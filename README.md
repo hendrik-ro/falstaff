@@ -1,75 +1,47 @@
-# React + TypeScript + Vite
+![CI tests](https://github.com/hendrik-ro/falstaff/actions/workflows/ci.yml/badge.svg)
+![CD GitHub Pages](https://github.com/hendrik-ro/falstaff/actions/workflows/cd.yml/badge.svg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Falstaff
+========
 
-Currently, two official plugins are available:
+A living document of a aspiring full stack engineer, serving as a quick reference guide for best practices and syntax.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Access
 
-## React Compiler
+Github Pages: [Cheat Sheet](https://hendrik-ro.github.io/falstaff/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Contents
 
-## Expanding the ESLint configuration
+### Front End
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **HTML**
+- **CSS**
+- **React**
+- **DOM**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Back End
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **APIs**
+- **Server**
+- **Databases**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Programming Languages
 
-```
+- **Golang**
+- **JavaScript**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Testing**
+- **CI/CD**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech Stack
 
-```
+- **Framework**: [Vite.js](https://vitejs.dev/)
+- **Deployment**: GitHub Pages
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+This project is licensed under the AGPL License.
