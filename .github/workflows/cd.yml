@@ -2,38 +2,41 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-      - name: Setup Node
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: '20'
+          cache: 'pnpm'
 
       - name: Install pnpm
         run: npm install -g pnpm@11.11.0
 
-      - name: Verify pnpm (debug)
-        run: |
-          echo "node: $(node -v)"
-          echo "npm:  $(npm -v)"
-          echo "pnpm: $(pnpm -v || true)"
-          which pnpm || true
-          echo "PATH=$PATH"
-
-      - name: Install dependencies
+      - name: Install dependencies (pnpm)
         run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm run build
 
-      - name: Deploy
-        run: npx gh-pages -d dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Does not require manual declaration
+      - name: Ensure git identity (safe-guard)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
