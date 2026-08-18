@@ -16,17 +16,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: "pnpm"
+          cache: "pnpm"   # optional; does NOT install pnpm
 
-      - name: Enable Corepack + pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@11.11.0 --activate
+      - name: Install pnpm (recommended)
+        uses: pnpm/action-setup@v2
+        with:
+          version: "11.11.0"    # pin to your desired pnpm version
 
-      - name: Verify pnpm
+      - name: Verify pnpm (debug)
         run: |
-          pnpm -v
-          which pnpm
+          echo "node: $(node -v)"
+          echo "npm:  $(npm -v)"
+          echo "pnpm: $(pnpm -v || true)"
+          which pnpm || true
+          echo "PATH=$PATH"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
