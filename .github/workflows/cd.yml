@@ -15,15 +15,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: "pnpm"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: "11.11.0"
+      - name: Install pnpm
+        run: npm install -g pnpm@11.11.0
 
-      - name: Verify pnpm
-        run: pnpm --v
+      - name: Verify pnpm (debug)
+        run: |
+          echo "node: $(node -v)"
+          echo "npm:  $(npm -v)"
+          echo "pnpm: $(pnpm -v || true)"
+          which pnpm || true
+          echo "PATH=$PATH"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
