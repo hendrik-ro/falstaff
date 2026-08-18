@@ -10,19 +10,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - name: Use Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: 24
 
       - name: Install pnpm
         run: npm install -g pnpm@11.11.0
+
+      - name: Verify pnpm (debug)
+        run: |
+          echo "node: $(node -v)"
+          echo "npm:  $(npm -v)"
+          echo "pnpm: $(pnpm -v || true)"
+          which pnpm || true
+          echo "PATH=$PATH"
 
       - name: Install dependencies (pnpm)
         run: pnpm install --frozen-lockfile
