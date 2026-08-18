@@ -2,8 +2,7 @@ name: Formatting
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -19,13 +18,15 @@ jobs:
           node-version: 24
           cache: "pnpm"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: "11.11.0"
+      - name: Enable Corepack + pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.11.0 --activate
 
       - name: Verify pnpm
-        run: pnpm --v
+        run: |
+          pnpm -v
+          which pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
