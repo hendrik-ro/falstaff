@@ -16,12 +16,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: "pnpm"   # optional; does NOT install pnpm
 
-      - name: Install pnpm (recommended)
-        uses: pnpm/action-setup@v2
-        with:
-          version: "11.11.0"    # pin to your desired pnpm version
+      - name: Install pnpm (global fallback)
+        run: npm install -g pnpm@11.11.0
 
       - name: Verify pnpm (debug)
         run: |
