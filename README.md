@@ -10,7 +10,7 @@ A living document of a aspiring full stack engineer, serving as a quick referenc
 
 Github Pages: [Cheat Sheet](https://hendrik-ro.github.io/falstaff/)
 
-## Features
+## Contents
 
 ### Front End
 
@@ -30,33 +30,18 @@ Github Pages: [Cheat Sheet](https://hendrik-ro.github.io/falstaff/)
 - **Golang**
 - **JavaScript**
 
-### Testing
+### Development
 
-- **TDD**
-- **Resources**
+- **Testing**
+- **CI/CD**
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Styling**: CSS Modules
+- **Framework**: [Vite.js](https://vitejs.dev/)
 - **Deployment**: GitHub Pages
 
-## Project Structure
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
 
-```bash
-app/
-├── front-end/          # Front-end technologies
-│   ├── html/
-│   ├── css/
-│   ├── react/
-│   └── dom/
-├── back-end/           # Back-end technologies
-│   ├── api/
-│   ├── server/
-│   └── database/
-├── language/           # Programming languages
-│   ├── golang/
-│   └── javascript/
-├── ui/                 # Reusable UI components
-└── globals.css         # Global styles
-```
+## License
+This project is licensed under the AGPL License.
