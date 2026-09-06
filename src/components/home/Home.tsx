@@ -1,17 +1,14 @@
-import "./App.css";
-
-function App() {
+function Home() {
   return (
-    <>
-      <Headers />
+    <div>
+      <HomeHeaders />
+      <HomeContent />
       <br />
-      <Content />
-      <br />
-    </>
+    </div>
   );
 }
 
-function Headers() {
+function HomeHeaders() {
   return (
     <header>
       <h1>Falstaff</h1>
@@ -23,7 +20,7 @@ function Headers() {
   );
 }
 
-function Content() {
+function HomeContent() {
   return (
     <div>
       <h3>Front End</h3>
@@ -128,4 +125,4 @@ function Content() {
   );
 }
 
-export default App;
+export default Home;
