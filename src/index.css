@@ -2,8 +2,8 @@
   --text: #fff;
   --text-h: #cddbe7;
   --bg: #172431;
+  --bg-h: #456f93;
   --border: #f0f4f8;
-  --code-bg: #f0f4f8;
   --accent: #2e4861;
   --accent-bg: #cddbe7;
   --accent-border: #1b2b3a;
@@ -30,6 +30,12 @@
 }
 
 /* Global */
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  min-height: 100svh;
+}
 h1,
 h2,
 h3,
@@ -39,9 +45,14 @@ h6 {
   text-align: center;
   color: var(--text-h);
 }
+h1 {
+  font-size: 3rem;
+}
 
 a {
   color: var(--text-h);
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover,
@@ -49,6 +60,7 @@ button:hover {
   transition: 100ms;
   font-weight: bold;
   color: var(--accent);
+  font-size: 1.2rem;
 }
 
 div {
@@ -63,6 +75,7 @@ div {
 nav {
   position: sticky;
   top: 0;
+  z-index: 1000;
   width: 100%;
   background-color: var(--accent-bg);
   border: 1px solid var(--accent-border);
@@ -79,16 +92,52 @@ nav ul {
 
 nav ul a {
   color: var(--accent);
+  text-decoration: none;
+}
+
+nav ul a:hover {
+  font-weight: 900;
+  transition-delay: 20ms;
 }
 
 .activeNavLink {
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* Main */
 .groupedColumns {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.group span {
+  margin: 0 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--bg-h);
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  z-index: 750;
+  text-align: end;
+  color: var(--accent);
+  background-color: var(--accent-bg);
+}
+
+/* Error */
+.errorPage {
+  justify-content: center;
+}
+.errorPage button {
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--bg-h);
 }

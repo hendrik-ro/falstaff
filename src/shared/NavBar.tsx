@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./NavBar.css";
-import type { NavBarProps } from "../../types/NavBar";
+import type { NavBarProps } from "../types/NavBar";
 import { v4 as uuidv4 } from "uuid";
 
 export default function NavBar(props: NavBarProps) {

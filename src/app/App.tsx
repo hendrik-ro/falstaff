@@ -7,10 +7,11 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Home from "../components/home/Home";
-import NavBar from "../shared/ui/NavBar";
+import NavBar from "../shared/NavBar";
 import Error404 from "../components/404/Error";
 import { selectNavLinks } from "../features/navLinks/navLinksSlice";
 import { useSelector } from "react-redux";
+import Footer from "../shared/Footer";
 
 function App() {
   const links = useSelector(selectNavLinks);
@@ -19,16 +20,18 @@ function App() {
       <Route
         path="/falstaff"
         element={
-          <>
+          <div>
             <NavBar links={links} />
             <Outlet />
-          </>
+            <Footer />
+          </div>
         }
         errorElement={
-          <>
+          <div>
             <NavBar links={links} />
             <Error404 />
-          </>
+            <Footer />
+          </div>
         }
       >
         <Route index element={<Home />} />
