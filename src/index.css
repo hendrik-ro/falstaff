@@ -38,3 +38,10 @@ h5,
 h6 {
   text-align: center;
 }
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
