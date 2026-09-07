@@ -1,13 +1,12 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #000;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #fff;
+  --text-h: #cddbe7;
+  --bg: #172431;
+  --border: #f0f4f8;
+  --code-bg: #f0f4f8;
+  --accent: #2e4861;
+  --accent-bg: #cddbe7;
+  --accent-border: #1b2b3a;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -30,6 +29,7 @@
   }
 }
 
+/* Global */
 h1,
 h2,
 h3,
@@ -37,11 +37,49 @@ h4,
 h5,
 h6 {
   text-align: center;
+  color: var(--text-h);
+}
+
+a {
+  color: var(--text-h);
+}
+
+a:hover,
+button:hover {
+  transition: 100ms;
+  font-weight: bold;
+  color: var(--accent);
 }
 
 div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* NavBar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+nav ul a {
+  color: var(--accent);
+}
+
+.activeNavLink {
+  font-weight: bold;
 }

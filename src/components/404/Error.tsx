@@ -1,8 +1,6 @@
-import "./Error.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Error404() {
-
   const navigate = useNavigate();
 
   return (
@@ -11,5 +9,5 @@ export default function Error404() {
       <p>The page you were looking for does not exist.</p>
       <button onClick={() => navigate("/falstaff")}>Back</button>
     </div>
-  )
+  );
 }
