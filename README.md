@@ -12,32 +12,13 @@ Github Pages: [Cheat Sheet](https://hendrik-ro.github.io/falstaff/)
 
 ## Contents
 
-### Front End
-
-- **HTML**
-- **CSS**
-- **React**
-- **DOM**
-
-### Back End
-
-- **APIs**
-- **Server**
-- **Databases**
-
-### Programming Languages
-
-- **Golang**
-- **JavaScript**
-
-### Development
-
-- **Testing**
-- **CI/CD**
+* Front End
+* Back End
+* Development
 
 ## Tech Stack
 
-- **Framework**: [Vite.js](https://vitejs.dev/)
+- **Framework**: [Vite.js](https://vitejs.dev/) + [Redux Toolkit](https://redux-toolkit.js.org/) + [React-Router](https://reactrouter.com/)
 - **Deployment**: GitHub Pages
 
 ## Contributing

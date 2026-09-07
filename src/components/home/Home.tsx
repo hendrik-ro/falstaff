@@ -16,7 +16,7 @@ function Home() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div style={{minHeight:"100svh"}}>
       <HomeHeaders />
       <HomeContent />
       <br />
@@ -38,7 +38,8 @@ function HomeHeaders() {
 
 function HomeContent() {
   return (
-    <div>
+    <div className="groupedColumns">
+      <div>
       <h3>Front End</h3>
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Front end technologies and libraries.
@@ -71,7 +72,9 @@ function HomeContent() {
             JavaScript
           </a>
         </button>
+        </div>
       </div>
+      <div>
       <h3>Back End</h3>
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Back end technologies and libraries.
@@ -103,8 +106,10 @@ function HomeContent() {
           >
             Server
           </a>
-        </button>
+          </button>
       </div>
+      </div>
+      <div>
       <h3>Development</h3>
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Development methods.
@@ -112,6 +117,7 @@ function HomeContent() {
       <div className="group">
         <button>Testing</button>
         <button>CI/CD</button>
+        </div>
       </div>
     </div>
   );
