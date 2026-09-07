@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import type { NavBarProps } from "../../types/NavBar";
+import { v4 as uuidv4 } from "uuid";
 
 export default function NavBar(props: NavBarProps) {
   const { links } = props;
@@ -8,13 +9,13 @@ export default function NavBar(props: NavBarProps) {
     <nav>
       <ul>
         {links.map((link) => {
+          const id = uuidv4();
           return (
-            <li>
+            <li key={id}>
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "activeNavLink" : "inactiveNavLink"
                 }
-                key={link.name}
                 to={link.to}
               >
                 {link.name}{" "}
