@@ -9,11 +9,11 @@ function Home() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
         {
           name: "About",
-          to: "/falstaff/about",
+          to: "/about",
         },
       ]),
     );
@@ -23,7 +23,6 @@ function Home() {
     <div>
       <HomeHeaders />
       <HomeContent />
-      <br />
     </div>
   );
 }

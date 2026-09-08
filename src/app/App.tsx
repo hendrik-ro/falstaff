@@ -12,29 +12,28 @@ import Error404 from "../components/errorElement";
 import { selectNavLinks } from "../features/navLinks/navLinksSlice";
 import { useSelector } from "react-redux";
 import Footer from "../features/Footer";
+import type { NavBarProps } from "../types/NavBar";
+import About from "../components/About";
+
+const Layout = (props: NavBarProps) => {
+  const { links } = props;
+  return (
+    <>
+      <NavBar links={links} />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   const links = useSelector(selectNavLinks);
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route
-        path="/falstaff"
-        element={
-          <div>
-            <NavBar links={links} />
-            <Outlet />
-            <Footer />
-          </div>
-        }
-        errorElement={
-          <div>
-            <NavBar links={links} />
-            <Error404 />
-            <Footer />
-          </div>
-        }
-      >
+      <Route path="/" element={<Layout links={links} />}>
         <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Error404 />} />
       </Route>,
     ),
   );

@@ -11,7 +11,7 @@ export default function Error404() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );
@@ -19,9 +19,10 @@ export default function Error404() {
 
   return (
     <div className="errorPage">
-      <h1>404 Not Found</h1>
+      <h1>Falstaff</h1>
+      <h2>Page Not Found</h2>
       <p>The page you were looking for does not exist.</p>
-      <button onClick={() => navigate("/falstaff")}>Back Home</button>
+      <button onClick={() => navigate("/")}>Back Home</button>
     </div>
   );
 }

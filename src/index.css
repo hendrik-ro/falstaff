@@ -50,13 +50,13 @@ h6 {
 h1 {
   font-size: 3rem;
 }
-
+p {
+  margin: 0 1rem;
+}
 a {
   color: var(--text-h);
   font-weight: bold;
-  text-decoration: none;
 }
-
 a:hover,
 button:hover {
   transition: 100ms;
@@ -64,12 +64,14 @@ button:hover {
   color: var(--accent);
   font-size: 1.2rem;
 }
-
 div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  flex: 1;
+}
+section {
   flex: 1;
 }
 
@@ -82,7 +84,6 @@ nav {
   background-color: var(--accent-bg);
   border: 1px solid var(--accent-border);
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -91,17 +92,14 @@ nav ul {
   padding: 0.2rem;
   margin: 0.2rem;
 }
-
 nav ul a {
   color: var(--accent);
   text-decoration: none;
 }
-
 nav ul a:hover {
   font-weight: 900;
   transition-delay: 20ms;
 }
-
 .activeNavLink {
   font-weight: bold;
   font-size: 1.2rem;
