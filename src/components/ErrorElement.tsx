@@ -19,10 +19,14 @@ export default function Error404() {
 
   return (
     <div className="errorPage">
-      <h1>Falstaff</h1>
-      <h2>Page Not Found</h2>
-      <p>The page you were looking for does not exist.</p>
-      <button onClick={() => navigate("/")}>Back Home</button>
+      <div className="errorPage">
+        <h1>Falstaff</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you were looking for does not exist.</p>
+      </div>
+      <div>
+        <button onClick={() => navigate("/")}>Back Home</button>
+      </div>
     </div>
   );
 }

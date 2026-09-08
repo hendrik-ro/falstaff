@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLinks } from "../features/navBar/navBarSlice";
 
-function Home() {
+export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
@@ -23,6 +23,7 @@ function Home() {
     <div>
       <HomeHeaders />
       <HomeContent />
+      <br style={{ marginBottom: "2rem" }} />
     </div>
   );
 }
@@ -42,88 +43,104 @@ function HomeHeaders() {
 function HomeContent() {
   return (
     <div className="groupedColumns">
-      <div>
-        <h3>Front End</h3>
-        <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
-          Front end technologies and libraries.
-        </p>
-        <div className="group">
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              HTML
-            </a>
-          </span>
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CSS
-            </a>
-          </span>
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              JavaScript
-            </a>
-          </span>
-        </div>
-      </div>
-      <div>
-        <h3>Back End</h3>
-        <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
-          Back end technologies and libraries.
-        </p>
-        <div className="group">
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/API"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              API
-            </a>
-          </span>
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/API/Database"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Database
-            </a>
-          </span>
-          <span>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/API/Server"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Server
-            </a>
-          </span>
-        </div>
-      </div>
-      <div>
-        <h3>Development</h3>
-        <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
-          Development methods.
-        </p>
-        <div className="group">
-          <span>Testing</span>
-          <span>CI/CD</span>
-        </div>
+      <HomeContentFrontEnd />
+      <HomeContentBackEnd />
+      <HomeContentDevelopment />
+    </div>
+  );
+}
+
+function HomeContentFrontEnd() {
+  return (
+    <div>
+      <h3>Front End</h3>
+      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
+        Front end technologies and libraries.
+      </p>
+      <div className="group">
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HTML
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CSS
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JavaScript
+          </a>
+        </span>
       </div>
     </div>
   );
 }
 
-export default Home;
+function HomeContentBackEnd() {
+  return (
+    <div>
+      <h3>Back End</h3>
+      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
+        Back end technologies and libraries.
+      </p>
+      <div className="group">
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            API
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Database"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Database
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Server"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Server
+          </a>
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function HomeContentDevelopment() {
+  return (
+    <div>
+      <h3>Development</h3>
+      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
+        Development methods.
+      </p>
+      <div className="group">
+        <span>Testing</span>
+        <span>CI/CD</span>
+      </div>
+    </div>
+  );
+}
