@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux";
-import { setLinks } from "../features/navLinks/navLinksSlice";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setLinks } from "../features/navBar/navBarSlice";
 
 function Home() {
   const dispatch = useDispatch();

@@ -5,15 +5,15 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import "./App.css";
-import Home from "../components/Home";
-import NavBar from "../features/navLinks/NavBar";
-import Error404 from "../components/errorElement";
-import { selectNavLinks } from "../features/navLinks/navLinksSlice";
 import { useSelector } from "react-redux";
-import Footer from "../features/Footer";
+import "./App.css";
 import type { NavBarProps } from "../types/NavBar";
+import Home from "../components/Home";
 import About from "../components/About";
+import Error404 from "../components/ErrorElement";
+import NavBar from "../features/navBar/NavBar";
+import { selectNavLinks } from "../features/navBar/navBarSlice";
+import Footer from "../features/Footer";
 
 const Layout = (props: NavBarProps) => {
   const { links } = props;

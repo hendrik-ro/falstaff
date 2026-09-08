@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import navLinksSliceReducer from "../features/navLinks/navLinksSlice";
+import navBarSliceReducer from "../features/navBar/navBarSlice";
 import {
   useDispatch,
   useSelector,
@@ -8,7 +8,7 @@ import {
 
 const store = configureStore({
   reducer: {
-    navLinksSliceReducer: navLinksSliceReducer,
+    navBarSliceReducer: navBarSliceReducer,
   },
 });
 

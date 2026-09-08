@@ -2,15 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { NavBarLink } from "../../types/NavBar";
 import type { RootState } from "../../app/store";
 
-interface NavLinksState {
+interface NavBarState {
   navLinks: NavBarLink[];
 }
 
-const initialState: NavLinksState = {
+const initialState: NavBarState = {
   navLinks: [],
 };
 
-const navLinksSlice = createSlice({
+const navBarSlice = createSlice({
   name: "navLinks",
   initialState: initialState,
   reducers: {
@@ -21,7 +21,7 @@ const navLinksSlice = createSlice({
 });
 
 export const selectNavLinks = (state: RootState) =>
-  state.navLinksSliceReducer.navLinks;
-export const { setLinks } = navLinksSlice.actions;
-export const navLinksState = navLinksSlice.reducer;
-export default navLinksState;
+  state.navBarSliceReducer.navLinks;
+export const { setLinks } = navBarSlice.actions;
+export const navBarState = navBarSlice.reducer;
+export default navBarState;
