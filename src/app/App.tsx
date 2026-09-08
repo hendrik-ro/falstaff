@@ -6,12 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import Home from "../components/home/Home";
-import NavBar from "../shared/NavBar";
-import Error404 from "../components/404/Error";
+import Home from "../components/Home";
+import NavBar from "../features/navLinks/NavBar";
+import Error404 from "../components/errorElement";
 import { selectNavLinks } from "../features/navLinks/navLinksSlice";
 import { useSelector } from "react-redux";
-import Footer from "../shared/Footer";
+import Footer from "../features/Footer";
 
 function App() {
   const links = useSelector(selectNavLinks);

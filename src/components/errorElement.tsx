@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLinks } from "../../features/navLinks/navLinksSlice";
+import { setLinks } from "../features/navLinks/navLinksSlice";
 
 export default function Error404() {
   const navigate = useNavigate();
