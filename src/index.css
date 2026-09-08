@@ -82,15 +82,45 @@ div {
 section {
   flex: 1;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.tooltiptext {
+  margin: 0.1rem !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.3rem !important;
+  padding: 0.1rem 0.3rem !important;
+  background-color: var(--bg-h) !important;
+  color: var(--text) !important;
+  font-weight: normal !important;
+  visibility: hidden;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 500ms;
+  font-size: 0.7rem !important;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.8;
+  white-space: nowrap;
+}
 
 /* NavBar */
 nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
+  width: 1%;
   background-color: var(--accent-bg);
   border: 1px solid var(--accent-border);
+  transition: width 500ms ease-in;
 }
 nav ul {
   list-style: none;

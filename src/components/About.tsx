@@ -1,4 +1,24 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setLinks } from "../features/navBar/navBarSlice";
+
 export default function About() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      setLinks([
+        {
+          name: "Home",
+          to: "/",
+        },
+        {
+          name: "About",
+          to: "/about",
+        },
+      ]),
+    );
+  }, [dispatch]);
+
   return (
     <div>
       <h1>About</h1>
@@ -19,11 +39,13 @@ export default function About() {
         <p>
           Contributions are welcome on{" "}
           <a
+            className="tooltip"
             href="https://github.com/hendrik-ro/falstaff"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
+            <span className="tooltiptext">Falstaff on GitHub</span>
           </a>
           .
         </p>

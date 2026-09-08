@@ -58,7 +58,7 @@ function HomeContentFrontEnd() {
         Front end technologies and libraries.
       </p>
       <div className="group">
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML"
             target="_blank"
@@ -66,8 +66,9 @@ function HomeContentFrontEnd() {
           >
             HTML
           </a>
+          <span className="tooltiptext">HTML</span>
         </span>
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
             target="_blank"
@@ -75,8 +76,9 @@ function HomeContentFrontEnd() {
           >
             CSS
           </a>
+          <span className="tooltiptext">CSS</span>
         </span>
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
@@ -84,6 +86,7 @@ function HomeContentFrontEnd() {
           >
             JavaScript
           </a>
+          <span className="tooltiptext">JavaScript</span>
         </span>
       </div>
     </div>
@@ -98,7 +101,7 @@ function HomeContentBackEnd() {
         Back end technologies and libraries.
       </p>
       <div className="group">
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API"
             target="_blank"
@@ -106,8 +109,9 @@ function HomeContentBackEnd() {
           >
             API
           </a>
+          <span className="tooltiptext">API</span>
         </span>
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Database"
             target="_blank"
@@ -115,8 +119,9 @@ function HomeContentBackEnd() {
           >
             Database
           </a>
+          <span className="tooltiptext">Database</span>
         </span>
-        <span>
+        <span className="tooltip">
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Server"
             target="_blank"
@@ -124,6 +129,7 @@ function HomeContentBackEnd() {
           >
             Server
           </a>
+          <span className="tooltiptext">Server</span>
         </span>
       </div>
     </div>
@@ -138,8 +144,14 @@ function HomeContentDevelopment() {
         Development methods.
       </p>
       <div className="group">
-        <span>Testing</span>
-        <span>CI/CD</span>
+        <span className="tooltip">
+          Testing
+          <span className="tooltiptext">Testing</span>
+        </span>
+        <span className="tooltip">
+          CI/CD
+          <span className="tooltiptext">CI/CD</span>
+        </span>
       </div>
     </div>
   );
