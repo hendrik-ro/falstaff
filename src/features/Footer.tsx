@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <span>Footer placeholder</span>
+      <span>&copy; Falstaff {new Date().getFullYear()}</span>
     </footer>
   );
 }

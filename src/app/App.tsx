@@ -5,36 +5,35 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import "./App.css";
-import Home from "../components/home/Home";
-import NavBar from "../shared/NavBar";
-import Error404 from "../components/404/Error";
-import { selectNavLinks } from "../features/navLinks/navLinksSlice";
 import { useSelector } from "react-redux";
-import Footer from "../shared/Footer";
+import "./App.css";
+import type { NavBarProps } from "../types/NavBar";
+import Home from "../components/Home";
+import About from "../components/About";
+import Error404 from "../components/ErrorElement";
+import NavBar from "../features/navBar/NavBar";
+import { selectNavLinks } from "../features/navBar/navBarSlice";
+import Footer from "../features/Footer";
+
+const Layout = (props: NavBarProps) => {
+  const { links } = props;
+  return (
+    <>
+      <NavBar links={links} />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   const links = useSelector(selectNavLinks);
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route
-        path="/falstaff"
-        element={
-          <div>
-            <NavBar links={links} />
-            <Outlet />
-            <Footer />
-          </div>
-        }
-        errorElement={
-          <div>
-            <NavBar links={links} />
-            <Error404 />
-            <Footer />
-          </div>
-        }
-      >
+      <Route path="/" element={<Layout links={links} />}>
         <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Error404 />} />
       </Route>,
     ),
   );
