@@ -16,7 +16,7 @@ export default function NavBar(props: NavBarProps) {
     }
   }, []);
   return (
-    <nav className={styles.nav}>
+    <nav id="navBar" className={styles.nav}>
       <ul>
         {links.map((link) => {
           const id = uuidv4();
