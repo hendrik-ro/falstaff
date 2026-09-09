@@ -1,6 +1,7 @@
 :root {
   --text: #fff;
   --text-h: #cddbe7;
+  --text-hover: orange;
   --bg: #172431;
   --bg-h: #456f93;
   --border: #f0f4f8;
@@ -165,9 +166,8 @@ nav ul a:hover {
   padding: 0.2rem 0.5rem;
   background-color: var(--bg-h);
 }
-.group span:hover {
-  font-size: 1.2rem;
-  font-weight: bold;
+.group span a:hover {
+  color: var(--text-hover);
 }
 
 /* Footer */
