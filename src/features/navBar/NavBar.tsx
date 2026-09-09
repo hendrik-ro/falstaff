@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import styles from "./NavBar.module.css";
 import type { NavBarProps } from "../../types/NavBar";
-import { useEffect } from "react";
 
 export default function NavBar(props: NavBarProps) {
   const { links } = props;
@@ -15,7 +16,7 @@ export default function NavBar(props: NavBarProps) {
     }
   }, []);
   return (
-    <nav id="navBar">
+    <nav className={styles.nav}>
       <ul>
         {links.map((link) => {
           const id = uuidv4();
@@ -23,7 +24,7 @@ export default function NavBar(props: NavBarProps) {
             <li key={id}>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "activeNavLink" : "inactiveNavLink"
+                  isActive ? styles.activeNavLink : styles.inactiveNavLink
                 }
                 to={link.to}
               >

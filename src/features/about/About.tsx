@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setLinks } from "../features/navBar/navBarSlice";
+import { setLinks } from "../navBar/navBarSlice";
 
 export default function About() {
   const dispatch = useDispatch();
