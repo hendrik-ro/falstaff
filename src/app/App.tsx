@@ -8,8 +8,8 @@ import {
 import { useSelector } from "react-redux";
 import "./App.css";
 import type { NavBarProps } from "../types/NavBar";
-import Home from "../components/Home";
-import About from "../components/About";
+import Home from "../features/home/Home";
+import About from "../features/about/About";
 import Error404 from "../components/ErrorElement";
 import NavBar from "../features/navBar/NavBar";
 import { selectNavLinks } from "../features/navBar/navBarSlice";
