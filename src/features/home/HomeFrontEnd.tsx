@@ -7,6 +7,10 @@ export default function HomeContentFrontEnd() {
       </p>
       <div className="group">
         <span className="tooltip">
+          <p>Frameworks</p>
+          <span className="tooltiptext">Not yet implemented</span>
+        </span>
+        <span className="tooltip">
           <a
             href="https://react.dev/"
             target="_blank"
@@ -25,10 +29,6 @@ export default function HomeContentFrontEnd() {
             Redux Toolkit
           </a>
           <span className="tooltiptext">Redux Toolkit`s official website</span>
-        </span>
-        <span className="tooltip">
-          <p>Frameworks</p>
-          <span className="tooltiptext">Not yet implemented</span>
         </span>
         <span className="tooltip">
           <a

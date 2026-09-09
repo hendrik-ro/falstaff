@@ -1,0 +1,41 @@
+.groupedColumns {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-width: 10rem;
+}
+.group span {
+  margin: 0.4rem 0.4rem 0.4rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--bg-h);
+}
+.group span a {
+  color: var(--accent);
+}
+#placeholder {
+  color: var(--text-hover) !important;
+}
+
+.group span a:hover {
+  color: var(--text-hover);
+}
+#external-links {
+  color: var(--accent);
+}
+#internal-links {
+  color: var(--text-h);
+}
+#placeholders {
+  color: var(--text-hover);
+}

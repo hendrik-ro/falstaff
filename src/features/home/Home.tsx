@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import "./Home.css";
 import { setLinks } from "../navBar/navBarSlice";
 import HomeContentFrontEnd from "./HomeFrontEnd";
 import HomeContentBackEnd from "./HomeBackEnd";
@@ -45,10 +46,21 @@ function HomeHeaders() {
 
 function HomeContent() {
   return (
-    <div className="groupedColumns">
-      <HomeContentFrontEnd />
-      <HomeContentBackEnd />
-      <HomeContentDevelopment />
+    <div>
+      <div className="groupedColumns">
+        <HomeContentFrontEnd />
+        <HomeContentBackEnd />
+        <HomeContentDevelopment />
+      </div>
+      <span id="external-links" style={{ fontSize: "0.8rem" }}>
+        external links
+      </span>
+      <span id="internal-links" style={{ fontSize: "0.8rem" }}>
+        internal links
+      </span>
+      <span id="placeholders" style={{ fontSize: "0.8rem" }}>
+        placeholders
+      </span>
     </div>
   );
 }

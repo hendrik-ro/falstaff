@@ -112,64 +112,6 @@ section {
   white-space: nowrap;
 }
 
-/* NavBar */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 1%;
-  background-color: var(--accent-bg);
-  border: 1px solid var(--accent-border);
-  transition: width 500ms ease-in;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.2rem;
-  margin: 0.2rem;
-}
-nav ul a {
-  color: var(--accent);
-  text-decoration: none;
-}
-nav ul a:hover {
-  font-weight: 900;
-  transition-delay: 20ms;
-}
-.activeNavLink {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Main */
-.groupedColumns {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  flex-wrap: wrap;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  min-width: 10rem;
-}
-.group span {
-  margin: 0.4rem 0.4rem 0.4rem 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 0.3rem;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--bg-h);
-}
-.group span a:hover {
-  color: var(--text-hover);
-}
-
 /* Footer */
 footer {
   width: 100%;

@@ -42,6 +42,16 @@ export default function HomeContentBackEnd() {
             Mozilla Developer Network`s Server documentation
           </span>
         </span>
+        <span className="tooltip">
+          <a
+            href="https://nodejs.org/en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Node
+          </a>
+          <span className="tooltiptext">Node`s official website</span>
+        </span>
       </div>
     </div>
   );

@@ -6,11 +6,11 @@ export default function HomeContentDevelopment() {
         Development methods.
       </p>
       <div className="group">
-        <span className="tooltip">
+        <span className="tooltip" id="placeholder">
           Testing
           <span className="tooltiptext">Not yet implemented</span>
         </span>
-        <span className="tooltip">
+        <span className="tooltip" id="placeholder">
           CI/CD
           <span className="tooltiptext">Not yet implemented</span>
         </span>
