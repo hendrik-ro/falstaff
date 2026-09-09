@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.7](https://github.com/hendrik-ro/falstaff/compare/v0.0.6...v0.0.7) (2026-09-09)
 
+### Bug Fixes
+
+* changed root path in vite.config.ts ([4cdefe7a](https://github.com/hendrik-ro/falstaff/commit/4cdefe7a66879cad729172bfb6cbfa743eae1fa6))
+
 ### [0.0.6](https://github.com/hendrik-ro/falstaff/compare/v0.0.5...v0.0.6) (2026-09-09)
 
 ### [0.0.5](https://github.com/hendrik-ro/falstaff/compare/v0.0.4...v0.0.5) (2026-09-08)
@@ -13,7 +17,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### [0.0.3](https://github.com/hendrik-ro/falstaff/compare/v0.0.2...v0.0.3) (2026-09-06)
 
 ### [0.0.2](https://github.com/hendrik-ro/falstaff/compare/v0.0.1...v0.0.2) (2026-08-19)
-
 
 ### Bug Fixes
 
