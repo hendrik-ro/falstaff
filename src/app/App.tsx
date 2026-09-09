@@ -30,10 +30,10 @@ function App() {
   const links = useSelector(selectNavLinks);
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Layout links={links} />}>
+      <Route path="/falstaff" element={<Layout links={links} />}>
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/falstaff/about" element={<About />} />
+        <Route path="/falstaff/*" element={<Error404 />} />
       </Route>,
     ),
   );
