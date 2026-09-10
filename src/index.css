@@ -58,6 +58,9 @@ a {
   color: var(--text-h);
   font-weight: bold;
 }
+code {
+  background-color: rgb(40, 42, 54);
+}
 button:hover {
   transition: 100ms;
   font-weight: bold;

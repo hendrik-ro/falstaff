@@ -1,0 +1,13 @@
+.frameworkFlex {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.frameworkItem {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
