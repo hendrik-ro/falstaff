@@ -1,5 +1,5 @@
 nav {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   width: 1%;
@@ -11,9 +11,16 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0.2rem;
   margin: 0.2rem;
+  flex-wrap: wrap;
+  max-height: 15rem;
+  overflow-y: scroll;
+}
+nav ul li {
+  color: var(--accent);
+  font-weight: bold;
 }
 nav ul a {
   color: var(--accent);
@@ -23,7 +30,26 @@ nav ul a:hover {
   font-weight: 900;
   transition-delay: 20ms;
 }
+nav ul button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+}
 .activeNavLink {
   font-weight: bold;
   font-size: 1.2rem;
+}
+.inactiveNavLink {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.activeChapterLink {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.inactiveChapterLink {
+  font-weight: normal;
+  font-size: 1rem;
 }

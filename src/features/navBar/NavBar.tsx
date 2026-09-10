@@ -2,10 +2,18 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./NavBar.module.css";
-import type { NavBarProps } from "../../types/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectChapterLinks,
+  selectLinks,
+  toggleActiveChapterLink,
+} from "./navBarSlice";
 
-export default function NavBar(props: NavBarProps) {
-  const { links } = props;
+export default function NavBar() {
+  const dispatch = useDispatch();
+
+  const links = useSelector(selectLinks);
+  const chapterLinks = useSelector(selectChapterLinks);
   useEffect(() => {
     const navBar = document.getElementById("navBar");
     if (navBar) {
@@ -27,9 +35,30 @@ export default function NavBar(props: NavBarProps) {
                   isActive ? styles.activeNavLink : styles.inactiveNavLink
                 }
                 to={link.to}
+                end
               >
                 {link.name}{" "}
               </NavLink>
+            </li>
+          );
+        })}
+        {chapterLinks && chapterLinks.length > 0 && <li>|</li>}
+        {chapterLinks.map((chapterLink) => {
+          const id = uuidv4();
+          return (
+            <li key={id}>
+              <button
+                className={
+                  chapterLink.active
+                    ? styles.activeChapterLink
+                    : styles.inactiveChapterLink
+                }
+                onClick={() => {
+                  dispatch(toggleActiveChapterLink({ name: chapterLink.name }));
+                }}
+              >
+                {chapterLink.name}{" "}
+              </button>
             </li>
           );
         })}

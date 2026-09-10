@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import style from "./Home.module.css";
+
 export default function HomeContentFrontEnd() {
   return (
     <div>
@@ -5,64 +8,68 @@ export default function HomeContentFrontEnd() {
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Front end technologies and libraries.
       </p>
-      <div className="group">
-        <span className="tooltip">
-          <p>Frameworks</p>
-          <span className="tooltiptext">Not yet implemented</span>
+      <div className={style.group}>
+        <span className={style.tooltip}>
+          <Link className={style.internalLink} to="/falstaff/frontend/dom">
+            DOM
+          </Link>
+          <span className={style.tooltiptext}>Document Object Model</span>
         </span>
-        <span className="tooltip">
-          <a
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <span className={style.tooltip}>
+          <Link className={style.internalLink} to="/falstaff/frontend/react">
             React
-          </a>
-          <span className="tooltiptext">React`s official website</span>
+          </Link>
+          <span className={style.tooltiptext}>React</span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://redux-toolkit.js.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Redux Toolkit
           </a>
-          <span className="tooltiptext">Redux Toolkit`s official website</span>
+          <span className={style.tooltiptext}>
+            Redux Toolkit`s official website
+          </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/HTML"
             target="_blank"
             rel="noopener noreferrer"
           >
             HTML
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
             target="_blank"
             rel="noopener noreferrer"
           >
             CSS
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
             rel="noopener noreferrer"
           >
             JavaScript
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>

@@ -1,3 +1,5 @@
+import style from "./Home.module.css";
+
 export default function HomeContentDevelopment() {
   return (
     <div>
@@ -5,14 +7,14 @@ export default function HomeContentDevelopment() {
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Development methods.
       </p>
-      <div className="group">
-        <span className="tooltip" id="placeholder">
-          Testing
-          <span className="tooltiptext">Not yet implemented</span>
+      <div className={style.group}>
+        <span className={style.tooltip} id="placeholder">
+          <p className={style.placeholder}>Testing</p>
+          <span className={style.tooltiptext}>Not yet implemented</span>
         </span>
-        <span className="tooltip" id="placeholder">
-          CI/CD
-          <span className="tooltiptext">Not yet implemented</span>
+        <span className={style.tooltip} id="placeholder">
+          <p className={style.placeholder}>CI/CD</p>
+          <span className={style.tooltiptext}>Not yet implemented</span>
         </span>
       </div>
     </div>
