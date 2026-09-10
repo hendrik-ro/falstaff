@@ -1,5 +1,5 @@
 nav {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   width: 1%;
@@ -14,6 +14,9 @@ nav ul {
   gap: 1rem;
   padding: 0.2rem;
   margin: 0.2rem;
+  flex-wrap: wrap;
+  max-height: 15rem;
+  overflow-y: scroll;
 }
 nav ul li {
   color: var(--accent);
