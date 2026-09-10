@@ -27,6 +27,13 @@ nav ul a:hover {
   font-weight: 900;
   transition-delay: 20ms;
 }
+nav ul button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+}
 .activeNavLink {
   font-weight: bold;
   font-size: 1.2rem;

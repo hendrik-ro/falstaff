@@ -2,10 +2,16 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./NavBar.module.css";
-import { useSelector } from "react-redux";
-import { selectChapterLinks, selectLinks } from "./navBarSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectChapterLinks,
+  selectLinks,
+  toggleActiveChapterLink,
+} from "./navBarSlice";
 
 export default function NavBar() {
+  const dispatch = useDispatch();
+
   const links = useSelector(selectLinks);
   const chapterLinks = useSelector(selectChapterLinks);
   useEffect(() => {
@@ -41,17 +47,18 @@ export default function NavBar() {
           const id = uuidv4();
           return (
             <li key={id}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
+              <button
+                className={
+                  chapterLink.active
                     ? styles.activeChapterLink
                     : styles.inactiveChapterLink
                 }
-                to={chapterLink.to}
-                end
+                onClick={() => {
+                  dispatch(toggleActiveChapterLink({ name: chapterLink.name }));
+                }}
               >
                 {chapterLink.name}{" "}
-              </NavLink>
+              </button>
             </li>
           );
         })}
