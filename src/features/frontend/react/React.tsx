@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setLinks } from "../../navBar/navBarSlice";
+import {
+  clearChapterLinks,
+  setChapterLinks,
+  setLinks,
+} from "../../navBar/navBarSlice";
 
 export default function React() {
   const dispatch = useDispatch();
@@ -9,15 +13,32 @@ export default function React() {
       setLinks([
         {
           name: "Home",
-          href: "/falstaff",
-        }
-      ])
+          to: "/falstaff",
+        },
+      ]),
     );
+    dispatch(
+      setChapterLinks([
+        {
+          name: "React",
+          to: "/falstaff/frontend/react",
+        },
+        {
+          name: "Frameworks",
+          to: "/falstaff/frontend/react/frameworks",
+        },
+      ]),
+    );
+
+    // Clear chapter links on unmount
+    return () => {
+      dispatch(clearChapterLinks());
+    };
   }, [dispatch]);
 
   return (
     <div>
-
+      <h1>React</h1>
     </div>
-  )
+  );
 }

@@ -11,9 +11,13 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0.2rem;
   margin: 0.2rem;
+}
+nav ul li {
+  color: var(--accent);
+  font-weight: bold;
 }
 nav ul a {
   color: var(--accent);
@@ -26,4 +30,16 @@ nav ul a:hover {
 .activeNavLink {
   font-weight: bold;
   font-size: 1.2rem;
+}
+.inactiveNavLink {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.activeChapterLink {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.inactiveChapterLink {
+  font-weight: normal;
+  font-size: 1rem;
 }

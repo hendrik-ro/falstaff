@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HomeContentFrontEnd() {
   return (
     <div>
@@ -10,7 +12,7 @@ export default function HomeContentFrontEnd() {
           <p>Frameworks</p>
           <span className="tooltiptext">Not yet implemented</span>
         </span>
-        <span className="tooltip">
+        {/* <span className="tooltip">
           <a
             href="https://react.dev/"
             target="_blank"
@@ -19,6 +21,10 @@ export default function HomeContentFrontEnd() {
             React
           </a>
           <span className="tooltiptext">React`s official website</span>
+          </span> */}
+        <span className="tooltip">
+          <Link to="/falstaff/frontend/react">React</Link>
+          <span className="tooltiptext">React</span>
         </span>
         <span className="tooltip">
           <a
