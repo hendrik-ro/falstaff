@@ -10,6 +10,7 @@ import {
   setActiveChapter,
 } from "../../navBar/navBarSlice";
 import ReactFrameworks from "./Frameworks";
+import ReactVDOM from "./VDOM";
 
 export default function React() {
   const dispatch = useDispatch();
@@ -33,6 +34,10 @@ export default function React() {
           name: "Frameworks",
           active: false,
         },
+        {
+          name: "vDOM",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("React"));
@@ -53,6 +58,7 @@ export default function React() {
 
       {activeChapter === "React" && <ReactSetup />}
       {activeChapter === "Frameworks" && <ReactFrameworks />}
+      {activeChapter === "vDOM" && <ReactVDOM />}
     </div>
   );
 }

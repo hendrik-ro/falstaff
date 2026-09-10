@@ -9,19 +9,9 @@ export default function HomeContentFrontEnd() {
       </p>
       <div className="group">
         <span className="tooltip">
-          <p>Frameworks</p>
-          <span className="tooltiptext">Not yet implemented</span>
+          <Link to="/falstaff/frontend/dom">DOM</Link>
+          <span className="tooltiptext">Document Object Model</span>
         </span>
-        {/* <span className="tooltip">
-          <a
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span className="tooltiptext">React`s official website</span>
-          </span> */}
         <span className="tooltip">
           <Link to="/falstaff/frontend/react">React</Link>
           <span className="tooltiptext">React</span>

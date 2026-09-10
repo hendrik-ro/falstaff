@@ -51,6 +51,9 @@ h6 {
 h1 {
   font-size: 3rem;
 }
+h3 {
+  text-decoration: underline;
+}
 p {
   margin: 0 1rem;
 }
