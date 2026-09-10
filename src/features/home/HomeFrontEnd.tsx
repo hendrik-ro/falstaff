@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import style from "./Home.module.css";
 
 export default function HomeContentFrontEnd() {
   return (
@@ -7,16 +8,16 @@ export default function HomeContentFrontEnd() {
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Front end technologies and libraries.
       </p>
-      <div className="group">
-        <span className="tooltip">
+      <div className={style.group}>
+        <span className={style.tooltip}>
           <Link to="/falstaff/frontend/dom">DOM</Link>
-          <span className="tooltiptext">Document Object Model</span>
+          <span className={style.tooltiptext}>Document Object Model</span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <Link to="/falstaff/frontend/react">React</Link>
-          <span className="tooltiptext">React</span>
+          <span className={style.tooltiptext}>React</span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://redux-toolkit.js.org/"
             target="_blank"
@@ -24,9 +25,11 @@ export default function HomeContentFrontEnd() {
           >
             Redux Toolkit
           </a>
-          <span className="tooltiptext">Redux Toolkit`s official website</span>
+          <span className={style.tooltiptext}>
+            Redux Toolkit`s official website
+          </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML"
             target="_blank"
@@ -34,11 +37,11 @@ export default function HomeContentFrontEnd() {
           >
             HTML
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
             target="_blank"
@@ -46,11 +49,11 @@ export default function HomeContentFrontEnd() {
           >
             CSS
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
@@ -58,7 +61,7 @@ export default function HomeContentFrontEnd() {
           >
             JavaScript
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s documentation
           </span>
         </span>

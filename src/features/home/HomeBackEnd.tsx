@@ -1,3 +1,5 @@
+import style from "./Home.module.css";
+
 export default function HomeContentBackEnd() {
   return (
     <div>
@@ -5,8 +7,8 @@ export default function HomeContentBackEnd() {
       <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
         Back end technologies and libraries.
       </p>
-      <div className="group">
-        <span className="tooltip">
+      <div className={style.group}>
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API"
             target="_blank"
@@ -14,11 +16,11 @@ export default function HomeContentBackEnd() {
           >
             API
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s API documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Database"
             target="_blank"
@@ -26,11 +28,11 @@ export default function HomeContentBackEnd() {
           >
             Database
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s Database documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Server"
             target="_blank"
@@ -38,11 +40,11 @@ export default function HomeContentBackEnd() {
           >
             Server
           </a>
-          <span className="tooltiptext">
+          <span className={style.tooltiptext}>
             Mozilla Developer Network`s Server documentation
           </span>
         </span>
-        <span className="tooltip">
+        <span className={style.tooltip}>
           <a
             href="https://nodejs.org/en"
             target="_blank"
@@ -50,7 +52,7 @@ export default function HomeContentBackEnd() {
           >
             Node
           </a>
-          <span className="tooltiptext">Node`s official website</span>
+          <span className={style.tooltiptext}>Node`s official website</span>
         </span>
       </div>
     </div>
