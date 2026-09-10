@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/hendrik-ro/falstaff/compare/v0.0.11...v0.0.12) (2026-09-10)
+
+
+### Features
+
+* React version bump ([#20](https://github.com/hendrik-ro/falstaff/issues/20)) ([fa2d572](https://github.com/hendrik-ro/falstaff/commit/fa2d572235a6108da0f6da8e7313ff6051e31fd9))
+
 ### [0.0.11](https://github.com/hendrik-ro/falstaff/compare/v0.0.10...v0.0.11) (2026-09-10)
 
 
