@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import {
   clearChapterLinks,
   selectActiveChapter,
@@ -10,7 +8,9 @@ import {
   setActiveChapter,
 } from "../../navBar/navBarSlice";
 import ReactFrameworks from "./Frameworks";
-import ReactVDOM from "./VDOM";
+import ReactComponents from "./Components";
+import ReactHooks from "./Hooks";
+import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function React() {
   const dispatch = useDispatch();
@@ -35,7 +35,11 @@ export default function React() {
           active: false,
         },
         {
-          name: "vDOM",
+          name: "Components",
+          active: false,
+        },
+        {
+          name: "Hooks",
           active: false,
         },
       ]),
@@ -56,9 +60,55 @@ export default function React() {
         <p>A JavaScript library for building user interfaces.</p>
       </header>
 
-      {activeChapter === "React" && <ReactSetup />}
+      {activeChapter === "React" && (
+        <>
+          <ReactSetup />
+          <ReactAbout />
+        </>
+      )}
       {activeChapter === "Frameworks" && <ReactFrameworks />}
-      {activeChapter === "vDOM" && <ReactVDOM />}
+      {activeChapter === "Components" && <ReactComponents />}
+      {activeChapter === "Hooks" && <ReactHooks />}
+    </div>
+  );
+}
+
+function ReactAbout() {
+  return (
+    <div>
+      <h2>About</h2>
+      <p>
+        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+          React
+        </a>{" "}
+        efficiently updates the DOM to reflect the application state using a
+        virtual DOM.
+      </p>
+      <br style={{ marginBottom: "1rem" }} />
+      <p>
+        React uses <em>JavaScript XML</em> (JSX) as a syntax extension to
+        interject HTML-like code into the JavaScript:
+      </p>
+      <Syntax
+        language="jsx"
+        code={`const homeLink = <Link to="/">Home</Link>`}
+      />
+      <p>
+        JSX also allows for bracket notation to embed JavaScript expressions
+        within JSX:
+      </p>
+      <Syntax
+        language="jsx"
+        code={`export default function Home(props) {
+  const { links } = props;
+  return (
+    <div>
+      {links.map((link) => <Link to={link}>{link}</Link>)}
+    </div>
+  )
+}`}
+        lineNumbers={true}
+      />
     </div>
   );
 }
@@ -66,23 +116,13 @@ export default function React() {
 function ReactSetup() {
   return (
     <div>
-      <p>
-        React efficiently updates the DOM to reflect the application state using
-        a virtual DOM.
-      </p>
       <h2>Setup</h2>
       <p>Install React using your package manager:</p>
-      <SyntaxHighlighter language="bash" style={dracula}>
-        {`$ pnpm install -D react`}
-      </SyntaxHighlighter>
+      <Syntax language="bash" code={`$ pnpm install -D react`} />
       <p>Add React-Router to your project:</p>
-      <SyntaxHighlighter language="bash" style={dracula}>
-        {`$ pnpm install -D react-router-dom`}
-      </SyntaxHighlighter>
+      <Syntax language="bash" code={`$ pnpm install -D react-router-dom`} />
       <p>Install Redux Toolkit to your project:</p>
-      <SyntaxHighlighter language="bash" style={dracula}>
-        {`$ pnpm install -D @reduxjs/toolkit`}
-      </SyntaxHighlighter>
+      <Syntax language="bash" code={`$ pnpm install -D @reduxjs/toolkit`} />
     </div>
   );
 }

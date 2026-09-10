@@ -1,6 +1,5 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import styles from "./React.module.css";
+import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function ReactFrameworks() {
   return (
@@ -11,9 +10,7 @@ export default function ReactFrameworks() {
         <div className={styles.frameworkItem}>
           <h3>Vite.js</h3>
           <p>Create a new Vite.js project:</p>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm create vite`}
-          </SyntaxHighlighter>
+          <Syntax language="bash" code={`$ pnpm create vite`} />
           <p>
             Vite.js supports various templates such as a React TypeScript
             template, add{" "}
@@ -21,31 +18,21 @@ export default function ReactFrameworks() {
           </p>
           <br style={{ marginTop: "1rem" }} />
           <p>Install dependencies and start the development server:</p>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm install`}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm dev`}
-          </SyntaxHighlighter>
+          <Syntax language="bash" code={`$ pnpm install`} />
+          <Syntax language="bash" code={`$ pnpm dev`} />
         </div>
 
         <div className={styles.frameworkItem}>
           <h3>Next.js</h3>
           <p>Create a new Next.js project:</p>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm create next-app`}
-          </SyntaxHighlighter>
+          <Syntax language="bash" code={`$ pnpm create next-app`} />
           <p>
             Next.js supports various templates such as a TypeScript template,
             add <code className={styles.code}>--template ts</code>.
           </p>
           <p>Install dependencies and start the development server:</p>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm install`}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter language="bash" style={dracula}>
-            {`$ pnpm dev`}
-          </SyntaxHighlighter>
+          <Syntax language="bash" code={`$ pnpm install`} />
+          <Syntax language="bash" code={`$ pnpm dev`} />
         </div>
       </div>
     </div>

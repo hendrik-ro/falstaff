@@ -61,6 +61,9 @@ a {
   color: var(--text-h);
   font-weight: bold;
 }
+a:hover {
+  color: var(--text-hover);
+}
 code {
   background-color: rgb(40, 42, 54);
 }
