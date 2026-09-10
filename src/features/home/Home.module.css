@@ -20,11 +20,24 @@
   padding: 0.2rem 0.5rem;
   background-color: var(--bg-h);
 }
-.group span a {
-  color: var(--accent);
+
+.externalLink {
+  color: var(--accent) !important;
 }
-.group span a:hover {
+.externalLink:hover {
+  color: var(--text-hover) !important;
+}
+
+.internalLink {
+  color: var(--text-h) !important;
+}
+.internalLink:hover {
+  color: var(--text-hover) !important;
+}
+
+.placeholder {
   color: var(--text-hover);
+  margin: 0;
 }
 
 /* Tooltip */

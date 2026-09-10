@@ -10,15 +10,20 @@ export default function HomeContentFrontEnd() {
       </p>
       <div className={style.group}>
         <span className={style.tooltip}>
-          <Link to="/falstaff/frontend/dom">DOM</Link>
+          <Link className={style.internalLink} to="/falstaff/frontend/dom">
+            DOM
+          </Link>
           <span className={style.tooltiptext}>Document Object Model</span>
         </span>
         <span className={style.tooltip}>
-          <Link to="/falstaff/frontend/react">React</Link>
+          <Link className={style.internalLink} to="/falstaff/frontend/react">
+            React
+          </Link>
           <span className={style.tooltiptext}>React</span>
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://redux-toolkit.js.org/"
             target="_blank"
             rel="noopener noreferrer"
@@ -31,6 +36,7 @@ export default function HomeContentFrontEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/HTML"
             target="_blank"
             rel="noopener noreferrer"
@@ -43,6 +49,7 @@ export default function HomeContentFrontEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
             target="_blank"
             rel="noopener noreferrer"
@@ -55,6 +62,7 @@ export default function HomeContentFrontEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
             rel="noopener noreferrer"

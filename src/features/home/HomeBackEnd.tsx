@@ -10,6 +10,7 @@ export default function HomeContentBackEnd() {
       <div className={style.group}>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/API"
             target="_blank"
             rel="noopener noreferrer"
@@ -22,6 +23,7 @@ export default function HomeContentBackEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/API/Database"
             target="_blank"
             rel="noopener noreferrer"
@@ -34,6 +36,7 @@ export default function HomeContentBackEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://developer.mozilla.org/en-US/docs/Web/API/Server"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,6 +49,7 @@ export default function HomeContentBackEnd() {
         </span>
         <span className={style.tooltip}>
           <a
+            className={style.externalLink}
             href="https://nodejs.org/en"
             target="_blank"
             rel="noopener noreferrer"
