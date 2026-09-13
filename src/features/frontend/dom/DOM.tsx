@@ -6,6 +6,8 @@ import {
   setChapterLinks,
   setLinks,
 } from "../../navBar/navBarSlice";
+import DOMDocument from "./Document";
+import DOMProperties from "./Properties";
 
 export default function DocumentObjectModel() {
   const dispatch = useDispatch();
@@ -25,9 +27,17 @@ export default function DocumentObjectModel() {
           name: "DOM",
           active: true,
         },
+        {
+          name: "Document",
+          active: false,
+        },
+        {
+          name: "Properties",
+          active: false,
+        },
       ]),
     );
-    dispatch(setActiveChapter("dom"));
+    dispatch(setActiveChapter("DOM"));
 
     // Clear chapters on unmount
     return () => {
@@ -37,9 +47,18 @@ export default function DocumentObjectModel() {
   }, [dispatch]);
   return (
     <div>
-      <h1>Document Object Model</h1>
+      <header>
+        <h1>DOM</h1>
+        <p>
+          The <em>Document Object Model</em> (DOM) is a programming interface
+          for web documents.
+        </p>
+      </header>
 
-      {activeChapter === "dom" && <DOMIntro />}
+      {(activeChapter === "DOM" || !activeChapter) && <DOMIntro />}
+      {activeChapter === "Document" && <DOMDocument />}
+      {activeChapter === "Properties" && <DOMProperties />}
+      <br style={{ marginTop: "2rem" }} />
     </div>
   );
 }
@@ -47,7 +66,16 @@ export default function DocumentObjectModel() {
 function DOMIntro() {
   return (
     <div>
-      <p>Lorem ipsum</p>
+      <h2>About</h2>
+      <p>
+        The DOM represents the structure of a web document as a tree of nodes,
+        allowing developers to manipulate and update the document's content and
+        structure.
+      </p>
+      <p>
+        Furthermore, it allows for a hierarchy within a web page and JavaScript
+        to access, modify, and update its structure.
+      </p>
     </div>
   );
 }
