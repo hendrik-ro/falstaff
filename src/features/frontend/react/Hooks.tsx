@@ -35,6 +35,7 @@ export default function ReactHooks() {
       <div className={style.flexContainer}>
         <ReactHooksUseState />
         <ReactHooksUseEffect />
+        <ReactHooksUseEffectEvent />
       </div>
       <br style={{ marginTop: "2rem" }} />
     </div>
@@ -114,6 +115,34 @@ function ReactHooksUseEffect() {
         once, after the component mounts. Passing a non-empty array will run the
         effect whenever the values in the array change e.g. <code>[count]</code>
         .
+      </p>
+    </div>
+  );
+}
+
+function ReactHooksUseEffectEvent() {
+  return (
+    <div className={style.flexItem}>
+      <h3>useEffect Event</h3>
+      <p>
+        <code>useEffectEvent</code> lets you run an effect only when a specific
+        event occurs.
+        <Syntax
+          language="javascript"
+          code={`const log = useEffectEvent(() => {
+  console.log('event fired');
+});
+
+useEffect(() => {
+  function handleClick() {
+    log();
+  }
+  window.addEventListener("click", handleClick);
+  return () => {
+    window.removeEventListener("click", handleClick);
+  };
+});`}
+        />
       </p>
     </div>
   );
