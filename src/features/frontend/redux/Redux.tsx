@@ -8,6 +8,9 @@ import {
 } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
+import ReduxStore from "./Store";
+import ReduxSlice from "./Slice";
+import ReduxMiddleware from "./Middleware";
 
 export default function Redux() {
   const dispatch = useDispatch();
@@ -26,6 +29,18 @@ export default function Redux() {
         {
           name: "Redux",
           active: true,
+        },
+        {
+          name: "Store",
+          active: false,
+        },
+        {
+          name: "Slice",
+          active: false,
+        },
+        {
+          name: "Middleware",
+          active: false,
         },
       ]),
     );
@@ -46,6 +61,9 @@ export default function Redux() {
       </header>
 
       {activeChapter === "Redux" && <ReduxSetup />}
+      {activeChapter === "Store" && <ReduxStore />}
+      {activeChapter === "Slice" && <ReduxSlice />}
+      {activeChapter === "Middleware" && <ReduxMiddleware />}
     </div>
   );
 }
@@ -83,6 +101,29 @@ function ReduxSetup() {
       <Syntax
         language="bash"
         code={`$ npm i -D react-redux @reduxjs/toolkit`}
+      />
+      <br style={{ marginTop: "2rem" }} />
+      <p>
+        An example file structure for a Redux setup in a vite.js + TypeScript
+        project:
+      </p>
+
+      <Syntax
+        language="bash"
+        code={`src/
+  app/
+    App.tsx
+    store.ts
+  components/
+    componentA.tsx
+    componentB.tsx
+  features/
+    featureA/
+      featureA.tsx
+      featureASlice.ts
+    featureB/
+      featureB.tsx
+      featureBSlice.ts`}
       />
     </div>
   );
