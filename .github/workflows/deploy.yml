@@ -32,6 +32,10 @@ jobs:
       - name: Build with Vite.js
         run: npm run build
 
+      - name: Remove symlinks from dist
+        run: |
+          find dist -type l -delete
+
       - name: Upload Pages artifact
         uses: actions/upload-artifact@v4
         with:
