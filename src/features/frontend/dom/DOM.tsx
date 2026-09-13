@@ -7,6 +7,7 @@ import {
   setLinks,
 } from "../../navBar/navBarSlice";
 import DOMDocument from "./Document";
+import DOMProperties from "./Properties";
 
 export default function DocumentObjectModel() {
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ export default function DocumentObjectModel() {
         },
         {
           name: "Document",
+          active: false,
+        },
+        {
+          name: "Properties",
           active: false,
         },
       ]),
@@ -52,6 +57,7 @@ export default function DocumentObjectModel() {
 
       {(activeChapter === "DOM" || !activeChapter) && <DOMIntro />}
       {activeChapter === "Document" && <DOMDocument />}
+      {activeChapter === "Properties" && <DOMProperties />}
       <br style={{ marginTop: "2rem" }} />
     </div>
   );
