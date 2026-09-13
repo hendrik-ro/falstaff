@@ -11,6 +11,7 @@ import ReactFrameworks from "./Frameworks";
 import ReactComponents from "./Components";
 import ReactHooks from "./Hooks";
 import Syntax from "../../../components/SyntaxHighlighter";
+import ReactProps from "./Props";
 
 export default function React() {
   const dispatch = useDispatch();
@@ -36,6 +37,10 @@ export default function React() {
         },
         {
           name: "Components",
+          active: false,
+        },
+        {
+          name: "Props",
           active: false,
         },
         {
@@ -69,6 +74,7 @@ export default function React() {
       {activeChapter === "Frameworks" && <ReactFrameworks />}
       {activeChapter === "Components" && <ReactComponents />}
       {activeChapter === "Hooks" && <ReactHooks />}
+      {activeChapter === "Props" && <ReactProps />}
     </div>
   );
 }

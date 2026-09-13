@@ -6,8 +6,8 @@ export default function ReactFrameworks() {
     <div>
       <h2>Frameworks</h2>
 
-      <div className={styles.frameworkFlex}>
-        <div className={styles.frameworkItem}>
+      <div className={styles.flexContainer}>
+        <div className={styles.flexItem}>
           <h3>Vite.js</h3>
           <p>Create a new Vite.js project:</p>
           <Syntax language="bash" code={`$ pnpm create vite`} />
@@ -22,7 +22,7 @@ export default function ReactFrameworks() {
           <Syntax language="bash" code={`$ pnpm dev`} />
         </div>
 
-        <div className={styles.frameworkItem}>
+        <div className={styles.flexItem}>
           <h3>Next.js</h3>
           <p>Create a new Next.js project:</p>
           <Syntax language="bash" code={`$ pnpm create next-app`} />
