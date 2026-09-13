@@ -1,5 +1,5 @@
-![CI tests](https://github.com/hendrik-ro/falstaff/actions/workflows/ci.yml/badge.svg)
-![CD GitHub Pages](https://github.com/hendrik-ro/falstaff/actions/workflows/cd.yml/badge.svg)
+![Format](https://github.com/hendrik-ro/falstaff/actions/workflows/format.yml/badge.svg)
+![GitHub Pages](https://github.com/hendrik-ro/falstaff/actions/workflows/deploy.yml/badge.svg)
 
 Falstaff
 ========
