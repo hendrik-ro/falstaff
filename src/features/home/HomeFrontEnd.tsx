@@ -22,17 +22,10 @@ export default function HomeContentFrontEnd() {
           <span className={style.tooltiptext}>React</span>
         </span>
         <span className={style.tooltip}>
-          <a
-            className={style.externalLink}
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          <span className={style.tooltiptext}>
-            Redux Toolkit`s official website
-          </span>
+          <Link className={style.internalLink} to="/falstaff/frontend/redux">
+            Redux
+          </Link>
+          <span className={style.tooltiptext}>Redux & Redux Toolkit</span>
         </span>
         <span className={style.tooltip}>
           <a
