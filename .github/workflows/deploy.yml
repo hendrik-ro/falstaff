@@ -32,5 +32,11 @@ jobs:
       - name: Build with Vite.js
         run: npm run build
 
+      - name: Upload Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: dist/
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v5
