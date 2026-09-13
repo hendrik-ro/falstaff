@@ -17,22 +17,11 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install pnpm
-        run: npm install -g pnpm@11.11.0
-
-      - name: Verify pnpm (debug)
-        run: |
-          echo "node: $(node -v)"
-          echo "npm:  $(npm -v)"
-          echo "pnpm: $(pnpm -v || true)"
-          which pnpm || true
-          echo "PATH=$PATH"
-
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
       - name: Check formatting
-        run: pnpm exec prettier --check src/
+        run: npm exec prettier --check src/
 
       - name: Check linting
-        run: pnpm run lint --max-warnings=0
+        run: npm run lint --max-warnings=0
