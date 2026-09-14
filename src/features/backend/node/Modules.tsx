@@ -4,10 +4,26 @@ export default function NodeJSModules() {
   return (
     <div>
       <h2>Modules</h2>
-      <p>Node provides built in modules that can be used out of the box.</p>
+      <p>
+        Node provides built in modules that can be used out of the box. A
+        complete list of modules is available in the{" "}
+        <a
+          href="https://nodejs.org/api/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Node.js documentation
+        </a>
+        .
+      </p>
+      <br style={{ marginTop: "1rem" }} />
+      <p>
+        <strong>Note: </strong> Code snippets are in CommonJS format.
+      </p>
       <div className="flexContainer">
         <NodeJSModulesConsole />
         <NodeJSModulesProcess />
+        <NodeJSModulesError />
         <NodeJSModulesOS />
         <NodeJSModulesUtil />
         <NodeJSModulesEvents />
@@ -101,6 +117,41 @@ console.log(mem);
   );
 }
 
+function NodeJSModulesError() {
+  return (
+    <div className="flexItem">
+      <h3>Error</h3>
+      <p>
+        <em>global</em>
+      </p>
+      <Syntax
+        language="javascript"
+        code={`// Error
+let errFirstCallback = (err, data) => {
+  if (err) {
+    console.log(\`Something went wrong: \${err}\`);
+  } else {
+    console.log(\`Data: \${data}\`);
+  }
+};
+
+let mockAPI = (input, callback) => {
+  setTimeout(() => {
+    if (input === 'input') {
+      throw new Error('Something went wrong');
+    } else {
+      let response = \`Received: \${input}\`
+      callback(response);
+    }
+  }, 0);
+};
+
+mockAPI('input', errFirstCallback);`}
+      />
+    </div>
+  );
+}
+
 function NodeJSModulesOS() {
   return (
     <div className="flexItem">
@@ -162,17 +213,6 @@ async function fetchData(url) {
   }
 }`}
       />
-      <p>
-        An extensive list of utility functions is available in the{" "}
-        <a
-          href="https://nodejs.org/api/util.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Node.js documentation
-        </a>
-        .
-      </p>
     </div>
   );
 }
