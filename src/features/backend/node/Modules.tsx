@@ -18,13 +18,16 @@ export default function NodeJSModules() {
       </p>
       <br style={{ marginTop: "1rem" }} />
       <p>
-        <strong>Note: </strong> Code snippets are in CommonJS format.
+        <strong>Note: </strong> Some code snippets are in CommonJS format.
       </p>
       <div className="flexContainer">
         <NodeJSModulesConsole />
         <NodeJSModulesProcess />
         <NodeJSModulesError />
+        <NodeJSModulesTimers />
         <NodeJSModulesBuffer />
+        <NodeJSModulesFS />
+        <NodeJSModulesReadline />
         <NodeJSModulesOS />
         <NodeJSModulesUtil />
         <NodeJSModulesEvents />
@@ -39,6 +42,9 @@ function NodeJSModulesConsole() {
       <h3>Console</h3>
       <p>
         <em>global</em>
+      </p>
+      <p>
+        The Console module provides a simple way to log messages to the console.
       </p>
       <Syntax
         language="bash"
@@ -74,6 +80,10 @@ function NodeJSModulesProcess() {
       <h3>Process</h3>
       <p>
         <em>global</em>
+      </p>
+      <p>
+        The Process module provides information about, and control over, the
+        current Node.js process.
       </p>
       <Syntax
         language="javascript"
@@ -125,6 +135,10 @@ function NodeJSModulesError() {
       <p>
         <em>global</em>
       </p>
+      <p>
+        The Error module provides built-in error types and is used to create
+        custom error objects.
+      </p>
       <Syntax
         language="javascript"
         code={`// Error
@@ -153,6 +167,40 @@ mockAPI('input', errFirstCallback);`}
   );
 }
 
+function NodeJSModulesTimers() {
+  return (
+    <div className="flexItem">
+      <h3>Timers</h3>
+      <p>
+        <em>global</em>
+      </p>
+      <p>
+        The Timers module provides a way to schedule functions to run at a later
+        time.
+      </p>
+      <Syntax
+        language="javascript"
+        code={`setTimeout(() => {
+  console.log('Gets called once after 1 second.');
+}, 1000);
+
+setImmediate(() => {
+  console.log('Gets called immediately after the current event loop.');
+});
+
+setInterval(() => {
+  console.log('Gets called every 5 seconds.');
+}, 5000);
+
+// prints:
+// Gets called immediately after the current event loop.
+// Gets called once after 1 second.
+// Gets called every 5 seconds.`}
+      />
+    </div>
+  );
+}
+
 function NodeJSModulesBuffer() {
   return (
     <div className="flexItem">
@@ -160,6 +208,7 @@ function NodeJSModulesBuffer() {
       <p>
         <em>import recommended</em>
       </p>
+      <p>The Buffer module provides a way to work with binary data.</p>
       <Syntax
         language="javascript"
         code={`let buffer = require("buffer");
@@ -192,6 +241,78 @@ console.log(bufferString);
   );
 }
 
+function NodeJSModulesFS() {
+  return (
+    <div className="flexItem">
+      <h3>FS</h3>
+      <p>
+        <em>needs import</em>
+      </p>
+      <p>The File System module allows for reading and writing local files.</p>
+      <Syntax
+        language="javascript"
+        code={`const fs = require('fs');
+// synchronous
+try {
+  data = fs.readFileSync("someFile.txt", "utf-8");
+  console.log(data);
+} catch (err) {
+  console.error(err);
+}
+
+// asynchronous
+const run = async () => {
+  try {
+    const data = await fs.readFile("someFile.txt", "utf-8");
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+};
+run();`}
+      />
+    </div>
+  );
+}
+
+function NodeJSModulesReadline() {
+  return (
+    <div className="flexItem">
+      <h3>Readline</h3>
+      <p>
+        <em>needs import</em>
+      </p>
+      <p>
+        The Readline module provides an interface for reading data from a stream
+        line by line.
+      </p>
+      <Syntax
+        language="javascript"
+        code={`const readline = require('readline');
+const fs = require('fs');
+
+// create an interface to read the file line by line
+const myInterface = readline.createInterface({
+  input: fs.createReadStream('text.txt')
+});
+
+// listen for the 'line' event and log each line
+myInterface.on('line', (fileLine) => {
+  console.log(\`The line read: \${fileLine}\`);
+});
+
+// create a write stream to save the transformed data
+const fileStream = fs.createWriteStream("output.txt");
+const transformData = (line) => {
+  fileStream.write(\`They were out of: \${line}\\n\`);
+};
+
+myInterface.on("line", transformData);`}
+      />
+    </div>
+  );
+}
+
 function NodeJSModulesOS() {
   return (
     <div className="flexItem">
@@ -199,6 +320,7 @@ function NodeJSModulesOS() {
       <p>
         <em>needs import</em>
       </p>
+      <p>The OS module provides information about the operating system.</p>
       <Syntax
         language="javascript"
         code={`const os = require('os');
@@ -235,7 +357,7 @@ function NodeJSModulesUtil() {
         <em>needs import</em>
       </p>
       <p>
-        The util module provides utility functions for working with JavaScript
+        The Util module provides utility functions for working with JavaScript
         objects and data types such as <code>util.promisify()</code>.
       </p>
       <Syntax
@@ -265,7 +387,7 @@ function NodeJSModulesEvents() {
         <em>needs import</em>
       </p>
       <p>
-        The events module provides a way to handle events and emit custom events
+        The Events module provides a way to handle events and emit custom events
         in Node.js.
       </p>
       <Syntax
