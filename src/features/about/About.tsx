@@ -32,6 +32,7 @@ export default function About() {
           refresh your memory, particularly for stacks you only touch
           periodically.
         </p>
+        <br style={{ marginTop: "2rem" }} />
         <p>The page is a living document and is continuously updated.</p>
       </section>
       <section>
