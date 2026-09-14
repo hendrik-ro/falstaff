@@ -1,4 +1,3 @@
-import style from "./DOM.module.css";
 import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function DOMDocument() {
@@ -20,8 +19,8 @@ export default function DOMDocument() {
 
 function DOMDocumentMethods() {
   return (
-    <div className={style.flexContainer}>
-      <div className={style.flexItem}>
+    <div className="flexContainer">
+      <div className="flexItem">
         <h3>Query Selector</h3>
         <Syntax
           language="javascript"
@@ -32,7 +31,7 @@ function DOMDocumentMethods() {
           specified selector.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Query Selector All</h3>
         <Syntax
           language="javascript"
@@ -43,7 +42,7 @@ function DOMDocumentMethods() {
           specified selector.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Get Element By ID</h3>
         <Syntax
           language="javascript"
@@ -54,7 +53,7 @@ function DOMDocumentMethods() {
           specified ID.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Get Element By Class</h3>
         <Syntax
           language="javascript"
@@ -65,7 +64,7 @@ function DOMDocumentMethods() {
           the specified class name.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Get Element By Tag</h3>
         <Syntax
           language="javascript"
@@ -76,7 +75,7 @@ function DOMDocumentMethods() {
           specified tag name.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Create Element</h3>
         <Syntax
           language="javascript"
@@ -87,7 +86,7 @@ function DOMDocumentMethods() {
           tag name.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Append Child</h3>
         <Syntax language="javascript" code={"element.appendChild(child)"} />
         <p>
@@ -95,7 +94,7 @@ function DOMDocumentMethods() {
           children of a specified parent node.
         </p>
       </div>
-      <div className={style.flexItem}>
+      <div className="flexItem">
         <h3>Remove Child</h3>
         <Syntax language="javascript" code={"parent.removeChild(child)"} />
         <p>

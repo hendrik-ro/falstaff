@@ -1,4 +1,3 @@
-import style from "./DOM.module.css";
 import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function DOMProperties() {
@@ -35,15 +34,15 @@ function DOMPropertiesProperties() {
         document.
       </p>
       <Syntax language="javascript" code={`let body = document.body;`} />
-      <div className={style.flexContainer}>
-        <div className={style.flexItem}>
+      <div className="flexContainer">
+        <div className="flexItem">
           <h3>Inner HTML</h3>
           <Syntax
             language="javascript"
             code={`body.innerHTML = '<h1>Hello, World!</h1>';`}
           />
         </div>
-        <div className={style.flexItem}>
+        <div className="flexItem">
           <h3>Style</h3>
           <Syntax language="javascript" code={`body.style.color = 'red';`} />
         </div>

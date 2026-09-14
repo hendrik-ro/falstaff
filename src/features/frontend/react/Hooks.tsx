@@ -1,5 +1,4 @@
 import Syntax from "../../../components/SyntaxHighlighter";
-import style from "./React.module.css";
 
 export default function ReactHooks() {
   return (
@@ -32,7 +31,7 @@ export default function ReactHooks() {
   }
 }, [userName]);`}
       />
-      <div className={style.flexContainer}>
+      <div className="flexContainer">
         <ReactHooksUseState />
         <ReactHooksUseEffect />
         <ReactHooksUseEffectEvent />
@@ -44,7 +43,7 @@ export default function ReactHooks() {
 
 function ReactHooksUseState() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>useState</h3>
       <p>
         <code>useState(initialValue)</code> can be used to declare state
@@ -87,7 +86,7 @@ const handleChange = (newItem) => {
 
 function ReactHooksUseEffect() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>useEffect</h3>
       <p>
         <code>useEffect</code> can be used to perform side effects in a
@@ -122,7 +121,7 @@ function ReactHooksUseEffect() {
 
 function ReactHooksUseEffectEvent() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>useEffect Event</h3>
       <p>
         <code>useEffectEvent</code> lets you run an effect only when a specific
