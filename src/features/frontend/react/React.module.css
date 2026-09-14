@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   width: 98%;
+  align-items: baseline;
 }
 
 .flexItem {

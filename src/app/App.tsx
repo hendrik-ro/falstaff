@@ -14,6 +14,7 @@ import Footer from "../features/Footer";
 import React from "../features/frontend/react/React";
 import DocumentObjectModel from "../features/frontend/dom/DOM";
 import Redux from "../features/frontend/redux/Redux";
+import NodeJS from "../features/backend/node/Node";
 
 const Layout = () => {
   return (
@@ -37,7 +38,9 @@ function App() {
           element={<DocumentObjectModel />}
         />
         <Route path="/falstaff/frontend/redux" element={<Redux />} />
-        // Back End // Development // About
+        // Back End
+        <Route path="/falstaff/node" element={<NodeJS />} />
+        // Development // About
         <Route path="/falstaff/about" element={<About />} />
         // ErrorElement
         <Route path="/falstaff/*" element={<Error404 />} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./Home.module.css";
 
 export default function HomeContentBackEnd() {
@@ -48,15 +49,10 @@ export default function HomeContentBackEnd() {
           </span>
         </span>
         <span className={style.tooltip}>
-          <a
-            className={style.externalLink}
-            href="https://nodejs.org/en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className={style.internalLink} to="/falstaff/node">
             Node
-          </a>
-          <span className={style.tooltiptext}>Node`s official website</span>
+          </Link>
+          <span className={style.tooltiptext}>Node.js</span>
         </span>
       </div>
     </div>
