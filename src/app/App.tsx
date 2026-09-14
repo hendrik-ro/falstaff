@@ -13,6 +13,7 @@ import NavBar from "../features/navBar/NavBar";
 import Footer from "../features/Footer";
 import React from "../features/frontend/react/React";
 import DocumentObjectModel from "../features/frontend/dom/DOM";
+import Redux from "../features/frontend/redux/Redux";
 
 const Layout = () => {
   return (
@@ -35,6 +36,7 @@ function App() {
           path="/falstaff/frontend/dom"
           element={<DocumentObjectModel />}
         />
+        <Route path="/falstaff/frontend/redux" element={<Redux />} />
         // Back End // Development // About
         <Route path="/falstaff/about" element={<About />} />
         // ErrorElement

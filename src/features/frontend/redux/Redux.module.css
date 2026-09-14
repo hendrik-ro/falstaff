@@ -1,0 +1,14 @@
+.flexContainer {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 98%;
+}
+
+.flexItem {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
