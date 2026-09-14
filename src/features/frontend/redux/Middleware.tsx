@@ -4,8 +4,10 @@ export default function ReduxMiddleware() {
   return (
     <div>
       <h2>Middleware</h2>
-      <ReduxMiddlewareThunks />
-      <ReduxMiddlewareExtraReducers />
+      <div className="flexContainer">
+        <ReduxMiddlewareThunks />
+        <ReduxMiddlewareExtraReducers />
+      </div>
       <br style={{ marginTop: "2rem" }} />
     </div>
   );
@@ -13,7 +15,7 @@ export default function ReduxMiddleware() {
 
 function ReduxMiddlewareThunks() {
   return (
-    <div>
+    <div className="flexItem">
       <h3>Thunks</h3>
       <p>
         In programming, <em>thunks</em> are functions that allow you to dispatch
@@ -71,7 +73,7 @@ export const fetchUserById = createAsyncThunk.withTypes<{
 
 function ReduxMiddlewareExtraReducers() {
   return (
-    <div>
+    <div className="flexItem">
       <h3>Extra Reducers</h3>
       <p>
         To add thunks to your store, use the <code>extraReducers</code> field in

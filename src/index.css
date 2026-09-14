@@ -92,6 +92,23 @@ section {
   flex: 1;
 }
 
+.flexContainer {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 98%;
+  align-items: baseline;
+}
+
+.flexItem {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 20%;
+}
+
 /* Footer */
 footer {
   width: 100%;

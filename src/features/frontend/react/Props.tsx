@@ -1,4 +1,3 @@
-import style from "./React.module.css";
 import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function ReactProps() {
@@ -39,7 +38,7 @@ export default function ReactProps() {
         );
       }`}
       />
-      <div className={style.flexContainer}>
+      <div className="flexContainer">
         <ReactPropsChildren />
         <ReactPropsDefaultValues />
       </div>
@@ -50,7 +49,7 @@ export default function ReactProps() {
 
 function ReactPropsChildren() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>Props Children</h3>
       <p>
         Every props object has a children property that contains the component's
@@ -87,7 +86,7 @@ function List(props) {
 
 function ReactPropsDefaultValues() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>Props Default Values</h3>
       <p>
         You can specify default values for props using the defaultProps

@@ -1,4 +1,3 @@
-import style from "./Node.module.css";
 import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function NodeJSModules() {
@@ -6,11 +5,12 @@ export default function NodeJSModules() {
     <div>
       <h2>Modules</h2>
       <p>Node provides built in modules that can be used out of the box.</p>
-      <div className={style.flexContainer}>
+      <div className="flexContainer">
         <NodeJSModulesConsole />
         <NodeJSModulesProcess />
         <NodeJSModulesOS />
         <NodeJSModulesUtil />
+        <NodeJSModulesEvents />
       </div>
     </div>
   );
@@ -18,7 +18,7 @@ export default function NodeJSModules() {
 
 function NodeJSModulesConsole() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>Console</h3>
       <p>
         <em>global</em>
@@ -53,7 +53,7 @@ undefined`}
 
 function NodeJSModulesProcess() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>Process</h3>
       <p>
         <em>global</em>
@@ -95,8 +95,7 @@ console.log(mem);
   heapTotal: bytes,
   heapUsed: bytes,
   external: bytes,
-}
-`}
+}`}
       />
     </div>
   );
@@ -104,7 +103,7 @@ console.log(mem);
 
 function NodeJSModulesOS() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>OS</h3>
       <p>
         <em>needs import</em>
@@ -126,8 +125,7 @@ console.log(local)
   os: 'Linux',
   arch: 'x64',
   uptime: 7199.97,
-}
-`}
+}`}
       />
       <p>
         Furthermore, OS supports <code>networkInterface</code> for network info
@@ -140,7 +138,7 @@ console.log(local)
 
 function NodeJSModulesUtil() {
   return (
-    <div className={style.flexItem}>
+    <div className="flexItem">
       <h3>Util</h3>
       <p>
         <em>needs import</em>
@@ -175,6 +173,38 @@ async function fetchData(url) {
         </a>
         .
       </p>
+    </div>
+  );
+}
+
+function NodeJSModulesEvents() {
+  return (
+    <div className="flexItem">
+      <h3>Events</h3>
+      <p>
+        <em>needs import</em>
+      </p>
+      <p>
+        The events module provides a way to handle events and emit custom events
+        in Node.js.
+      </p>
+      <Syntax
+        language="javascript"
+        code={`let events = require("events");
+
+let listenerCallback = (data) => {
+  console.log("Celebrate " + data);
+};
+
+let myEmitter = new events.EventEmitter();
+
+myEmitter.on('celebration', listenerCallback);
+
+myEmitter.emit('celebration', 'HEUREKA!');
+
+// prints:
+// Celebrate HEUREKA!`}
+      />
     </div>
   );
 }
