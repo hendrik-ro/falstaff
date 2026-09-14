@@ -24,6 +24,7 @@ export default function NodeJSModules() {
         <NodeJSModulesConsole />
         <NodeJSModulesProcess />
         <NodeJSModulesError />
+        <NodeJSModulesBuffer />
         <NodeJSModulesOS />
         <NodeJSModulesUtil />
         <NodeJSModulesEvents />
@@ -147,6 +148,45 @@ let mockAPI = (input, callback) => {
 };
 
 mockAPI('input', errFirstCallback);`}
+      />
+    </div>
+  );
+}
+
+function NodeJSModulesBuffer() {
+  return (
+    <div className="flexItem">
+      <h3>Buffer</h3>
+      <p>
+        <em>import recommended</em>
+      </p>
+      <Syntax
+        language="javascript"
+        code={`let buffer = require("buffer");
+// allocate buffer of size 15 filled with 'b', encoding optional
+const bufferAlloc = Buffer.alloc(15, 'b', 'utf-8')
+
+// create buffer1 with 'Node' and buffer2 with '.js', encoding optional
+const buffer1 = Buffer.from('Node', 'utf-8');
+const buffer2 = Buffer.from('.js', 'utf-8');
+
+
+// combine buffer1 and buffer2, length optional
+const bufferArray = [buffer1, buffer2];
+const bufferConcat = Buffer.concat(bufferArray, 7);
+
+
+// translate buffer to string
+const bufferString = bufferConcat.toString();
+
+console.log(bufferAlloc);
+// <Buffer 62 62 62 62 62 62 62 62 62 62 62 62 62 62 62>
+console.log('Buffer 1:', buffer1, 'Buffer 2:', buffer2)
+// Buffer 1: <Buffer 4e 6f 64 65> Buffer 2: <Buffer 2e 6a 73>
+console.log(bufferConcat);
+// <Buffer 4e 6f 64 65 2e 6a 73>
+console.log(bufferString);
+// Node.js`}
       />
     </div>
   );
