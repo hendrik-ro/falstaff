@@ -2,6 +2,37 @@ import { Link } from "react-router-dom";
 import style from "./Home.module.css";
 
 export default function HomeContentFrontEnd() {
+  const internalContent = [
+    {
+      title: "DOM",
+      path: "/falstaff/frontend/dom",
+      tooltip: "Document Object Model",
+    },
+    { title: "React", path: "/falstaff/frontend/react", tooltip: "React" },
+    {
+      title: "Redux",
+      path: "/falstaff/frontend/redux",
+      tooltip: "Redux & Redux Toolkit",
+    },
+  ];
+  const externalContent = [
+    {
+      title: "HTML",
+      href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      tooltip: "Mozilla Developer Network`s HTML documentation",
+    },
+    {
+      title: "CSS",
+      href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      tooltip: "Mozilla Developer Network`s CSS documentation",
+    },
+    {
+      title: "JavaScript",
+      href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      tooltip: "Mozilla Developer Network`s JavaScript documentation",
+    },
+  ];
+
   return (
     <div>
       <h3>Front End</h3>
@@ -9,63 +40,27 @@ export default function HomeContentFrontEnd() {
         Front end technologies and libraries.
       </p>
       <div className={style.group}>
-        <span className={style.tooltip}>
-          <Link className={style.internalLink} to="/falstaff/frontend/dom">
-            DOM
-          </Link>
-          <span className={style.tooltiptext}>Document Object Model</span>
-        </span>
-        <span className={style.tooltip}>
-          <Link className={style.internalLink} to="/falstaff/frontend/react">
-            React
-          </Link>
-          <span className={style.tooltiptext}>React</span>
-        </span>
-        <span className={style.tooltip}>
-          <Link className={style.internalLink} to="/falstaff/frontend/redux">
-            Redux
-          </Link>
-          <span className={style.tooltiptext}>Redux & Redux Toolkit</span>
-        </span>
-        <span className={style.tooltip}>
-          <a
-            className={style.externalLink}
-            href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            HTML
-          </a>
-          <span className={style.tooltiptext}>
-            Mozilla Developer Network`s documentation
+        {internalContent.map((item, index) => (
+          <span key={index} className={style.tooltip}>
+            <Link className={style.internalLink} to={item.path}>
+              {item.title}
+            </Link>
+            <span className={style.tooltiptext}>{item.tooltip}</span>
           </span>
-        </span>
-        <span className={style.tooltip}>
-          <a
-            className={style.externalLink}
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CSS
-          </a>
-          <span className={style.tooltiptext}>
-            Mozilla Developer Network`s documentation
+        ))}
+        {externalContent.map((item, index) => (
+          <span key={index} className={style.tooltip}>
+            <a
+              className={style.externalLink}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.title}
+            </a>
+            <span className={style.tooltiptext}>{item.tooltip}</span>
           </span>
-        </span>
-        <span className={style.tooltip}>
-          <a
-            className={style.externalLink}
-            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            JavaScript
-          </a>
-          <span className={style.tooltiptext}>
-            Mozilla Developer Network`s documentation
-          </span>
-        </span>
+        ))}
       </div>
     </div>
   );
