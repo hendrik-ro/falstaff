@@ -7,6 +7,7 @@ import {
 } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
+import ExpressJSRouting from "./Routing";
 
 export default function ExpressJS() {
   const dispatch = useDispatch();
@@ -26,6 +27,10 @@ export default function ExpressJS() {
           name: "Express",
           active: true,
         },
+        {
+          name: "Routing",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("Express"));
@@ -43,6 +48,7 @@ export default function ExpressJS() {
       <p>A framework to build backend servers.</p>
 
       {activeChapter === "Express" && <ExpressJSSetup />}
+      {activeChapter === "Routing" && <ExpressJSRouting />}
 
       <br style={{ marginTop: "2rem" }} />
     </div>
@@ -64,6 +70,24 @@ function ExpressJSSetup() {
         can be installed using a node package manager:
       </p>
       <Syntax language="bash" code="$ pnpm install express" />
+      <br style={{ marginTop: "2rem" }} />
+      <h2>Starting a server</h2>
+      <Syntax
+        language="typescript"
+        code={`import express, { type Express } from "express";
+
+// Instantiate the app
+const app: Express = express();
+
+// Define a PORT for the server to listen on
+const PORT: number = process.env.PORT || 3000;
+
+// Start the server and listen on the defined PORT
+app.listen(PORT, () => {
+  console.log(\`Server is running on port \${PORT}\`);
+});
+`}
+      />
     </div>
   );
 }
