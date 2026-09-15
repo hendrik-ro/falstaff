@@ -8,6 +8,11 @@ export default function HomeContentBackEnd() {
       path: "/falstaff/backend/nodejs",
       tooltip: "Node.js",
     },
+    {
+      title: "Express",
+      path: "/falstaff/backend/expressjs",
+      tooltip: "Express.js",
+    },
   ];
   const externalContent = [
     {
@@ -33,16 +38,16 @@ export default function HomeContentBackEnd() {
         Back end technologies and libraries.
       </p>
       <div className={style.group}>
-        {internalContent.map((item) => (
-          <span className={style.tooltip}>
+        {internalContent.map((item, index) => (
+          <span className={style.tooltip} key={index}>
             <Link className={style.internalLink} to={item.path}>
               {item.title}
             </Link>
             <span className={style.tooltiptext}>{item.tooltip}</span>
           </span>
         ))}
-        {externalContent.map((item) => (
-          <span className={style.tooltip}>
+        {externalContent.map((item, index) => (
+          <span className={style.tooltip} key={index}>
             <a
               className={style.externalLink}
               href={item.href}
