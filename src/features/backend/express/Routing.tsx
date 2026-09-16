@@ -36,6 +36,39 @@ app.delete('/', (req: Request, res: Response) => {
         handler by matching
         <code>&lt;server address&gt;:&lt;port number&gt;/api-endpoint</code>.
       </p>
+      <br style={{ marginTop: "2rem" }} />
+      <p>
+        To group routes, Express provides <code>Router</code> objects:
+      </p>
+      <Syntax
+        language="typescript"
+        code={`import { Router } from 'express';
+
+const apiRouter = Router();
+
+// GET method route to '/api'
+apiRouter.get('/', (req: Request, res: Response) => {
+  res.send('GET request to the API');
+});
+
+export default apiRouter;`}
+      />
+      <p>
+        Conventionally, each route is defined in a separate file and imported
+        into the main router file:
+      </p>
+      <Syntax
+        language="typescript"
+        code={`import express, { type Express } from 'express';
+import appRouter from './appRouter';
+
+const app: Express = express();
+
+app.use('/api', appRouter);
+
+export default app;`}
+      />
+      <p>Routers can be nested to create a hierarchical routing structure.</p>
     </div>
   );
 }
