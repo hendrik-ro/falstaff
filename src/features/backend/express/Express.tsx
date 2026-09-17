@@ -8,6 +8,7 @@ import {
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
 import ExpressJSRouting from "./Routing";
+import ExpressJSPath from "./Path";
 
 export default function ExpressJS() {
   const dispatch = useDispatch();
@@ -31,6 +32,10 @@ export default function ExpressJS() {
           name: "Routing",
           active: false,
         },
+        {
+          name: "Paths",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("Express"));
@@ -49,6 +54,7 @@ export default function ExpressJS() {
 
       {activeChapter === "Express" && <ExpressJSSetup />}
       {activeChapter === "Routing" && <ExpressJSRouting />}
+      {activeChapter === "Paths" && <ExpressJSPath />}
 
       <br style={{ marginTop: "2rem" }} />
     </div>
