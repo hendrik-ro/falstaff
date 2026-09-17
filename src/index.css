@@ -93,6 +93,9 @@ section {
   flex: 1;
   max-width: 80%;
 }
+ul {
+  text-align: left;
+}
 
 .flexContainer {
   display: flex;
