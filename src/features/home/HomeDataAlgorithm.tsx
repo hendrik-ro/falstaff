@@ -9,7 +9,6 @@ export default function HomeContentDataAlgorithm() {
       tooltip: "Sorting algorithms",
     },
   ];
-  const externalContent = [];
 
   return (
     <div>
@@ -21,14 +20,6 @@ export default function HomeContentDataAlgorithm() {
         {internalContent.map((item, index) => (
           <span key={index} className={style.tooltip} id="placeholder">
             <Link className={style.internalLink} to={item.path}>
-              {item.title}
-            </Link>
-            <span className={style.tooltiptext}>{item.tooltip}</span>
-          </span>
-        ))}
-        {externalContent.map((item, index) => (
-          <span key={index} className={style.tooltip} id="placeholder">
-            <Link className={style.externalLink} to={item.path}>
               {item.title}
             </Link>
             <span className={style.tooltiptext}>{item.tooltip}</span>
