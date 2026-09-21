@@ -16,6 +16,7 @@ import DocumentObjectModel from "../features/frontend/dom/DOM";
 import Redux from "../features/frontend/redux/Redux";
 import NodeJS from "../features/backend/node/Node";
 import ExpressJS from "../features/backend/express/Express";
+import Sorting from "../features/data/sort/Sorting";
 
 const Layout = () => {
   return (
@@ -42,7 +43,9 @@ function App() {
         // Back End
         <Route path="/falstaff/backend/nodejs" element={<NodeJS />} />
         <Route path="/falstaff/backend/expressjs" element={<ExpressJS />} />
-        // Development // About
+        // Development // Data Structures and Algorithms
+        <Route path="/falstaff/data/sort" element={<Sorting />} />
+        // About
         <Route path="/falstaff/about" element={<About />} />
         // ErrorElement
         <Route path="/falstaff/*" element={<Error404 />} />
