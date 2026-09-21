@@ -17,6 +17,7 @@ import Redux from "../features/frontend/redux/Redux";
 import NodeJS from "../features/backend/node/Node";
 import ExpressJS from "../features/backend/express/Express";
 import Sorting from "../features/data/sort/Sorting";
+import Testing from "../features/dev/testing/Testing";
 
 const Layout = () => {
   return (
@@ -43,7 +44,9 @@ function App() {
         // Back End
         <Route path="/falstaff/backend/nodejs" element={<NodeJS />} />
         <Route path="/falstaff/backend/expressjs" element={<ExpressJS />} />
-        // Development // Data Structures and Algorithms
+        // Development
+        <Route path="/falstaff/dev/testing" element={<Testing />} />
+        // Data Structures and Algorithms
         <Route path="/falstaff/data/sort" element={<Sorting />} />
         // About
         <Route path="/falstaff/about" element={<About />} />

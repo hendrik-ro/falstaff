@@ -18,7 +18,7 @@ export default function HomeContentDataAlgorithm() {
       </p>
       <div className={style.group}>
         {internalContent.map((item, index) => (
-          <span key={index} className={style.tooltip} id="placeholder">
+          <span key={index} className={style.tooltip}>
             <Link className={style.internalLink} to={item.path}>
               {item.title}
             </Link>
