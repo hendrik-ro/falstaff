@@ -7,6 +7,11 @@ import {
   setLinks,
 } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
+import BubbleSort from "./BubbleSort";
+import InsertionSort from "./InsertionSort";
+import SelectionSort from "./SelectionSort";
+import QuickSort from "./QuickSort";
+import MergeSort from "./MergeSort";
 
 export default function Sorting() {
   const dispatch = useDispatch();
@@ -26,6 +31,26 @@ export default function Sorting() {
           name: "Sort",
           active: true,
         },
+        {
+          name: "Bubble Sort",
+          active: false,
+        },
+        {
+          name: "Insertion Sort",
+          active: false,
+        },
+        {
+          name: "Selection Sort",
+          active: false,
+        },
+        {
+          name: "Quick Sort",
+          active: false,
+        },
+        {
+          name: "Merge Sort",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("Sort"));
@@ -40,8 +65,13 @@ export default function Sorting() {
   return (
     <div>
       <h1>Sort</h1>
-      <p>Sorting algorithms</p>
+      <p>Algorithms for sorting.</p>
       {activeChapter === "Sort" && <SortingComplexity />}
+      {activeChapter === "Bubble Sort" && <BubbleSort />}
+      {activeChapter === "Insertion Sort" && <InsertionSort />}
+      {activeChapter === "Merge Sort" && <MergeSort />}
+      {activeChapter === "Selection Sort" && <SelectionSort />}
+      {activeChapter === "Quick Sort" && <QuickSort />}
 
       <br style={{ marginTop: "2rem" }} />
     </div>
