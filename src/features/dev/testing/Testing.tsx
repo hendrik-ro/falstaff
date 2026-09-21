@@ -84,8 +84,7 @@ function TestingJS() {
     {
       name: "Sinon",
       link: "https://sinonjs.org/",
-      description:
-        "library including fakes, spies and mocks to be used with any testing framework",
+      description: "library including fakes, spies and mocks to be used with any testing framework",
     },
   ];
   return (

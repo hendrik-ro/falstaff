@@ -5,13 +5,9 @@ export default function NodeJSModules() {
     <div>
       <h2>Modules</h2>
       <p>
-        Node provides built in modules that can be used out of the box. A
-        complete list of modules is available in the{" "}
-        <a
-          href="https://nodejs.org/api/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        Node provides built in modules that can be used out of the box. A complete list of modules
+        is available in the{" "}
+        <a href="https://nodejs.org/api/" target="_blank" rel="noopener noreferrer">
           Node.js documentation
         </a>
         .
@@ -43,9 +39,7 @@ function NodeJSModulesConsole() {
       <p>
         <em>global</em>
       </p>
-      <p>
-        The Console module provides a simple way to log messages to the console.
-      </p>
+      <p>The Console module provides a simple way to log messages to the console.</p>
       <Syntax
         language="bash"
         code={`$ node
@@ -82,8 +76,8 @@ function NodeJSModulesProcess() {
         <em>global</em>
       </p>
       <p>
-        The Process module provides information about, and control over, the
-        current Node.js process.
+        The Process module provides information about, and control over, the current Node.js
+        process.
       </p>
       <Syntax
         language="javascript"
@@ -136,8 +130,7 @@ function NodeJSModulesError() {
         <em>global</em>
       </p>
       <p>
-        The Error module provides built-in error types and is used to create
-        custom error objects.
+        The Error module provides built-in error types and is used to create custom error objects.
       </p>
       <Syntax
         language="javascript"
@@ -174,10 +167,7 @@ function NodeJSModulesTimers() {
       <p>
         <em>global</em>
       </p>
-      <p>
-        The Timers module provides a way to schedule functions to run at a later
-        time.
-      </p>
+      <p>The Timers module provides a way to schedule functions to run at a later time.</p>
       <Syntax
         language="javascript"
         code={`setTimeout(() => {
@@ -282,10 +272,7 @@ function NodeJSModulesReadline() {
       <p>
         <em>needs import</em>
       </p>
-      <p>
-        The Readline module provides an interface for reading data from a stream
-        line by line.
-      </p>
+      <p>The Readline module provides an interface for reading data from a stream line by line.</p>
       <Syntax
         language="javascript"
         code={`const readline = require('readline');
@@ -341,9 +328,8 @@ console.log(local)
 }`}
       />
       <p>
-        Furthermore, OS supports <code>networkInterface</code> for network info
-        such as IP and MAC addresses, and <code>hostname</code> for the system's
-        hostname.
+        Furthermore, OS supports <code>networkInterface</code> for network info such as IP and MAC
+        addresses, and <code>hostname</code> for the system's hostname.
       </p>
     </div>
   );
@@ -357,8 +343,8 @@ function NodeJSModulesUtil() {
         <em>needs import</em>
       </p>
       <p>
-        The Util module provides utility functions for working with JavaScript
-        objects and data types such as <code>util.promisify()</code>.
+        The Util module provides utility functions for working with JavaScript objects and data
+        types such as <code>util.promisify()</code>.
       </p>
       <Syntax
         language="javascript"
@@ -386,10 +372,7 @@ function NodeJSModulesEvents() {
       <p>
         <em>needs import</em>
       </p>
-      <p>
-        The Events module provides a way to handle events and emit custom events
-        in Node.js.
-      </p>
+      <p>The Events module provides a way to handle events and emit custom events in Node.js.</p>
       <Syntax
         language="javascript"
         code={`let events = require("events");

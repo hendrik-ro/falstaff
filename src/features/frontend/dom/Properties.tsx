@@ -5,8 +5,7 @@ export default function DOMProperties() {
     <div>
       <h2>Properties</h2>
       <p>
-        The <code>document</code>'s properties allow for access and modification
-        of the DOM.
+        The <code>document</code>'s properties allow for access and modification of the DOM.
       </p>
       <p>
         A full list of properties can be found in the{" "}
@@ -30,17 +29,13 @@ function DOMPropertiesProperties() {
   return (
     <div>
       <p>
-        For instance, <code>document.body</code> returns the body element of the
-        document.
+        For instance, <code>document.body</code> returns the body element of the document.
       </p>
       <Syntax language="javascript" code={`let body = document.body;`} />
       <div className="flexContainer">
         <div className="flexItem">
           <h3>Inner HTML</h3>
-          <Syntax
-            language="javascript"
-            code={`body.innerHTML = '<h1>Hello, World!</h1>';`}
-          />
+          <Syntax language="javascript" code={`body.innerHTML = '<h1>Hello, World!</h1>';`} />
         </div>
         <div className="flexItem">
           <h3>Style</h3>

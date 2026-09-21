@@ -36,10 +36,7 @@ function App() {
         <Route index element={<Home />} />
         // Front End
         <Route path="/falstaff/frontend/react" element={<React />} />
-        <Route
-          path="/falstaff/frontend/dom"
-          element={<DocumentObjectModel />}
-        />
+        <Route path="/falstaff/frontend/dom" element={<DocumentObjectModel />} />
         <Route path="/falstaff/frontend/redux" element={<Redux />} />
         // Back End
         <Route path="/falstaff/backend/nodejs" element={<NodeJS />} />

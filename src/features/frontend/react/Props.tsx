@@ -5,8 +5,8 @@ export default function ReactProps() {
     <div>
       <h2>React Props</h2>
       <p>
-        Props are properties passed to React components. They can be
-        destructured using the spread operator.
+        Props are properties passed to React components. They can be destructured using the spread
+        operator.
       </p>
       <Syntax
         language="tsx"
@@ -21,8 +21,8 @@ export default function ReactProps() {
 }`}
       />
       <p>
-        Conventionally, functions are named handleEvent and onEvent and passed
-        into components as props:
+        Conventionally, functions are named handleEvent and onEvent and passed into components as
+        props:
       </p>
       <Syntax
         language="tsx"
@@ -51,10 +51,7 @@ function ReactPropsChildren() {
   return (
     <div className="flexItem">
       <h3>Props Children</h3>
-      <p>
-        Every props object has a children property that contains the component's
-        children.
-      </p>
+      <p>Every props object has a children property that contains the component's children.</p>
       <Syntax
         language="tsx"
         code={`export default function App() {
@@ -88,10 +85,7 @@ function ReactPropsDefaultValues() {
   return (
     <div className="flexItem">
       <h3>Props Default Values</h3>
-      <p>
-        You can specify default values for props using the defaultProps
-        property:
-      </p>
+      <p>You can specify default values for props using the defaultProps property:</p>
       <Syntax
         language="tsx"
         code={`export default function Component({ title = "Default Title" }) {

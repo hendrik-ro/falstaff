@@ -5,8 +5,7 @@ export default function ReduxStore() {
     <div>
       <h2>Redux Store</h2>
       <p>
-        Create the Redux store file <code>store.ts</code> using{" "}
-        <code>configureStore</code>.
+        Create the Redux store file <code>store.ts</code> using <code>configureStore</code>.
       </p>
       <Syntax
         language="typescript"
@@ -34,8 +33,8 @@ export default store;
         lineNumbers={true}
       />
       <p>
-        Wrap the <code>App</code> component with <code>Provider</code> to make
-        the store available to all components:
+        Wrap the <code>App</code> component with <code>Provider</code> to make the store available
+        to all components:
       </p>
       <Syntax
         language="typescript"

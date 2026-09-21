@@ -12,9 +12,7 @@ export default function HomeContentDevelopment() {
   return (
     <div>
       <h3>Development</h3>
-      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
-        Development methods.
-      </p>
+      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>Development methods.</p>
       <div className={style.group}>
         {internalContent.map((item, index) => (
           <span key={index} className={style.tooltip}>

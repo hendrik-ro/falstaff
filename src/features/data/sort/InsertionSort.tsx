@@ -5,8 +5,8 @@ export default function InsertionSort() {
     <div>
       <h2>Insertion Sort</h2>
       <p>
-        Insertion Sort is a simple sorting algorithm that builds the final
-        sorted array one item at a time.
+        Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at
+        a time.
       </p>
       <Syntax
         language="typescript"

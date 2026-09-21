@@ -25,12 +25,10 @@ export default function About() {
       <section>
         <h2>Falstaff</h2>
         <p>
-          Falstaff serves as a cheat sheet for Software Engineering. It
-          consolidates scattered and often convoluted documentation into a more
-          accessible resource. The project does not aim to be a comprehensive
-          coding guide but provides relevant information and boilerplate code to
-          refresh your memory, particularly for stacks you only touch
-          periodically.
+          Falstaff serves as a cheat sheet for Software Engineering. It consolidates scattered and
+          often convoluted documentation into a more accessible resource. The project does not aim
+          to be a comprehensive coding guide but provides relevant information and boilerplate code
+          to refresh your memory, particularly for stacks you only touch periodically.
         </p>
         <br style={{ marginTop: "2rem" }} />
         <p>The page is a living document and is continuously updated.</p>

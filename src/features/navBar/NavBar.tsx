@@ -3,11 +3,7 @@ import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectChapterLinks,
-  selectLinks,
-  toggleActiveChapterLink,
-} from "./navBarSlice";
+import { selectChapterLinks, selectLinks, toggleActiveChapterLink } from "./navBarSlice";
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -49,9 +45,7 @@ export default function NavBar() {
             <li key={id}>
               <button
                 className={
-                  chapterLink.active
-                    ? styles.activeChapterLink
-                    : styles.inactiveChapterLink
+                  chapterLink.active ? styles.activeChapterLink : styles.inactiveChapterLink
                 }
                 onClick={() => {
                   dispatch(toggleActiveChapterLink({ name: chapterLink.name }));

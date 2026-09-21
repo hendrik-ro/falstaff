@@ -5,10 +5,9 @@ export default function QuickSort() {
     <div>
       <h2>Quick Sort</h2>
       <p>
-        Quick Sort is a divide-and-conquer algorithm that works by selecting a
-        'pivot' element from the array and partitioning the other elements into
-        two sub-arrays, according to whether they are less than or greater than
-        the pivot.
+        Quick Sort is a divide-and-conquer algorithm that works by selecting a 'pivot' element from
+        the array and partitioning the other elements into two sub-arrays, according to whether they
+        are less than or greater than the pivot.
       </p>
       <Syntax
         language="typescript"

@@ -5,10 +5,9 @@ export default function ReactComponents() {
     <div>
       <h2>Components</h2>
       <p>
-        Containers and components are the building blocks of React applications.
-        In standard React, containers are higher-order components that manage
-        state and pass data to child components, while components are the UI
-        elements that render the view.
+        Containers and components are the building blocks of React applications. In standard React,
+        containers are higher-order components that manage state and pass data to child components,
+        while components are the UI elements that render the view.
       </p>
       <Syntax
         language="jsx"

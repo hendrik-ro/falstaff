@@ -5,8 +5,8 @@ export default function NodeJSCLI() {
     <div>
       <h2>CLI REPL</h2>
       <p>
-        Node provides a REPL (Read-Eval-Print Loop) CLI that allows you to
-        interactively run JavaScript code.
+        Node provides a REPL (Read-Eval-Print Loop) CLI that allows you to interactively run
+        JavaScript code.
       </p>
       <Syntax
         language="bash"
@@ -30,8 +30,8 @@ undefined`}
       />
       <br style={{ marginTop: "2rem" }} />
       <p>
-        The command <code>require(\`module\`).builtinModules</code> lists all
-        the built-in modules available in Node.js:
+        The command <code>require(\`module\`).builtinModules</code> lists all the built-in modules
+        available in Node.js:
       </p>
       <Syntax
         language="bash"

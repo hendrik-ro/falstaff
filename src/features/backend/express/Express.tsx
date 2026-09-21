@@ -60,11 +60,7 @@ function ExpressJSSetup() {
     <div>
       <h2>Setup</h2>
       <p>
-        <a
-          href="https://expressjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">
           Express
         </a>{" "}
         can be installed using a node package manager:

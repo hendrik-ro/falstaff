@@ -18,16 +18,15 @@ function ReduxMiddlewareThunks() {
     <div className="flexItem">
       <h3>Thunks</h3>
       <p>
-        In programming, <em>thunks</em> are functions that allow you to dispatch
-        actions asynchronously.
+        In programming, <em>thunks</em> are functions that allow you to dispatch actions
+        asynchronously.
       </p>
       <p>
-        Redux provides a <code>createAsyncThunk</code> utility for creating
-        thunks.
+        Redux provides a <code>createAsyncThunk</code> utility for creating thunks.
       </p>
       <p>
-        First, you will need to define the type of the thunk using{" "}
-        <code>createAsyncThunk</code>'s generic type parameter:
+        First, you will need to define the type of the thunk using <code>createAsyncThunk</code>'s
+        generic type parameter:
       </p>
       <Syntax
         language="typescript"
@@ -46,8 +45,7 @@ export type AppThunk = ThunkAction<void, RootState, unknown, Action>`}
         lineNumbers={true}
       />
       <p>
-        Then, you can use <code>createAsyncThunk</code> to define the thunk
-        itself:
+        Then, you can use <code>createAsyncThunk</code> to define the thunk itself:
       </p>
       <Syntax
         language="typescript"
@@ -76,8 +74,7 @@ function ReduxMiddlewareExtraReducers() {
     <div className="flexItem">
       <h3>Extra Reducers</h3>
       <p>
-        To add thunks to your store, use the <code>extraReducers</code> field in
-        your slice reducer:
+        To add thunks to your store, use the <code>extraReducers</code> field in your slice reducer:
       </p>
       <Syntax
         language="typescript"
