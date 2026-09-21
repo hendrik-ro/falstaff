@@ -105,6 +105,17 @@ app.use(streamMiddleware);
 `}
         lineNumbers={true}
       />
+      <p>
+        <strong>Note:</strong> Parsing Request bodies can be done with middleware like{" "}
+        <a
+          href="https://github.com/expressjs/body-parser"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          body-parser
+        </a>
+        .
+      </p>
     </div>
   );
 }
