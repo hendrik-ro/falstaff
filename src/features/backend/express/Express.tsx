@@ -8,6 +8,7 @@ import {
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
 import ExpressJSRouting from "./Routing";
+import ExpressMiddleware from "./Middleware";
 
 export default function ExpressJS() {
   const dispatch = useDispatch();
@@ -31,6 +32,10 @@ export default function ExpressJS() {
           name: "Routing",
           active: false,
         },
+        {
+          name: "Middleware",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("Express"));
@@ -49,6 +54,7 @@ export default function ExpressJS() {
 
       {activeChapter === "Express" && <ExpressJSSetup />}
       {activeChapter === "Routing" && <ExpressJSRouting />}
+      {activeChapter === "Middleware" && <ExpressMiddleware />}
 
       <br style={{ marginTop: "2rem" }} />
     </div>
@@ -83,6 +89,7 @@ app.listen(PORT, () => {
   console.log(\`Server is running on port \${PORT}\`);
 });
 `}
+        lineNumbers={true}
       />
     </div>
   );

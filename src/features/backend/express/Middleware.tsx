@@ -1,0 +1,151 @@
+import Syntax from "../../../components/SyntaxHighlighter";
+
+export default function ExpressMiddleware() {
+  return (
+    <div>
+      <h2>Middleware</h2>
+      <p>Connects data, APIs, software tools, and other applications.</p>
+      <br style={{ marginTop: "1rem" }} />
+      <div className="flexContainer">
+        <MiddlewareBasic />
+        <MiddlewareRouteSpecific />
+        <MiddlewareStream />
+        <MiddlewareAuthFlow />
+      </div>
+    </div>
+  );
+}
+
+function MiddlewareBasic() {
+  return (
+    <div className="flexItem">
+      <h3>Basic Middleware</h3>
+      <p>The following middleware is applied to all routes:</p>
+      <Syntax
+        language="typescript"
+        code={`// Define middleware function
+const loggingMiddleware = (
+req: Request,
+res: Response,
+next: NextFunction
+) => {
+console.log(\`\${req.method} \${req.url}\`);
+next();
+};
+
+// Apply middleware to all routes
+app.use(loggingMiddleware);
+`}
+        lineNumbers={true}
+      />
+      <p>
+        <strong>Note:</strong> Basic logging can be accomplished by a library such as{" "}
+        <a href="https://github.com/expressjs/morgan" target="_blank" rel="noopener noreferrer">
+          Morgan
+        </a>
+        .
+      </p>
+    </div>
+  );
+}
+
+function MiddlewareRouteSpecific() {
+  return (
+    <div className="flexItem">
+      <h3>Route-Specific Middleware</h3>
+      <p>To apply middleware to a specific route, specify the route as the first argument:</p>
+      <Syntax
+        language="typescript"
+        code={`const loggingMiddleware = (
+req: Request,
+res: Response,
+next: NextFunction
+) => {
+console.log(\`\${req.method} \${req.url}\`);
+next();
+};
+
+// Apply middleware to a specific route
+app.use("/api", LoggingMiddleware);
+
+// Or to multiple routes
+app.use(["/api", "/admin"], loggingMiddleware);
+`}
+        lineNumbers={true}
+      />
+    </div>
+  );
+}
+
+function MiddlewareStream() {
+  return (
+    <div className="flexItem">
+      <h3>Stream Middleware</h3>
+      <p>Advanced middleware for handling a stream:</p>
+      <Syntax
+        language="typescript"
+        code={`const streamMiddleware = (
+req: Request,
+res: Response,
+next: NextFunction
+) => {
+// Handle stream
+req.on("data", (chunk) => {
+// Process chunk
+});
+
+req.on("end", () => {
+// Stream ended
+});
+
+next();
+};
+
+app.use(streamMiddleware);
+`}
+        lineNumbers={true}
+      />
+    </div>
+  );
+}
+
+function MiddlewareAuthFlow() {
+  return (
+    <div className="flexItem">
+      <h3>Authentication Flow</h3>
+      <p>Middleware for handling authentication flow:</p>
+      <Syntax
+        language="typescript"
+        code={`const authenticate = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+  // middleware logic
+  next();
+};
+
+const logRequest = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+  ) => {
+  // middleware logic
+  next();
+};
+
+const getData = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+  ) => {
+  // route logic
+};
+
+app.get("/api/data", authenticate, logRequest, getData);
+`}
+        lineNumbers={true}
+      />
+    </div>
+  );
+}

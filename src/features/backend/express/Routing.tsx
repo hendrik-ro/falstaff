@@ -107,6 +107,7 @@ export default endpointRouter;`}
       res.status(404).send(\`User \${id} not found\`);
     }
   });`}
+          lineNumbers={true}
         />
       </div>
     </div>
