@@ -40,20 +40,28 @@ export default function About() {
         <p>
           Contributions are welcome on{" "}
           <a
-            className="tooltip"
             href="https://github.com/hendrik-ro/falstaff"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
-            <span className="tooltiptext">Falstaff on GitHub</span>
           </a>
           .
         </p>
       </section>
       <section>
         <h2>License</h2>
-        <p>This project is licensed under the AGPL License.</p>
+        <p>
+          This project is licensed under the{" "}
+          <a
+            href="https://github.com/hendrik-ro/falstaff/blob/main/LICENSE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            AGPL License
+          </a>
+          .
+        </p>
       </section>
     </div>
   );

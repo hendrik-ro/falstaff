@@ -90,7 +90,7 @@ function TestingJS() {
   ];
   return (
     <div className="flexItem">
-      <h3>JavaScript</h3>
+      <h3>JavaScript / TypeScript</h3>
       <ul style={{ fontSize: "1rem" }}>
         {Libraries.map((lib) => (
           <li key={lib.name}>
