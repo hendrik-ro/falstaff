@@ -33,15 +33,12 @@ export default app;
             lineNumbers={true}
           />
           <p>
-            Express tries to match the incoming request to the appropriate route
-            handler by matching
-            <code>&lt;server address&gt;:&lt;port number&gt;/api-endpoint</code>
-            .
+            Express tries to match the incoming request to the appropriate route handler by matching
+            <code>&lt;server address&gt;:&lt;port number&gt;/api-endpoint</code>.
           </p>
           <p>
-            Conventionally, each route is defined in a separate file and
-            imported into the main router file. Routers can be nested to create
-            a hierarchical routing structure.
+            Conventionally, each route is defined in a separate file and imported into the main
+            router file. Routers can be nested to create a hierarchical routing structure.
           </p>
         </div>
         <div className="flexItem">
@@ -93,9 +90,8 @@ export default endpointRouter;`}
       <div>
         <h3>Path Parameters</h3>
         <p>
-          The method <code>req.params</code> is used to extract path parameters
-          and <code>req.query</code> is used to extract query parameters from a
-          URL:
+          The method <code>req.params</code> is used to extract path parameters and{" "}
+          <code>req.query</code> is used to extract query parameters from a URL:
         </p>
         <Syntax
           language="typescript"

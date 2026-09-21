@@ -33,9 +33,7 @@ const navBarSlice = createSlice({
     toggleActiveChapterLink: (state, action) => {
       const { name } = action.payload;
       state.chapterLinks = state.chapterLinks.map((link) => {
-        return link.name === name
-          ? { ...link, active: true }
-          : { ...link, active: false };
+        return link.name === name ? { ...link, active: true } : { ...link, active: false };
       });
       state.activeChapter = name;
     },
@@ -46,10 +44,8 @@ const navBarSlice = createSlice({
 });
 
 export const selectLinks = (state: RootState) => state.navBarSliceReducer.links;
-export const selectChapterLinks = (state: RootState) =>
-  state.navBarSliceReducer.chapterLinks;
-export const selectActiveChapter = (state: RootState) =>
-  state.navBarSliceReducer.activeChapter;
+export const selectChapterLinks = (state: RootState) => state.navBarSliceReducer.chapterLinks;
+export const selectActiveChapter = (state: RootState) => state.navBarSliceReducer.activeChapter;
 export const {
   setLinks,
   setChapterLinks,

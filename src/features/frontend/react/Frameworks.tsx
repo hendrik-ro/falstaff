@@ -11,8 +11,8 @@ export default function ReactFrameworks() {
           <p>Create a new Vite.js project:</p>
           <Syntax language="bash" code={`$ pnpm create vite`} />
           <p>
-            Vite.js supports various templates such as a React TypeScript
-            template, add <code>--template react-ts</code>.
+            Vite.js supports various templates such as a React TypeScript template, add{" "}
+            <code>--template react-ts</code>.
           </p>
           <br style={{ marginTop: "1rem" }} />
           <p>Install dependencies and start the development server:</p>
@@ -25,8 +25,8 @@ export default function ReactFrameworks() {
           <p>Create a new Next.js project:</p>
           <Syntax language="bash" code={`$ pnpm create next-app`} />
           <p>
-            Next.js supports various templates such as a TypeScript template,
-            add <code>--template ts</code>.
+            Next.js supports various templates such as a TypeScript template, add{" "}
+            <code>--template ts</code>.
           </p>
           <p>Install dependencies and start the development server:</p>
           <Syntax language="bash" code={`$ pnpm install`} />

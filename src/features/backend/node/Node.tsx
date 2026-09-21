@@ -51,10 +51,7 @@ export default function NodeJS() {
   return (
     <div>
       <h1>Node</h1>
-      <p>
-        A runtime that allows JavaScript to be executed outside of a browser
-        environment.
-      </p>
+      <p>A runtime that allows JavaScript to be executed outside of a browser environment.</p>
 
       {activeChapter === "Node" && <NodeJSSetup />}
       {activeChapter === "CLI" && <NodeJSCLI />}
@@ -70,8 +67,8 @@ function NodeJSSetup() {
     <div>
       <h2>Setup</h2>
       <p>
-        Most package managers support Node.js installation. Use your package
-        manager to install Node.js on your system:
+        Most package managers support Node.js installation. Use your package manager to install
+        Node.js on your system:
       </p>
       <br style={{ marginTop: "2rem" }} />
       <p>On Fedora: </p>

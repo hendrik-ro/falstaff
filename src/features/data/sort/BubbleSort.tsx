@@ -5,9 +5,8 @@ export default function BubbleSort() {
     <div>
       <h2>Bubble Sort</h2>
       <p>
-        Bubble Sort is a simple sorting algorithm that repeatedly steps through
-        the list, compares adjacent elements and swaps them if they are in the
-        wrong order.
+        Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares
+        adjacent elements and swaps them if they are in the wrong order.
       </p>
       <Syntax
         language="typescript"

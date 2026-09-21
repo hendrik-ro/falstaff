@@ -13,12 +13,10 @@ export default function HomeContentDataAlgorithm() {
   return (
     <div>
       <h3>Data</h3>
-      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>
-        Data structures and algorithms.
-      </p>
+      <p style={{ textAlign: "center", fontSize: "0.8rem" }}>Data structures and algorithms.</p>
       <div className={style.group}>
         {internalContent.map((item, index) => (
-          <span key={index} className={style.tooltip} id="placeholder">
+          <span key={index} className={style.tooltip}>
             <Link className={style.internalLink} to={item.path}>
               {item.title}
             </Link>

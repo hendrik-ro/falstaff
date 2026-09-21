@@ -87,22 +87,15 @@ function ReactAbout() {
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
           React
         </a>{" "}
-        efficiently updates the DOM to reflect the application state using a
-        virtual DOM.
+        efficiently updates the DOM to reflect the application state using a virtual DOM.
       </p>
       <br style={{ marginBottom: "1rem" }} />
       <p>
-        React uses <em>JavaScript XML</em> (JSX) as a syntax extension to
-        interject HTML-like code into the JavaScript:
+        React uses <em>JavaScript XML</em> (JSX) as a syntax extension to interject HTML-like code
+        into the JavaScript:
       </p>
-      <Syntax
-        language="jsx"
-        code={`const homeLink = <Link to="/">Home</Link>`}
-      />
-      <p>
-        JSX also allows for bracket notation to embed JavaScript expressions
-        within JSX:
-      </p>
+      <Syntax language="jsx" code={`const homeLink = <Link to="/">Home</Link>`} />
+      <p>JSX also allows for bracket notation to embed JavaScript expressions within JSX:</p>
       <Syntax
         language="jsx"
         code={`export default function Home(props) {

@@ -5,8 +5,8 @@ export default function MergeSort() {
     <div>
       <h2>MergeSort</h2>
       <p>
-        Merge Sort is a divide-and-conquer algorithm that divides the input
-        array into two halves, sorts them, and then merges them back together.
+        Merge Sort is a divide-and-conquer algorithm that divides the input array into two halves,
+        sorts them, and then merges them back together.
       </p>
       <Syntax
         language="typescript"
