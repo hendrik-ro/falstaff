@@ -5,6 +5,7 @@ import { setLinks } from "../navBar/navBarSlice";
 import HomeContentFrontEnd from "./HomeFrontEnd";
 import HomeContentBackEnd from "./HomeBackEnd";
 import HomeContentDevelopment from "./HomeDevelopment";
+import HomeContentDataAlgorithm from "./HomeDataAlgorithm";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ function HomeContent() {
         <HomeContentFrontEnd />
         <HomeContentBackEnd />
         <HomeContentDevelopment />
+        <HomeContentDataAlgorithm />
       </div>
       <span className={style.externalLinks} style={{ fontSize: "0.8rem" }}>
         external links
