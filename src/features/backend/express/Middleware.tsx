@@ -6,11 +6,24 @@ export default function ExpressMiddleware() {
       <h2>Middleware</h2>
       <p>Connects data, APIs, software tools, and other applications.</p>
       <br style={{ marginTop: "1rem" }} />
+      <p>
+        Common middleware modules can be found{" "}
+        <a
+          href="https://expressjs.com/en/resources/middleware.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+        .
+      </p>
+      <br style={{ marginTop: "1rem" }} />
       <div className="flexContainer">
         <MiddlewareBasic />
         <MiddlewareRouteSpecific />
         <MiddlewareStream />
         <MiddlewareAuthFlow />
+        <MiddlewareError />
       </div>
     </div>
   );
@@ -155,6 +168,45 @@ const getData = (
 
 app.get("/api/data", authenticate, logRequest, getData);
 `}
+        lineNumbers={true}
+      />
+    </div>
+  );
+}
+
+function MiddlewareError() {
+  return (
+    <div className="flexItem">
+      <h3>Error Handling</h3>
+      <p></p>
+      <Syntax
+        language="typescript"
+        code={`const getData = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    // route logic
+  } catch (err) {
+    // pass error to error handling middleware
+    next(err);
+  }
+};
+
+app.get("/api/data", getData);
+
+// Call error handling middleware last
+app.use(
+  (
+    err: Error,
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});`}
         lineNumbers={true}
       />
     </div>
