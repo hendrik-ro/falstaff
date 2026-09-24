@@ -24,6 +24,7 @@ export default function ExpressMiddleware() {
         <MiddlewareStream />
         <MiddlewareAuthFlow />
         <MiddlewareError />
+        <MiddlewareRouteParams />
       </div>
     </div>
   );
@@ -178,7 +179,7 @@ function MiddlewareError() {
   return (
     <div className="flexItem">
       <h3>Error Handling</h3>
-      <p></p>
+      <p>Middleware for error handling:</p>
       <Syntax
         language="typescript"
         code={`const getData = async (
@@ -209,6 +210,49 @@ app.use(
 });`}
         lineNumbers={true}
       />
+    </div>
+  );
+}
+
+function MiddlewareRouteParams() {
+  return (
+    <div className="flexItem">
+      <h3>Router Parameters</h3>
+      <p>Express provides middleware that automatically extracts parameters from the URL:</p>
+      <Syntax
+        language="typescript"
+        code={`app.param(
+          'parameter',
+          (
+            req: Request,
+            res: Response,
+            next: NextFunction,
+            parameter: string
+          ) => {
+            try {
+              const found = table.find((item) => {
+                return parameter === item.parameter;
+              });
+              if (found) {
+                req.item = found;
+                next();
+              } else {
+                next(new Error(
+                  'No item matched the parameter provided.'
+                ));
+              };
+            } catch (err) {
+              next(err);
+            }
+          }
+        );
+`}
+        lineNumbers={true}
+      />
+      <p>
+        This code example, intercepts requests to <code>:parameter</code> and extracts the parameter
+        value.
+      </p>
     </div>
   );
 }
