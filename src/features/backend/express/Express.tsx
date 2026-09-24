@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
 import ExpressJSRouting from "./Routing";
 import ExpressMiddleware from "./Middleware";
+import ExpressRouterParams from "./RouterParams";
 
 export default function ExpressJS() {
   const dispatch = useDispatch();
@@ -36,6 +37,10 @@ export default function ExpressJS() {
           name: "Middleware",
           active: false,
         },
+        {
+          name: "Router Parameters",
+          active: false,
+        },
       ]),
     );
     dispatch(setActiveChapter("Express"));
@@ -55,6 +60,7 @@ export default function ExpressJS() {
       {activeChapter === "Express" && <ExpressJSSetup />}
       {activeChapter === "Routing" && <ExpressJSRouting />}
       {activeChapter === "Middleware" && <ExpressMiddleware />}
+      {activeChapter === "Router Parameters" && <ExpressRouterParams />}
 
       <br style={{ marginTop: "2rem" }} />
     </div>
