@@ -17,7 +17,7 @@ export default function DocumentObjectModel() {
       setLinks([
         {
           name: "Home",
-          href: "/falstaff",
+          href: "/",
         },
       ]),
     );

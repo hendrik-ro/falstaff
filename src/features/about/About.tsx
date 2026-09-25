@@ -9,11 +9,11 @@ export default function About() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
         {
           name: "About",
-          to: "/falstaff/about",
+          to: "/about",
         },
       ]),
     );

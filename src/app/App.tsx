@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Outlet,
   Route,
@@ -30,25 +30,25 @@ const Layout = () => {
 };
 
 function App() {
-  const router = createBrowserRouter(
+  const router = createHashRouter(
     createRoutesFromElements(
-      <Route path="/falstaff" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         // Front End
-        <Route path="/falstaff/frontend/react" element={<React />} />
-        <Route path="/falstaff/frontend/dom" element={<DocumentObjectModel />} />
-        <Route path="/falstaff/frontend/redux" element={<Redux />} />
+        <Route path="frontend/react" element={<React />} />
+        <Route path="frontend/dom" element={<DocumentObjectModel />} />
+        <Route path="frontend/redux" element={<Redux />} />
         // Back End
-        <Route path="/falstaff/backend/nodejs" element={<NodeJS />} />
-        <Route path="/falstaff/backend/expressjs" element={<ExpressJS />} />
+        <Route path="backend/nodejs" element={<NodeJS />} />
+        <Route path="backend/expressjs" element={<ExpressJS />} />
         // Development
-        <Route path="/falstaff/dev/testing" element={<Testing />} />
+        <Route path="dev/testing" element={<Testing />} />
         // Data Structures and Algorithms
-        <Route path="/falstaff/data/sort" element={<Sorting />} />
+        <Route path="data/sort" element={<Sorting />} />
         // About
-        <Route path="/falstaff/about" element={<About />} />
+        <Route path="about" element={<About />} />
         // ErrorElement
-        <Route path="/falstaff/*" element={<Error404 />} />
+        <Route path="*" element={<Error404 />} />
       </Route>,
     ),
   );

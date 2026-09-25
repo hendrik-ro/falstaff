@@ -5,13 +5,13 @@ export default function HomeContentFrontEnd() {
   const internalContent = [
     {
       title: "DOM",
-      path: "/falstaff/frontend/dom",
+      path: "/frontend/dom",
       tooltip: "Document Object Model",
     },
-    { title: "React", path: "/falstaff/frontend/react", tooltip: "React" },
+    { title: "React", path: "/frontend/react", tooltip: "React" },
     {
       title: "Redux",
-      path: "/falstaff/frontend/redux",
+      path: "/frontend/redux",
       tooltip: "Redux & Redux Toolkit",
     },
   ];

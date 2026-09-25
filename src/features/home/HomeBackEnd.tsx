@@ -5,12 +5,12 @@ export default function HomeContentBackEnd() {
   const internalContent = [
     {
       title: "Node",
-      path: "/falstaff/backend/nodejs",
+      path: "/backend/nodejs",
       tooltip: "Node.js",
     },
     {
       title: "Express",
-      path: "/falstaff/backend/expressjs",
+      path: "/backend/expressjs",
       tooltip: "Express.js",
     },
   ];

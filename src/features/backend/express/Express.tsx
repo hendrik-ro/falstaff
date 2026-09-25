@@ -18,7 +18,7 @@ export default function ExpressJS() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );
