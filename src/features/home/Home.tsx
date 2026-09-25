@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import style from "./Home.module.css";
-import { setLinks } from "../navBar/navBarSlice";
+import { clearLinks, setLinks } from "../navBar/navBarSlice";
 import HomeContentFrontEnd from "./HomeFrontEnd";
 import HomeContentBackEnd from "./HomeBackEnd";
 import HomeContentDevelopment from "./HomeDevelopment";
@@ -22,6 +22,9 @@ export default function Home() {
         },
       ]),
     );
+    return () => {
+      dispatch(clearLinks());
+    };
   }, [dispatch]);
 
   return (

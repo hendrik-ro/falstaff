@@ -4,7 +4,6 @@ import {
   clearChapterLinks,
   selectActiveChapter,
   setChapterLinks,
-  setLinks,
   setActiveChapter,
 } from "../../navBar/navBarSlice";
 import ReactFrameworks from "./Frameworks";
@@ -17,14 +16,6 @@ export default function React() {
   const dispatch = useDispatch();
   const activeChapter = useSelector(selectActiveChapter);
   useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          to: "/",
-        },
-      ]),
-    );
     dispatch(
       setChapterLinks([
         {

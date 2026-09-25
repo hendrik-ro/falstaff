@@ -9,7 +9,12 @@ interface NavBarState {
 }
 
 const initialState: NavBarState = {
-  links: [],
+  links: [
+    {
+      name: "Home",
+      to: "/",
+    },
+  ],
   chapterLinks: [],
   activeChapter: "",
 };
@@ -22,7 +27,12 @@ const navBarSlice = createSlice({
       state.links = action.payload;
     },
     clearLinks: (state) => {
-      state.links = [];
+      state.links = [
+        {
+          name: "Home",
+          to: "/",
+        },
+      ];
     },
     setChapterLinks: (state, action) => {
       state.chapterLinks = action.payload;

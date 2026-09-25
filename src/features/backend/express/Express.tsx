@@ -1,10 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-  setLinks,
-} from "../../navBar/navBarSlice";
+import { selectActiveChapter, setActiveChapter, setChapterLinks } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
 import ExpressJSRouting from "./Routing";
@@ -14,14 +9,6 @@ export default function ExpressJS() {
   const dispatch = useDispatch();
   const activeChapter = useSelector(selectActiveChapter);
   useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          to: "/",
-        },
-      ]),
-    );
     dispatch(
       setChapterLinks([
         {
