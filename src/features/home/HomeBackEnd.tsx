@@ -13,6 +13,11 @@ export default function HomeContentBackEnd() {
       path: "/backend/expressjs",
       tooltip: "Express.js",
     },
+    {
+      title: "CORS",
+      path: "/backend/cors",
+      tooltip: "Cross-origin resource sharing",
+    },
   ];
   const externalContent = [
     {
