@@ -19,7 +19,7 @@ export default function NodeJS() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );

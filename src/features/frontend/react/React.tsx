@@ -21,7 +21,7 @@ export default function React() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );

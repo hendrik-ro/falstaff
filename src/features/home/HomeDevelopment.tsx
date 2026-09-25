@@ -5,7 +5,7 @@ export default function HomeContentDevelopment() {
   const internalContent = [
     {
       title: "Testing",
-      path: "/falstaff/dev/testing",
+      path: "/dev/testing",
       tooltip: "Testing in development",
     },
   ];

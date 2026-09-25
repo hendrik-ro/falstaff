@@ -17,7 +17,7 @@ export default function Testing() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );

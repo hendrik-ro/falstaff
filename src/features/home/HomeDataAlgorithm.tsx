@@ -5,7 +5,7 @@ export default function HomeContentDataAlgorithm() {
   const internalContent = [
     {
       title: "Sort",
-      path: "/falstaff/data/sort",
+      path: "/data/sort",
       tooltip: "Sorting algorithms",
     },
   ];

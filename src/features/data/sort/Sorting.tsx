@@ -21,7 +21,7 @@ export default function Sorting() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );

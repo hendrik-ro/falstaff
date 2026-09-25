@@ -20,7 +20,7 @@ export default function Redux() {
       setLinks([
         {
           name: "Home",
-          to: "/falstaff",
+          to: "/",
         },
       ]),
     );
