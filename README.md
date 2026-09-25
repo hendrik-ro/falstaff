@@ -15,6 +15,7 @@ Github Pages: [Cheat Sheet](https://hendrik-ro.github.io/falstaff/)
 * Front End
 * Back End
 * Development
+* Data structures and algorithms
 
 ## Tech Stack
 
