@@ -18,6 +18,7 @@ import NodeJS from "../features/backend/node/Node";
 import ExpressJS from "../features/backend/express/Express";
 import Sorting from "../features/data/sort/Sorting";
 import Testing from "../features/dev/testing/Testing";
+import CORS from "../features/backend/cors/CORS";
 
 const Layout = () => {
   return (
@@ -41,6 +42,7 @@ function App() {
         // Back End
         <Route path="backend/nodejs" element={<NodeJS />} />
         <Route path="backend/expressjs" element={<ExpressJS />} />
+        <Route path="backend/cors" element={<CORS />} />
         // Development
         <Route path="dev/testing" element={<Testing />} />
         // Data Structures and Algorithms
