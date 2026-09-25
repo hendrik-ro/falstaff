@@ -25,6 +25,7 @@ export default function ExpressMiddleware() {
         <MiddlewareAuthFlow />
         <MiddlewareError />
         <MiddlewareRouteParams />
+        <MiddlewareMergeParams />
       </div>
     </div>
   );
@@ -222,30 +223,30 @@ function MiddlewareRouteParams() {
       <Syntax
         language="typescript"
         code={`app.param(
-          'parameter',
-          (
-            req: Request,
-            res: Response,
-            next: NextFunction,
-            parameter: string
-          ) => {
-            try {
-              const found = table.find((item) => {
-                return parameter === item.parameter;
-              });
-              if (found) {
-                req.item = found;
-                next();
-              } else {
-                next(new Error(
-                  'No item matched the parameter provided.'
-                ));
-              };
-            } catch (err) {
-              next(err);
-            }
-          }
-        );
+  'parameter',
+  (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+    parameter: string
+  ) => {
+    try {
+      const found = table.find((item) => {
+        return parameter === item.parameter;
+      });
+      if (found) {
+        req.item = found;
+        next();
+      } else {
+        next(new Error(
+          'No item matched the parameter provided.'
+        ));
+      };
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 `}
         lineNumbers={true}
       />
@@ -253,6 +254,48 @@ function MiddlewareRouteParams() {
         This code example, intercepts requests to <code>:parameter</code> and extracts the parameter
         value.
       </p>
+    </div>
+  );
+}
+
+function MiddlewareMergeParams() {
+  return (
+    <div className="flexItem">
+      <h3>Express Merge Params</h3>
+      <p>Allows to merge parameters from the parent router into the child router.</p>
+      <Syntax
+        language="typescript"
+        code={`const parentRouter = express.Router();
+const childRouter = express.Router(
+  { mergeParams: true }
+);
+
+parentRouter.use('/:item/list', childRouter);
+
+parentRouter.get('/', (req, res, next) => {
+  res.status(200).send(items);
+  next();
+});
+
+parentRouter.param(
+  'item',
+  (req, res, next, id) => {
+    const item = getItemById(id);
+    req.item = item;
+    next();
+});
+
+childRouter.get('/', (req, res, next) => {
+  res.status(200).send(
+    \`Route \${req.item}: \${getItems(req.item)}\`
+  );
+});
+
+app.use('/route', parentRouter);
+`}
+        lineNumbers={true}
+      />
+      <p>Router parameters only need to be defined in the parent router.</p>
     </div>
   );
 }
