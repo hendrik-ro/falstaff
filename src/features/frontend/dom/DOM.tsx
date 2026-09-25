@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-  setLinks,
-} from "../../navBar/navBarSlice";
+import { selectActiveChapter, setActiveChapter, setChapterLinks } from "../../navBar/navBarSlice";
 import DOMDocument from "./Document";
 import DOMProperties from "./Properties";
 
@@ -13,14 +8,6 @@ export default function DocumentObjectModel() {
   const dispatch = useDispatch();
   const activeChapter = useSelector(selectActiveChapter);
   useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          href: "/",
-        },
-      ]),
-    );
     dispatch(
       setChapterLinks([
         {

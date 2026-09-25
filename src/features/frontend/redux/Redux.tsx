@@ -4,7 +4,6 @@ import {
   selectActiveChapter,
   setActiveChapter,
   setChapterLinks,
-  setLinks,
 } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
@@ -16,14 +15,6 @@ export default function Redux() {
   const dispatch = useDispatch();
   const activeChapter = useSelector(selectActiveChapter);
   useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          to: "/",
-        },
-      ]),
-    );
     dispatch(
       setChapterLinks([
         {

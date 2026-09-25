@@ -1,20 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLinks } from "../features/navBar/navBarSlice";
+import { clearLinks } from "../features/navBar/navBarSlice";
 
 export default function Error404() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          to: "/",
-        },
-      ]),
-    );
+    dispatch(clearLinks());
   }, [dispatch]);
 
   return (
