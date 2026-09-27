@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectActiveChapter, setActiveChapter, setChapterLinks } from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
+import PostgreSQLCmds from "./PostgresCmds";
 
 export default function Postgres() {
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ export default function Postgres() {
         {
           name: "PostgreSQL",
           active: true,
+        },
+        {
+          name: "PSQL Commands",
+          active: false,
         },
       ]),
     );
@@ -29,6 +34,7 @@ export default function Postgres() {
       <h1>PostgreSQL</h1>
       <p>Open-source object-relational database.</p>
       {activeChapter === "PostgreSQL" && <PostgreSQLSetup />}
+      {activeChapter === "PSQL Commands" && <PostgreSQLCmds />}
       <br style={{ marginTop: "2rem" }} />
     </div>
   );
