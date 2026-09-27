@@ -17,6 +17,11 @@ export default function HomeContentBackEnd() {
       path: "/backend/cors",
       tooltip: "Cross-origin resource sharing",
     },
+    {
+      title: "PostgreSQL",
+      path: "/backend/postgres",
+      tooltip: "PostgreSQL",
+    },
   ];
   const externalContent = [
     {
