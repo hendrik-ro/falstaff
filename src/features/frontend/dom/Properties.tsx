@@ -35,11 +35,15 @@ function DOMPropertiesProperties() {
       <div className="flexContainer">
         <div className="flexItem">
           <h3>Inner HTML</h3>
-          <Syntax language="javascript" code={`body.innerHTML = '<h1>Hello, World!</h1>';`} />
+          <Syntax
+            language="javascript"
+            code={`body.innerHTML =
+  "<h1>Hello, World!</h1>";`}
+          />
         </div>
         <div className="flexItem">
           <h3>Style</h3>
-          <Syntax language="javascript" code={`body.style.color = 'red';`} />
+          <Syntax language="javascript" code={`body.style.color = "red";`} />
         </div>
       </div>
     </div>

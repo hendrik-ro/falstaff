@@ -40,17 +40,18 @@ function MiddlewareBasic() {
         language="typescript"
         code={`// Define middleware function
 const loggingMiddleware = (
-req: Request,
-res: Response,
-next: NextFunction
+  req: Request,
+  res: Response,
+  next: NextFunction,
 ) => {
-console.log(\`\${req.method} \${req.url}\`);
-next();
+  console.log(
+    \`\${req.method} \${req.url}\`,
+  );
+  next();
 };
 
 // Apply middleware to all routes
-app.use(loggingMiddleware);
-`}
+app.use(loggingMiddleware);`}
         lineNumbers={true}
       />
       <p>
@@ -72,20 +73,24 @@ function MiddlewareRouteSpecific() {
       <Syntax
         language="typescript"
         code={`const loggingMiddleware = (
-req: Request,
-res: Response,
-next: NextFunction
+  req: Request,
+  res: Response,
+  next: NextFunction,
 ) => {
-console.log(\`\${req.method} \${req.url}\`);
-next();
+  console.log(
+    \`\${req.method} \${req.url}\`,
+  );
+  next();
 };
 
 // Apply middleware to a specific route
 app.use("/api", LoggingMiddleware);
 
 // Or to multiple routes
-app.use(["/api", "/admin"], loggingMiddleware);
-`}
+app.use(
+  ["/api", "/admin"],
+  loggingMiddleware,
+);`}
         lineNumbers={true}
       />
     </div>
@@ -100,24 +105,23 @@ function MiddlewareStream() {
       <Syntax
         language="typescript"
         code={`const streamMiddleware = (
-req: Request,
-res: Response,
-next: NextFunction
+  req: Request,
+  res: Response,
+  next: NextFunction,
 ) => {
-// Handle stream
-req.on("data", (chunk) => {
-// Process chunk
-});
+  // Handle stream
+  req.on("data", (chunk) => {
+    // Process chunk
+  });
 
-req.on("end", () => {
-// Stream ended
-});
+  req.on("end", () => {
+    // Stream ended
+  });
 
-next();
+  next();
 };
 
-app.use(streamMiddleware);
-`}
+app.use(streamMiddleware);`}
         lineNumbers={true}
       />
       <p>
@@ -143,10 +147,10 @@ function MiddlewareAuthFlow() {
       <Syntax
         language="typescript"
         code={`const authenticate = (
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ) => {
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   // middleware logic
   next();
 };
@@ -154,8 +158,8 @@ function MiddlewareAuthFlow() {
 const logRequest = (
   req: Request,
   res: Response,
-  next: NextFunction
-  ) => {
+  next: NextFunction,
+) => {
   // middleware logic
   next();
 };
@@ -163,13 +167,17 @@ const logRequest = (
 const getData = (
   req: Request,
   res: Response,
-  next: NextFunction
-  ) => {
+  next: NextFunction,
+) => {
   // route logic
 };
 
-app.get("/api/data", authenticate, logRequest, getData);
-`}
+app.get(
+  "/api/data",
+  authenticate,
+  logRequest,
+  getData,
+);`}
         lineNumbers={true}
       />
     </div>
@@ -186,12 +194,13 @@ function MiddlewareError() {
         code={`const getData = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   try {
     // route logic
   } catch (err) {
-    // pass error to error handling middleware
+    // pass error to error handling
+    // middleware
     next(err);
   }
 };
@@ -204,11 +213,14 @@ app.use(
     err: Error,
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});`}
+    console.error(err.stack);
+    res
+      .status(500)
+      .send("Something broke!");
+  },
+);`}
         lineNumbers={true}
       />
     </div>
@@ -223,31 +235,33 @@ function MiddlewareRouteParams() {
       <Syntax
         language="typescript"
         code={`app.param(
-  'parameter',
+  "parameter",
   (
     req: Request,
     res: Response,
     next: NextFunction,
-    parameter: string
+    parameter: string,
   ) => {
-    try {
-      const found = table.find((item) => {
-        return parameter === item.parameter;
-      });
-      if (found) {
-        req.item = found;
-        next();
-      } else {
-        next(new Error(
-          'No item matched the parameter provided.'
-        ));
-      };
-    } catch (err) {
-      next(err);
+    if (!table[parameter]) {
+      res.status(404).send();
+    } else {
+      req.parameter = table[parameter];
+      next();
     }
-  }
+  },
 );
-`}
+
+app.get(
+  "/items/:parameter",
+  (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+    parameter: string,
+  ) => {
+    res.send(req.item);
+  },
+);`}
         lineNumbers={true}
       />
       <p>
@@ -266,33 +280,44 @@ function MiddlewareMergeParams() {
       <Syntax
         language="typescript"
         code={`const parentRouter = express.Router();
-const childRouter = express.Router(
-  { mergeParams: true }
-);
-
-parentRouter.use('/:item/list', childRouter);
-
-parentRouter.get('/', (req, res, next) => {
-  res.status(200).send(items);
-  next();
+const childRouter = express.Router({
+  mergeParams: true,
 });
 
+parentRouter.use(
+  "/:item/list",
+  childRouter,
+);
+
+parentRouter.get(
+  "/",
+  (req, res, next) => {
+    res.status(200).send(items);
+    next();
+  },
+);
+
 parentRouter.param(
-  'item',
+  "item",
   (req, res, next, id) => {
     const item = getItemById(id);
     req.item = item;
     next();
-});
+  },
+);
 
-childRouter.get('/', (req, res, next) => {
-  res.status(200).send(
-    \`Route \${req.item}: \${getItems(req.item)}\`
-  );
-});
+childRouter.get(
+  "/",
+  (req, res, next) => {
+    res
+      .status(200)
+      .send(
+        \`Route \${req.item}: \${getItems(req.item)}\`,
+      );
+  },
+);
 
-app.use('/route', parentRouter);
-`}
+app.use("/route", parentRouter);`}
         lineNumbers={true}
       />
       <p>Router parameters only need to be defined in the parent router.</p>

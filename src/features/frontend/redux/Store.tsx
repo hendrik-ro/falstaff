@@ -9,27 +9,31 @@ export default function ReduxStore() {
       </p>
       <Syntax
         language="typescript"
-        code={`import { configureStore } from '@reduxjs/toolkit'
+        code={`import { configureStore } from "@reduxjs/toolkit";
 import {
   useDispatch,
   useSelector,
   type TypedUseSelectorHook,
 } from "react-redux";
-import exampleReducer from './features/bookmarks/bookmarksSlice'
+import exampleReducer from "./features/bookmarks/bookmarksSlice";
 
 const store = configureStore({
   reducer: {
     example: exampleReducer,
-  }
-})
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<
+  typeof store.getState
+>;
+export type AppDispatch =
+  typeof store.dispatch;
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-export default store;
-`}
+export const useAppDispatch = () =>
+  useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> =
+  useSelector;
+export default store;`}
         lineNumbers={true}
       />
       <p>
@@ -44,7 +48,9 @@ import "./index.css";
 import App from "./app/App.tsx";
 import store from "./app/store";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(
+  document.getElementById("root")!,
+).render(
   <StrictMode>
     <AppWrapper />
   </StrictMode>,

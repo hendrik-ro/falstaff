@@ -10,17 +10,25 @@ export default function BubbleSort() {
       </p>
       <Syntax
         language="typescript"
-        code={`function bubbleSort(arr: number[]): number[] {
+        code={`function bubbleSort(
+  arr: number[],
+): number[] {
   for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - 1; j++) {
+    for (
+      let j = 0;
+      j < arr.length - 1;
+      j++
+    ) {
       if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        [arr[j], arr[j + 1]] = [
+          arr[j + 1],
+          arr[j],
+        ];
       }
     }
   }
   return arr;
-}
-      `}
+}`}
         lineNumbers={true}
       />
     </div>

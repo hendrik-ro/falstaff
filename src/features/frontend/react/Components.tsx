@@ -18,22 +18,33 @@ function Container() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <Component count={count} setCount={setCount} />
+      <Component
+        count={count}
+        setCount={setCount}
+      />
     </div>
   );
 }
 
-function Component({ count, setCount }) {
+function Component({
+  count,
+  setCount,
+}) {
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button
+        onClick={() =>
+          setCount(count + 1)
+        }
+      >
+        Increment
+      </button>
     </div>
   );
 }
 
-export default Container;
-`}
+export default Container;`}
         lineNumbers={true}
       />
     </div>

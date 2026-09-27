@@ -7,19 +7,27 @@ export default function SelectionSort() {
       <p>Selection sort is a simple comparison-based sorting algorithm.</p>
       <Syntax
         language="typescript"
-        code={`function selectionSort(arr: number[]): number[] {
+        code={`function selectionSort(
+  arr: number[],
+): number[] {
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i;
-    for (let j = i + 1; j < arr.length; j++) {
+    for (
+      let j = i + 1;
+      j < arr.length;
+      j++
+    ) {
       if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }
     }
-    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    [arr[i], arr[minIndex]] = [
+      arr[minIndex],
+      arr[i],
+    ];
   }
   return arr;
-}
-`}
+}`}
         lineNumbers={true}
       />
     </div>
