@@ -10,15 +10,20 @@ export default function ReactProps() {
       </p>
       <Syntax
         language="tsx"
-        code={`export default function Component(props: Props) {
+        code={`export default function Component(
+  props: Props,
+) {
   const { title, onClick } = props;
   return (
     <div>
       <h3>{title}</h3>
-      <button onClick={onClick}>Click me</button>
+      <button onClick={onClick}>
+        Click me
+      </button>
     </div>
   );
 }`}
+        lineNumbers={true}
       />
       <p>
         Conventionally, functions are named handleEvent and onEvent and passed into components as
@@ -27,16 +32,20 @@ export default function ReactProps() {
       <Syntax
         language="tsx"
         code={`export default function App() {
-        const title = "Title";
-        const handleEvent = () => {
-          console.log("Event handled");
-        };
-        return (
-          <div>
-            <Component onClick={handleEvent} title={title} />
-          </div>
-        );
-      }`}
+  const title = "Title";
+  const handleEvent = () => {
+    console.log("Event handled");
+  };
+  return (
+    <div>
+      <Component
+        onClick={handleEvent}
+        title={title}
+      />
+    </div>
+  );
+}`}
+        lineNumbers={true}
       />
       <div className="flexContainer">
         <ReactPropsChildren />
@@ -57,8 +66,8 @@ function ReactPropsChildren() {
         code={`export default function App() {
   return (
     <div>
-      <List">
-        <li>Item 1</li> // children
+      <List>
+        <li>Item 1</li> {/* children */}
         <li>Item 2</li>
         <li>Item 3</li>
       </List>
@@ -69,9 +78,7 @@ function ReactPropsChildren() {
 function List(props) {
   return (
     <div>
-      <ul>
-        {props.children}
-      </ul>
+      <ul>{props.children}</ul>
     </div>
   );
 }`}
@@ -88,7 +95,9 @@ function ReactPropsDefaultValues() {
       <p>You can specify default values for props using the defaultProps property:</p>
       <Syntax
         language="tsx"
-        code={`export default function Component({ title = "Default Title" }) {
+        code={`export default function Component({
+  title = "Default Title",
+}) {
   return (
     <div>
       <h3>{title}</h3>
@@ -96,6 +105,7 @@ function ReactPropsDefaultValues() {
     </div>
   );
 }`}
+        lineNumbers={true}
       />
     </div>
   );

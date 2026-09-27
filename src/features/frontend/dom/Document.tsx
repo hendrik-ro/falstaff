@@ -19,21 +19,27 @@ function DOMDocumentMethods() {
     <div className="flexContainer">
       <div className="flexItem">
         <h3>Query Selector</h3>
-        <Syntax language="javascript" code={"const firstParagraph = document.querySelector('p')"} />
+        <Syntax
+          language="javascript"
+          code={'const firstParagraph =\n  document.querySelector("p");'}
+        />
         <p>
           <code>.querySelector</code> returns the first element that matches the specified selector.
         </p>
       </div>
       <div className="flexItem">
         <h3>Query Selector All</h3>
-        <Syntax language="javascript" code={"const paragraphs = document.querySelectorAll('p')"} />
+        <Syntax
+          language="javascript"
+          code={'const paragraphs =\n  document.querySelectorAll("p");'}
+        />
         <p>
           <code>.querySelectorAll</code> returns all elements that match the specified selector.
         </p>
       </div>
       <div className="flexItem">
         <h3>Get Element By ID</h3>
-        <Syntax language="javascript" code={"const element = document.getElementById('id')"} />
+        <Syntax language="javascript" code={'const element =\n  document.getElementById("id");'} />
         <p>
           <code>.getElementById</code> returns the element that has the specified ID.
         </p>
@@ -42,7 +48,8 @@ function DOMDocumentMethods() {
         <h3>Get Element By Class</h3>
         <Syntax
           language="javascript"
-          code={"const elements = document.getElementsByClassName('class')"}
+          code={'const elements =\n  document.getElementsByClassName(\n    "class",\n  );'}
+          lineNumbers={true}
         />
         <p>
           <code>.getElementsByClassName</code> returns all elements that have the specified class
@@ -53,7 +60,7 @@ function DOMDocumentMethods() {
         <h3>Get Element By Tag</h3>
         <Syntax
           language="javascript"
-          code={"const elements = document.getElementsByTagName('tag')"}
+          code={'const elements =\n  document.getElementsByTagName("tag");'}
         />
         <p>
           <code>.getElementsByTagName</code> returns all elements that have the specified tag name.
@@ -61,14 +68,14 @@ function DOMDocumentMethods() {
       </div>
       <div className="flexItem">
         <h3>Create Element</h3>
-        <Syntax language="javascript" code={"const element = document.createElement('tag')"} />
+        <Syntax language="javascript" code={'const element =\n  document.createElement("tag");'} />
         <p>
           <code>.createElement</code> creates a new element with the specified tag name.
         </p>
       </div>
       <div className="flexItem">
         <h3>Append Child</h3>
-        <Syntax language="javascript" code={"element.appendChild(child)"} />
+        <Syntax language="javascript" code={"element.appendChild(child);"} />
         <p>
           <code>.appendChild</code> appends a node to the end of the list of children of a specified
           parent node.
@@ -76,7 +83,7 @@ function DOMDocumentMethods() {
       </div>
       <div className="flexItem">
         <h3>Remove Child</h3>
-        <Syntax language="javascript" code={"parent.removeChild(child)"} />
+        <Syntax language="javascript" code={"parent.removeChild(child);"} />
         <p>
           <code>.removeChild</code> removes a child node from the DOM.
         </p>

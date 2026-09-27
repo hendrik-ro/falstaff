@@ -63,19 +63,25 @@ function ExpressJSSetup() {
       <h2>Starting a server</h2>
       <Syntax
         language="typescript"
-        code={`import express, { type Express } from "express";
+        code={`import express, {
+  type Express,
+} from "express";
 
 // Instantiate the app
 const app: Express = express();
 
-// Define a PORT for the server to listen on
-const PORT: number = process.env.PORT || 3000;
+// Define a PORT for the server to
+// listen on
+const PORT: number =
+  process.env.PORT || 3000;
 
-// Start the server and listen on the defined PORT
+// Start the server and listen on the
+// defined PORT
 app.listen(PORT, () => {
-  console.log(\`Server is running on port \${PORT}\`);
-});
-`}
+  console.log(
+    \`Server is running on port \${PORT}\`,
+  );
+});`}
         lineNumbers={true}
       />
     </div>

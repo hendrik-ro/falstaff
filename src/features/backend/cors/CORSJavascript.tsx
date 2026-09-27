@@ -9,10 +9,23 @@ export default function CORSTypescript() {
       </p>
       <Syntax
         language="typescript"
-        code={`function enableCors(req: Request, res: Response, next: NextFunction) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        code={`function enableCors(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "*",
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE",
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization",
+  );
   next();
 }`}
         lineNumbers={true}
@@ -26,8 +39,9 @@ export default function CORSTypescript() {
       </p>
       <Syntax
         language="typescript"
-        code={`import cors from 'cors';
-// Adds headers: Access-Control-Allow-Origin: *
+        code={`import cors from "cors";
+// Adds headers:
+// Access-Control-Allow-Origin: *
 app.use(cors());`}
         lineNumbers={true}
       />
@@ -36,24 +50,31 @@ app.use(cors());`}
       </p>
       <Syntax
         language="typescript"
-        code={`var express = require('express')
-var cors = require('cors')
-var app = express()
+        code={`var express = require("express");
+var cors = require("cors");
+var app = express();
 
 var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200
-}
+  origin: "http://example.com",
+  optionsSuccessStatus: 200,
+};
 
-// Adds headers: Access-Control-Allow-Origin: http://example.com
-app.get('/products/:id', cors(corsOptions), (req, res, next) => {
-  res.json({msg: 'Hello'})
-})
+// Adds headers:
+// Access-Control-Allow-Origin:
+// http://example.com
+app.get(
+  "/products/:id",
+  cors(corsOptions),
+  (req, res, next) => {
+    res.json({ msg: "Hello" });
+  },
+);
 
 app.listen(80, function () {
-  console.log('web server listening on port 80')
-})
-`}
+  console.log(
+    "web server listening on port 80",
+  );
+});`}
         lineNumbers={true}
       />
       <p>

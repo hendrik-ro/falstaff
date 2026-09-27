@@ -22,10 +22,11 @@ export default function ReactHooks() {
       <Syntax
         language="javascript"
         code={`useEffect(() => {
-  if (userName === '') {
-    setUserName('guest');
+  if (userName === "") {
+    setUserName("guest");
   }
 }, [userName]);`}
+        lineNumbers={true}
       />
       <div className="flexContainer">
         <ReactHooksUseState />
@@ -48,8 +49,11 @@ function ReactHooksUseState() {
         language="javascript"
         code={`const [count, setCount] = useState(0);
 const handleChange = () => {
-  setCount(prevCount => prevCount + 1);
+  setCount(
+    (prevCount) => prevCount + 1,
+  );
 };`}
+        lineNumbers={true}
       />
       <p>
         <strong>Note: </strong> it is safer to use{" "}
@@ -63,16 +67,26 @@ const handleChange = () => {
         language="javascript"
         code={`const [list, setList] = useState([]);
 const handleChange = (newItem) => {
-  setList(prevList => [...prevList, newItem]);
+  setList((prevList) => [
+    ...prevList,
+    newItem,
+  ]);
 };`}
+        lineNumbers={true}
       />
       <p>Or an object:</p>
       <Syntax
         language="javascript"
-        code={`const [object, setObject] = useState({});
+        code={`const [object, setObject] = useState(
+  {},
+);
 const handleChange = (newItem) => {
-  setObject(prevObject => ({ ...prevObject, ...newItem }));
+  setObject((prevObject) => ({
+    ...prevObject,
+    ...newItem,
+  }));
 };`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -100,7 +114,10 @@ function ReactHooksUseEffect() {
   return () => {
     clearInterval(intervalId);
   };
-}, []); // pass an empty array to run the effect only once`}
+  // pass an empty array to run the
+  // effect only once
+}, []);`}
+        lineNumbers={true}
       />
       <p>
         The dependency array passed to <code>useEffect</code> determines when the effect should run.
@@ -121,18 +138,25 @@ function ReactHooksUseEffectEvent() {
         <Syntax
           language="javascript"
           code={`const log = useEffectEvent(() => {
-  console.log('event fired');
+  console.log("event fired");
 });
 
 useEffect(() => {
   function handleClick() {
     log();
   }
-  window.addEventListener("click", handleClick);
+  window.addEventListener(
+    "click",
+    handleClick,
+  );
   return () => {
-    window.removeEventListener("click", handleClick);
+    window.removeEventListener(
+      "click",
+      handleClick,
+    );
   };
 });`}
+          lineNumbers={true}
         />
       </p>
     </div>

@@ -85,7 +85,12 @@ function ReactAbout() {
         React uses <em>JavaScript XML</em> (JSX) as a syntax extension to interject HTML-like code
         into the JavaScript:
       </p>
-      <Syntax language="jsx" code={`const homeLink = <Link to="/">Home</Link>`} />
+      <Syntax
+        language="jsx"
+        code={`const homeLink = (
+  <Link to="/">Home</Link>
+);`}
+      />
       <p>JSX also allows for bracket notation to embed JavaScript expressions within JSX:</p>
       <Syntax
         language="jsx"
@@ -93,9 +98,11 @@ function ReactAbout() {
   const { links } = props;
   return (
     <div>
-      {links.map((link) => <Link to={link}>{link}</Link>)}
+      {links.map((link) => (
+        <Link to={link}>{link}</Link>
+      ))}
     </div>
-  )
+  );
 }`}
         lineNumbers={true}
       />

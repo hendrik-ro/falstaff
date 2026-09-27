@@ -10,24 +10,24 @@ export default function InsertionSort() {
       </p>
       <Syntax
         language="typescript"
-        code={`function insertionSort(arr: number[]): number[] {
+        code={`function insertionSort(
+  arr: number[],
+): number[] {
   // Iterate the array (0..n)
-  for(let i = 0; i < arr.length; i++)
-  {
+  for (let i = 0; i < arr.length; i++) {
     const tmp = arr[i];
     let j = i - 1;
     // Iterate while J is out of place.
-    while(j >= 0 && arr[j] > tmp)
-    {
-        arr[j + 1] = arr[j];
-        j--;
+    while (j >= 0 && arr[j] > tmp) {
+      arr[j + 1] = arr[j];
+      j--;
     }
-    // Assign the correct location of i where j stops.
+    // Assign the correct location of i
+    // where j stops.
     arr[j + 1] = tmp;
   }
   return arr;
-}
-      `}
+}`}
         lineNumbers={true}
       />
     </div>

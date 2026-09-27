@@ -100,6 +100,7 @@ function ReduxSetup() {
     featureB/
       featureB.tsx
       featureBSlice.ts`}
+        lineNumbers={true}
       />
     </div>
   );

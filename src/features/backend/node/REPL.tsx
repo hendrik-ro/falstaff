@@ -27,6 +27,7 @@ console.log(Object.keys(global))
   'navigator',       'sessionStorage'
 ]
 undefined`}
+        lineNumbers={true}
       />
       <br style={{ marginTop: "2rem" }} />
       <p>
@@ -64,6 +65,7 @@ Type ".help" for more information.
   'node:sqlite',         'node:test',      'node:test/reporters'
 ]
 >`}
+        lineNumbers={true}
       />
     </div>
   );

@@ -30,18 +30,32 @@ function ReduxMiddlewareThunks() {
       </p>
       <Syntax
         language="typescript"
-        code={`import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
+        code={`import {
+  Action,
+  ThunkAction,
+  configureStore,
+} from "@reduxjs/toolkit";
 
 // omit actual store setup
 
 // Infer the type of 'store'
-export type AppStore = typeof store
-// Infer the 'AppDispatch' type from the store itself
-export type AppDispatch = typeof store.dispatch
+export type AppStore = typeof store;
+// Infer the 'AppDispatch' type from the
+// store itself
+export type AppDispatch =
+  typeof store.dispatch;
 // Same for the 'RootState' type
-export type RootState = ReturnType<typeof store.getState>
-// Export a reusable type for handwritten thunks
-export type AppThunk = ThunkAction<void, RootState, unknown, Action>`}
+export type RootState = ReturnType<
+  typeof store.getState
+>;
+// Export a reusable type for
+// handwritten thunks
+export type AppThunk = ThunkAction<
+  void,
+  RootState,
+  unknown,
+  Action
+>;`}
         lineNumbers={true}
       />
       <p>
@@ -49,20 +63,25 @@ export type AppThunk = ThunkAction<void, RootState, unknown, Action>`}
       </p>
       <Syntax
         language="typescript"
-        code={`import { createAsyncThunk } from '@reduxjs/toolkit'
-import type { RootState, AppDispatch } from './store'
-import { fetchUser } from './api'
+        code={`import { createAsyncThunk } from "@reduxjs/toolkit";
+import type {
+  RootState,
+  AppDispatch,
+} from "./store";
+import { fetchUser } from "./api";
 
-export const fetchUserById = createAsyncThunk.withTypes<{
-  state: RootState
-  dispatch: AppDispatch
-}>(
-  'users/fetchUserById',
-  async (arg, thunkAPI) => {
-    const response = await fetchUser(arg);
-    return response.json();
-  }
-)`}
+export const fetchUserById =
+  createAsyncThunk.withTypes<{
+    state: RootState;
+    dispatch: AppDispatch;
+  }>(
+    "users/fetchUserById",
+    async (arg, thunkAPI) => {
+      const response =
+        await fetchUser(arg);
+      return response.json();
+    },
+  );`}
         lineNumbers={true}
       />
     </div>
@@ -78,54 +97,80 @@ function ReduxMiddlewareExtraReducers() {
       </p>
       <Syntax
         language="typescript"
-        code={`export const loadRecipes = createAsyncThunk.withTypes<{
-        state: RootState
-        dispatch: AppDispatch
-      }>(
-        "allRecipes/getAllRecipes",
-        async () => {
-          const response = await fetch("api/recipes?limit=10");
-
-          if (!response.ok) {
-            throw new Error(\`HTTP error! status: \${response.status}\`);
-          }
-
-          const json = await response.json();
-          return json as Recipe[]; // Assuming Recipe type exists
-        }
+        code={`export const loadRecipes =
+  createAsyncThunk.withTypes<{
+    state: RootState;
+    dispatch: AppDispatch;
+  }>(
+    "allRecipes/getAllRecipes",
+    async () => {
+      const response = await fetch(
+        "api/recipes?limit=10",
       );
 
-      const sliceOptions = {
-        name: "allRecipes",
-        initialState: {
-          recipes: [] as Recipe[],
-          isLoading: false,
-          hasError: false,
-        },
-        reducers: {},
-        extraReducers: builder => {
-          builder
-            .addCase(loadRecipes.pending, (state) => {
-              state.isLoading = true;
-              state.hasError = false;
-            })
-            .addCase(loadRecipes.fulfilled, (state, action) => {
-              state.isLoading = false;
-              state.hasError = false;
-              state.recipes = action.payload;
-            })
-            .addCase(loadRecipes.rejected, (state) => {
-              state.isLoading = false;
-              state.hasError = true;
-            })
-        }
-      };
+      if (!response.ok) {
+        throw new Error(
+          \`HTTP error! status: \${response.status}\`,
+        );
+      }
 
-      export const allRecipesSlice = createSlice(sliceOptions);
-      export const { } = allRecipesSlice.actions; // Empty since no synchronous reducers
-      export const selectAllRecipes = (state: RootState) => state.allRecipes.recipes;
-      export const selectAllRecipesStatus = (state: RootState) => state.allRecipes.isLoading;
-      export const selectAllRecipesError = (state: RootState) => state.allRecipes.hasError;`}
+      const json =
+        await response.json();
+      // Assuming Recipe type exists
+      return json as Recipe[];
+    },
+  );
+
+const sliceOptions = {
+  name: "allRecipes",
+  initialState: {
+    recipes: [] as Recipe[],
+    isLoading: false,
+    hasError: false,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(
+        loadRecipes.pending,
+        (state) => {
+          state.isLoading = true;
+          state.hasError = false;
+        },
+      )
+      .addCase(
+        loadRecipes.fulfilled,
+        (state, action) => {
+          state.isLoading = false;
+          state.hasError = false;
+          state.recipes =
+            action.payload;
+        },
+      )
+      .addCase(
+        loadRecipes.rejected,
+        (state) => {
+          state.isLoading = false;
+          state.hasError = true;
+        },
+      );
+  },
+};
+
+export const allRecipesSlice =
+  createSlice(sliceOptions);
+export const {} =
+  // Empty since no synchronous reducers
+  allRecipesSlice.actions;
+export const selectAllRecipes = (
+  state: RootState,
+) => state.allRecipes.recipes;
+export const selectAllRecipesStatus = (
+  state: RootState,
+) => state.allRecipes.isLoading;
+export const selectAllRecipesError = (
+  state: RootState,
+) => state.allRecipes.hasError;`}
         lineNumbers={true}
       />
     </div>

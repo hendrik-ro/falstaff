@@ -6,7 +6,10 @@ export default function ReduxSlice() {
       <h2>Redux Slice</h2>
       <Syntax
         language="typescript"
-        code={`import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+        code={`import {
+  createSlice,
+  PayloadAction,
+} from "@reduxjs/toolkit";
 
 interface ExampleState {
   statePropertyOne: string[];
@@ -19,17 +22,33 @@ const initialState: ExampleState = {
 };
 
 const exampleSlice = createSlice({
-  name: 'example',
+  name: "example",
   initialState,
   reducers: {
-    addExample: (state, action: PayloadAction<string>) => {
-      state.statePropertyOne.push(action.payload);
+    addExample: (
+      state,
+      action: PayloadAction<string>,
+    ) => {
+      state.statePropertyOne.push(
+        action.payload,
+      );
     },
-    removeExample: (state, action: PayloadAction<string>) => {
-      state.statePropertyOne = state.statePropertyOne.filter((example) => example !== action.payload);
+    removeExample: (
+      state,
+      action: PayloadAction<string>,
+    ) => {
+      state.statePropertyOne =
+        state.statePropertyOne.filter(
+          (example) =>
+            example !== action.payload,
+        );
     },
-    updateStatePropertyTwo: (state, action: PayloadAction<string>) => {
-      state.statePropertyTwo = action.payload;
+    updateStatePropertyTwo: (
+      state,
+      action: PayloadAction<string>,
+    ) => {
+      state.statePropertyTwo =
+        action.payload;
     },
     clearAll: (state) => {
       state.statePropertyOne = [];
@@ -38,10 +57,20 @@ const exampleSlice = createSlice({
   },
 });
 
-export const selectStatePropertyOne = (state: { example: ExampleState }) => state.example.statePropertyOne;
-export const selectStatePropertyTwo = (state: { example: ExampleState }) => state.example.statePropertyTwo;
-export const { addExample, removeExample, updateStatePropertyTwo, clearAll } = exampleSlice.actions;
-export const exampleReducer = exampleSlice.reducer;
+export const selectStatePropertyOne =
+  (state: { example: ExampleState }) =>
+    state.example.statePropertyOne;
+export const selectStatePropertyTwo =
+  (state: { example: ExampleState }) =>
+    state.example.statePropertyTwo;
+export const {
+  addExample,
+  removeExample,
+  updateStatePropertyTwo,
+  clearAll,
+} = exampleSlice.actions;
+export const exampleReducer =
+  exampleSlice.reducer;
 export default exampleReducer;`}
         lineNumbers={true}
       />

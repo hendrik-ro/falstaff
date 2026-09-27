@@ -63,6 +63,7 @@ console.assert(cars.length === 4);
 └─────────┴──────────────┘
 Assertion failed
 undefined`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -87,22 +88,24 @@ console.log(args);
 
 // prints:
 [
-  '/usr/bin/node',
-  '/path/to/file/app.js',
-  'arg2', // launch arguments
-  'arg3',
-  'arg4',
-]`}
+  "/usr/bin/node",
+  "/path/to/file/app.js",
+  "arg2", // launch arguments
+  "arg3",
+  "arg4",
+];`}
+        lineNumbers={true}
       />
       <Syntax
         language="javascript"
         code={`// process.env
 let env = process.env;
-env.NODE_ENV = 'development';
+env.NODE_ENV = "development";
 console.log(env.NODE_ENV);
 
 // prints:
-development`}
+development;`}
+        lineNumbers={true}
       />
       <Syntax
         language="javascript"
@@ -111,12 +114,13 @@ let mem = process.memoryUsage();
 console.log(mem);
 
 // prints:
-{
-  rss: bytes,
-  heapTotal: bytes,
-  heapUsed: bytes,
-  external: bytes,
-}`}
+// {
+//   rss: bytes,
+//   heapTotal: bytes,
+//   heapUsed: bytes,
+//   external: bytes,
+// }`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -137,7 +141,9 @@ function NodeJSModulesError() {
         code={`// Error
 let errFirstCallback = (err, data) => {
   if (err) {
-    console.log(\`Something went wrong: \${err}\`);
+    console.log(
+      \`Something went wrong: \${err}\`,
+    );
   } else {
     console.log(\`Data: \${data}\`);
   }
@@ -145,16 +151,19 @@ let errFirstCallback = (err, data) => {
 
 let mockAPI = (input, callback) => {
   setTimeout(() => {
-    if (input === 'input') {
-      throw new Error('Something went wrong');
+    if (input === "input") {
+      throw new Error(
+        "Something went wrong",
+      );
     } else {
-      let response = \`Received: \${input}\`
+      let response = \`Received: \${input}\`;
       callback(response);
     }
   }, 0);
 };
 
-mockAPI('input', errFirstCallback);`}
+mockAPI("input", errFirstCallback);`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -171,21 +180,29 @@ function NodeJSModulesTimers() {
       <Syntax
         language="javascript"
         code={`setTimeout(() => {
-  console.log('Gets called once after 1 second.');
+  console.log(
+    "Gets called once after 1 second.",
+  );
 }, 1000);
 
 setImmediate(() => {
-  console.log('Gets called immediately after the current event loop.');
+  console.log(
+    "Gets called immediately after the current event loop.",
+  );
 });
 
 setInterval(() => {
-  console.log('Gets called every 5 seconds.');
+  console.log(
+    "Gets called every 5 seconds.",
+  );
 }, 5000);
 
 // prints:
-// Gets called immediately after the current event loop.
+// Gets called immediately after the
+// current event loop.
 // Gets called once after 1 second.
 // Gets called every 5 seconds.`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -202,30 +219,53 @@ function NodeJSModulesBuffer() {
       <Syntax
         language="javascript"
         code={`let buffer = require("buffer");
-// allocate buffer of size 15 filled with 'b', encoding optional
-const bufferAlloc = Buffer.alloc(15, 'b', 'utf-8')
+// allocate buffer of size 15 filled
+// with 'b', encoding optional
+const bufferAlloc = Buffer.alloc(
+  15,
+  "b",
+  "utf-8",
+);
 
-// create buffer1 with 'Node' and buffer2 with '.js', encoding optional
-const buffer1 = Buffer.from('Node', 'utf-8');
-const buffer2 = Buffer.from('.js', 'utf-8');
+// create buffer1 with 'Node' and
+// buffer2 with '.js', encoding optional
+const buffer1 = Buffer.from(
+  "Node",
+  "utf-8",
+);
+const buffer2 = Buffer.from(
+  ".js",
+  "utf-8",
+);
 
-
-// combine buffer1 and buffer2, length optional
+// combine buffer1 and buffer2, length
+// optional
 const bufferArray = [buffer1, buffer2];
-const bufferConcat = Buffer.concat(bufferArray, 7);
-
+const bufferConcat = Buffer.concat(
+  bufferArray,
+  7,
+);
 
 // translate buffer to string
-const bufferString = bufferConcat.toString();
+const bufferString =
+  bufferConcat.toString();
 
 console.log(bufferAlloc);
-// <Buffer 62 62 62 62 62 62 62 62 62 62 62 62 62 62 62>
-console.log('Buffer 1:', buffer1, 'Buffer 2:', buffer2)
-// Buffer 1: <Buffer 4e 6f 64 65> Buffer 2: <Buffer 2e 6a 73>
+// <Buffer 62 62 62 62 62 62 62 62 62 62
+// 62 62 62 62 62>
+console.log(
+  "Buffer 1:",
+  buffer1,
+  "Buffer 2:",
+  buffer2,
+);
+// Buffer 1: <Buffer 4e 6f 64 65> Buffer
+// 2: <Buffer 2e 6a 73>
 console.log(bufferConcat);
 // <Buffer 4e 6f 64 65 2e 6a 73>
 console.log(bufferString);
 // Node.js`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -241,10 +281,13 @@ function NodeJSModulesFS() {
       <p>The File System module allows for reading and writing local files.</p>
       <Syntax
         language="javascript"
-        code={`const fs = require('fs');
+        code={`const fs = require("fs");
 // synchronous
 try {
-  data = fs.readFileSync("someFile.txt", "utf-8");
+  data = fs.readFileSync(
+    "someFile.txt",
+    "utf-8",
+  );
   console.log(data);
 } catch (err) {
   console.error(err);
@@ -253,13 +296,17 @@ try {
 // asynchronous
 const run = async () => {
   try {
-    const data = await fs.readFile("someFile.txt", "utf-8");
+    const data = await fs.readFile(
+      "someFile.txt",
+      "utf-8",
+    );
     console.log(data);
   } catch (err) {
     console.error(err);
   }
 };
 run();`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -275,26 +322,38 @@ function NodeJSModulesReadline() {
       <p>The Readline module provides an interface for reading data from a stream line by line.</p>
       <Syntax
         language="javascript"
-        code={`const readline = require('readline');
-const fs = require('fs');
+        code={`const readline = require("readline");
+const fs = require("fs");
 
-// create an interface to read the file line by line
-const myInterface = readline.createInterface({
-  input: fs.createReadStream('text.txt')
+// create an interface to read the file
+// line by line
+const myInterface =
+  readline.createInterface({
+    input:
+      fs.createReadStream("text.txt"),
+  });
+
+// listen for the 'line' event and log
+// each line
+myInterface.on("line", (fileLine) => {
+  console.log(
+    \`The line read: \${fileLine}\`,
+  );
 });
 
-// listen for the 'line' event and log each line
-myInterface.on('line', (fileLine) => {
-  console.log(\`The line read: \${fileLine}\`);
-});
-
-// create a write stream to save the transformed data
-const fileStream = fs.createWriteStream("output.txt");
+// create a write stream to save the
+// transformed data
+const fileStream = fs.createWriteStream(
+  "output.txt",
+);
 const transformData = (line) => {
-  fileStream.write(\`They were out of: \${line}\\n\`);
+  fileStream.write(
+    \`They were out of: \${line}\\n\`,
+  );
 };
 
 myInterface.on("line", transformData);`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -310,22 +369,23 @@ function NodeJSModulesOS() {
       <p>The OS module provides information about the operating system.</p>
       <Syntax
         language="javascript"
-        code={`const os = require('os');
+        code={`const os = require("os");
 const local = {
-  'home': os.homedir(),
-  'os': os.type(),
-  'arch': os.arch(),
-  'uptime': os.uptime(),
-}
-console.log(local)
+  home: os.homedir(),
+  os: os.type(),
+  arch: os.arch(),
+  uptime: os.uptime(),
+};
+console.log(local);
 
 // prints:
-{
-  home: '/home/user',
-  os: 'Linux',
-  arch: 'x64',
-  uptime: 7199.97,
-}`}
+// {
+//   home: '/home/user',
+//   os: 'Linux',
+//   arch: 'x64',
+//   uptime: 7199.97,
+// }`}
+        lineNumbers={true}
       />
       <p>
         Furthermore, OS supports <code>networkInterface</code> for network info such as IP and MAC
@@ -348,18 +408,22 @@ function NodeJSModulesUtil() {
       </p>
       <Syntax
         language="javascript"
-        code={`const util = require('util');
+        code={`const util = require("util");
 
-const getPromise = util.promisify(getData);
+const getPromise =
+  util.promisify(getData);
 
 async function fetchData(url) {
   try {
-    const respone = await getPromise(url); // mocks an http request
-    console.log('success');
-  } catch(e) {
-    console.error('failed');
+    const respone =
+      // mocks an http request
+      await getPromise(url);
+    console.log("success");
+  } catch (e) {
+    console.error("failed");
   }
 }`}
+        lineNumbers={true}
       />
     </div>
   );
@@ -381,14 +445,21 @@ let listenerCallback = (data) => {
   console.log("Celebrate " + data);
 };
 
-let myEmitter = new events.EventEmitter();
+let myEmitter =
+  new events.EventEmitter();
 
-myEmitter.on('celebration', listenerCallback);
+myEmitter.on(
+  "celebration",
+  listenerCallback,
+);
 
-myEmitter.emit('celebration', 'HEUREKA!');
+myEmitter.emit(
+  "celebration",
+  "HEUREKA!",
+);
 
-// prints:
-// Celebrate HEUREKA!`}
+// prints: Celebrate HEUREKA!`}
+        lineNumbers={true}
       />
     </div>
   );
