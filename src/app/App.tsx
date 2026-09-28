@@ -20,6 +20,7 @@ import Sorting from "../features/data/sort/Sorting";
 import Testing from "../features/dev/testing/Testing";
 import CORS from "../features/backend/cors/CORS";
 import Postgres from "../features/backend/postgres/Postgres";
+import Authentication from "../features/security/Authentication";
 
 const Layout = () => {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="backend/expressjs" element={<ExpressJS />} />
         <Route path="backend/cors" element={<CORS />} />
         <Route path="backend/postgres" element={<Postgres />} />
+        // Web Security
+        <Route path="security/authentication" element={<Authentication />} />
         // Development
         <Route path="dev/testing" element={<Testing />} />
         // Data Structures and Algorithms
