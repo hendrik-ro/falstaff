@@ -22,11 +22,13 @@ export default function Authentication() {
     );
     dispatch(setActiveChapter("Authentication"));
 
+    // Clear chapter on unmount
     return () => {
       dispatch(clearChapterLinks());
       dispatch(setActiveChapter(""));
     };
-  });
+  }, [dispatch]);
+
   return (
     <div>
       <h1>Authentication</h1>

@@ -53,36 +53,56 @@ function CORSStandard() {
         A <em>cross-origin request</em> is a request from another domain, protocol, or port.
       </p>
       <br style={{ marginTop: "1rem" }} />
-      <p>HTTP headers included by CORS standard:</p>
-      <ul>
-        <li>
-          <code>Access-Control-Allow-Origin</code>
-        </li>
-        <li>
-          <code>Access-Control-Allow-Credentials</code>
-        </li>
-        <li>
-          <code>Access-Control-Allow-Headers</code>
-        </li>
-        <li>
-          <code>Access-Control-Allow-Methods</code>
-        </li>
-        <li>
-          <code>Access-Control-Expose-Headers</code>
-        </li>
-        <li>
-          <code>Access-Control-Max-Age</code>
-        </li>
-        <li>
-          <code>Access-Control-Request-Headers</code>
-        </li>
-        <li>
-          <code>Access-Control-Request-Method</code>
-        </li>
-        <li>
-          <code>Origin</code>
-        </li>
-      </ul>
+      <table>
+        <caption>HTTP headers included by CORS standard:</caption>
+        <tbody>
+          <tr>
+            <td>
+              <code>Access-Control-Allow-Origin</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Allow-Credentials</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Allow-Headers</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Allow-Methods</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Expose-Headers</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Max-Age</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Request-Headers</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Access-Control-Request-Method</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>Origin</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <p>
         Each HTTP request is preceded by a pre-flight request to check if the request is safe to
         send. The server then responds wether or not the server allows the actual request.

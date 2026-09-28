@@ -135,9 +135,10 @@ function ReactHooksUseEffectEvent() {
       <h3>useEffect Event</h3>
       <p>
         <code>useEffectEvent</code> lets you run an effect only when a specific event occurs.
-        <Syntax
-          language="javascript"
-          code={`const log = useEffectEvent(() => {
+      </p>
+      <Syntax
+        language="javascript"
+        code={`const log = useEffectEvent(() => {
   console.log("event fired");
 });
 
@@ -156,9 +157,8 @@ useEffect(() => {
     );
   };
 });`}
-          lineNumbers={true}
-        />
-      </p>
+        lineNumbers={true}
+      />
     </div>
   );
 }

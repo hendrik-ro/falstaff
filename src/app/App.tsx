@@ -21,6 +21,7 @@ import Testing from "../features/dev/testing/Testing";
 import CORS from "../features/backend/cors/CORS";
 import Postgres from "../features/backend/postgres/Postgres";
 import Authentication from "../features/security/Authentication";
+import Cookies from "../features/frontend/cookies/Cookies";
 
 const Layout = () => {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="frontend/react" element={<React />} />
         <Route path="frontend/dom" element={<DocumentObjectModel />} />
         <Route path="frontend/redux" element={<Redux />} />
+        <Route path="frontend/cookies" element={<Cookies />} />
         // Back End
         <Route path="backend/nodejs" element={<NodeJS />} />
         <Route path="backend/expressjs" element={<ExpressJS />} />

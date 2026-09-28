@@ -95,6 +95,38 @@ section {
 ul {
   text-align: left;
 }
+table {
+  border-collapse: collapse;
+  border: 2px solid rbg(140 140 140);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+thead,
+tfoot {
+  background-color: var(--bg-h);
+}
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+td:last-of-type {
+  text-align: center;
+}
+tbody > tr:nth-of-type(even) {
+  background-color: var(--bg-h);
+}
+tfoot th {
+  text-align: right;
+}
+tfoot td {
+  font-weight: bold;
+}
 
 .flexContainer {
   display: flex;

@@ -14,6 +14,11 @@ export default function HomeContentFrontEnd() {
       path: "/frontend/redux",
       tooltip: "Redux & Redux Toolkit",
     },
+    {
+      title: "Cookies",
+      path: "/frontend/cookies",
+      tooltip: "Cookies and storage",
+    },
   ];
   const externalContent = [
     {

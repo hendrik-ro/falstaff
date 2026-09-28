@@ -72,9 +72,9 @@ export default function Sorting() {
 function SortingComplexity() {
   return (
     <div>
-      <p>Different sorting algorithms have different time complexities:</p>
-      <table style={{ margin: "1rem" }}>
-        <thead style={{ textDecoration: "underline" }}>
+      <table>
+        <caption>Different sorting algorithms have different time complexities</caption>
+        <thead>
           <tr>
             <th>Algorithm</th>
             <th>Worst</th>
@@ -85,7 +85,7 @@ function SortingComplexity() {
         </thead>
         <tbody>
           <tr>
-            <td style={{ paddingRight: "1rem" }}>
+            <td>
               <strong>Bubble Sort</strong>
             </td>
             <td>
@@ -98,7 +98,7 @@ function SortingComplexity() {
             <td>O(1)</td>
           </tr>
           <tr>
-            <td style={{ paddingRight: "1rem" }}>
+            <td>
               <strong>Insertion Sort</strong>
             </td>
             <td>
@@ -111,7 +111,7 @@ function SortingComplexity() {
             <td>O(1)</td>
           </tr>
           <tr>
-            <td style={{ paddingRight: "1rem" }}>
+            <td>
               <strong>Selection Sort</strong>
             </td>
             <td>
@@ -126,7 +126,7 @@ function SortingComplexity() {
             <td>O(1)</td>
           </tr>
           <tr>
-            <td style={{ paddingRight: "1rem" }}>
+            <td>
               <strong>Quick Sort</strong>
             </td>
             <td>
@@ -137,7 +137,7 @@ function SortingComplexity() {
             <td>O(log n)</td>
           </tr>
           <tr>
-            <td style={{ paddingRight: "1rem" }}>
+            <td>
               <strong>Merge Sort</strong>
             </td>
             <td>O(n log n)</td>
