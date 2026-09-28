@@ -6,6 +6,7 @@ import HomeContentFrontEnd from "./HomeFrontEnd";
 import HomeContentBackEnd from "./HomeBackEnd";
 import HomeContentDevelopment from "./HomeDevelopment";
 import HomeContentDataAlgorithm from "./HomeDataAlgorithm";
+import HomeContentSecurity from "./HomeSecurity";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ function HomeContent() {
       <div className={style.groupedColumns}>
         <HomeContentFrontEnd />
         <HomeContentBackEnd />
+        <HomeContentSecurity />
         <HomeContentDevelopment />
         <HomeContentDataAlgorithm />
       </div>
