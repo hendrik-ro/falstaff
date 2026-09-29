@@ -6,6 +6,8 @@ import {
   setChapterLinks,
 } from "../navBar/navBarSlice";
 import { useEffect } from "react";
+import AuthenticationSessions from "./Sessions";
+import AuthenticationExpressJS from "./ExpressJS";
 
 export default function Authentication() {
   const dispatch = useDispatch();
@@ -17,6 +19,14 @@ export default function Authentication() {
         {
           name: "Authentication",
           active: true,
+        },
+        {
+          name: "Sessions",
+          active: false,
+        },
+        {
+          name: "Express-session",
+          active: false,
         },
       ]),
     );
@@ -36,6 +46,8 @@ export default function Authentication() {
         Verify a users <em>identity</em>.
       </p>
       {activeChapter === "Authentication" && <AuthenticationIntroduction />}
+      {activeChapter === "Sessions" && <AuthenticationSessions />}
+      {activeChapter === "Express-session" && <AuthenticationExpressJS />}
     </div>
   );
 }
@@ -43,47 +55,41 @@ export default function Authentication() {
 function AuthenticationIntroduction() {
   return (
     <div>
-      <h2>Cookie-bases sessions</h2>
-      <p>
-        Whilst a server holds a session state, the client keeps a session ID in a cookie. On each
-        request, the cookie is automatically attached as an HTTP header.
-      </p>
+      <h2>Types of authentication</h2>
+      <p>To identify a user, a combination of three authentication stypes is used.</p>
       <br style={{ marginTop: "1rem" }} />
       <table>
-        <caption>Cookie Attributes</caption>
+        <caption>Different authentication types</caption>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Desciption</th>
+            <th>Example</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <td scope="row">
-              <code>HttpOnly</code>
-            </td>
-            <td>Blocks JavaScript access and prevents XSS cookie theft</td>
+            <th scope="row">Knowledge</th>
+            <td>Something the user knows</td>
+            <td>Password, PIN</td>
           </tr>
           <tr>
-            <td scope="row">
-              <code>Secure</code>
-            </td>
-            <td>Only sent over HTTPS</td>
+            <th scope="row">Ownership</th>
+            <td>Something the user has</td>
+            <td>ID card, security token</td>
           </tr>
           <tr>
-            <td scope="row">
-              <code>SameSite= Lax | Strict</code>
-            </td>
-            <td>Blocks CSRF by limiting cross-site sending</td>
-          </tr>
-          <tr>
-            <td scope="row">
-              <code>Max-Age / Expires</code>
-            </td>
-            <td>Controlls session lifetime</td>
-          </tr>
-          <tr>
-            <td scope="row">
-              <code>Path=/; Domain</code>
-            </td>
-            <td>Scope where the cookie is sent</td>
+            <th scope="row">Inherence</th>
+            <td>Something the user is or does</td>
+            <td>Fingerprint, face scan, retina scan</td>
           </tr>
         </tbody>
       </table>
+      <br style={{ marginTop: "1rem" }} />
+      <p>
+        Furthermore, a <em>single-factor authentication</em> provides lower certainty than{" "}
+        <em>multi-factor authentication</em>.
+      </p>
     </div>
   );
 }
