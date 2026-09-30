@@ -7,7 +7,7 @@ import {
 } from "../navBar/navBarSlice";
 import { useEffect } from "react";
 import AuthenticationSessions from "./Sessions";
-import AuthenticationExpressJS from "./ExpressJS";
+import AuthenticationExpressJS from "./ExpressSession";
 
 export default function Authentication() {
   const dispatch = useDispatch();
