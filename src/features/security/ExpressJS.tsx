@@ -5,7 +5,7 @@ export default function AuthenticationExpressJS() {
   const [content, setContent] = useState("Boilerplate");
 
   const handleClick = () => {
-    setContent(content === "Boilerplate" ? "Methods" : "Boilerplate");
+    setContent(content === "Boilerplate" ? "Configuration" : "Boilerplate");
   };
 
   return (
@@ -27,11 +27,13 @@ export default function AuthenticationExpressJS() {
       </p>
       <br style={{ marginTop: "1rem" }} />
       <button onClick={handleClick}>
-        Show {content === "Boilerplate" ? "Methods" : "Boilerplate"}
+        Show {content === "Boilerplate" ? "Configuration" : "Boilerplate"}
       </button>
       <br style={{ marginTop: "1rem" }} />
       {content === "Boilerplate" && <Boilerplate />}
-      {content === "Methods" && <Methods />}
+      {content === "Configuration" && <Configuration />}
+
+      <br style={{ marginTop: "2rem" }} />
     </div>
   );
 }
@@ -69,7 +71,7 @@ app.use(
       sameSite: 'lax',
       maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
     },
-    // store: new RedisStore(...) — see note below
+    // store: new RedisStore(...) — see note above
   })
 );
 
@@ -101,14 +103,96 @@ app.listen(3000, () => console.log('http://localhost:3000'));
   );
 }
 
-function Methods() {
+function Configuration() {
   return (
     <div className="flexContainer">
       <div className="flexItem">
-        <h3>Config</h3>
+        <h3>Basic config</h3>
+        <Syntax
+          language="typescript"
+          code={`app.use(
+   session({
+    // key for signing/encrypting cookies
+    secret: process.env.SESSION_SECRET ??
+      'dev-only-secret',
+    // force session data to be saved when unchanged
+    // default: true
+    resave: false,
+    // store new session if no changes to session object
+    // to keep track of recurring visits
+    // default: false
+    saveUninitialized: false,
+  })
+);
+`}
+          lineNumbers={true}
+        />
+        <p>
+          Setting <code>resave</code> and <code>saveUninitialized</code> to false saves memory by
+          not storing unchanged sessions.
+        </p>
       </div>
       <div className="flexItem">
         <h3>Storing session data</h3>
+        <Syntax
+          language="typescript"
+          code={`// replace with SQL DB or Redis cache
+const store = new session.MemoryStore();
+
+app.use(
+  session({
+    secret: "D53gxl41G",
+    resave: false,
+    saveUninitialized: false,
+    // attach store
+    store,
+  })
+);
+`}
+          lineNumbers={true}
+        />
+        <p>
+          <strong>Note:</strong> <code>.MemoryStore()</code> leaks memory in production. Use only
+          during development and replace with a database or cache.
+        </p>
+      </div>
+      <div className="flexItem">
+        <h3>Cookies</h3>
+        <Syntax
+          language="typescript"
+          code={`app.use(
+  session({
+    secret: "f4z4gs$Gcg",
+    cookie: {
+      // set expiration time
+      maxAge: 1000 * 60 *60 * 24,
+      // only HTTPS
+      secure: process.env.NODE_ENV ===
+        'production',
+      // allow cross-site cookie
+      // other options: 'lax', 'strict'
+      sameSite: "none",
+      // restrict to HTTP
+      httpOnly: true
+    },
+    saveUninitialized: false,
+    resave: false,
+  })
+);
+`}
+          lineNumbers={true}
+        />
+        <p>
+          <code>sameSite</code> supports <code>'lax'</code> where cross-site requests are allowed
+          if, the request is a top-level navigation AND the request method is safe (e.g. GET - not
+          POST).
+        </p>
+        <p>
+          <code>'strict'</code> blocks all cross-site requests.
+        </p>
+      </div>
+      <div className="flexItem">
+        <h3>Logging in</h3>
       </div>
     </div>
   );
