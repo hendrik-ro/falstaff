@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Syntax from "../../components/SyntaxHighlighter";
 
 export default function AuthenticationExpressJS() {
+  const [content, setContent] = useState("Boilerplate");
+
+  const handleClick = () => {
+    setContent(content === "Boilerplate" ? "Methods" : "Boilerplate");
+  };
+
   return (
     <div>
       <h2>Sessions in Express.js</h2>
@@ -19,6 +26,19 @@ export default function AuthenticationExpressJS() {
         production/multi-instance setups. Use a real store, e.g. <code>connect-redis</code>.
       </p>
       <br style={{ marginTop: "1rem" }} />
+      <button onClick={handleClick}>
+        Show {content === "Boilerplate" ? "Methods" : "Boilerplate"}
+      </button>
+      <br style={{ marginTop: "1rem" }} />
+      {content === "Boilerplate" && <Boilerplate />}
+      {content === "Methods" && <Methods />}
+    </div>
+  );
+}
+
+function Boilerplate() {
+  return (
+    <div>
       <p>Create a session on the server side:</p>
       <Syntax
         language="typescript"
@@ -77,6 +97,19 @@ app.listen(3000, () => console.log('http://localhost:3000'));
 `}
         lineNumbers={true}
       />
+    </div>
+  );
+}
+
+function Methods() {
+  return (
+    <div className="flexContainer">
+      <div className="flexItem">
+        <h3>Config</h3>
+      </div>
+      <div className="flexItem">
+        <h3>Storing session data</h3>
+      </div>
     </div>
   );
 }
