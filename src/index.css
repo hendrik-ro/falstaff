@@ -146,8 +146,7 @@ tfoot td {
 
 .flexItem {
   flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
+  display: block;
   gap: 0.5rem;
   min-width: 20%;
 }
