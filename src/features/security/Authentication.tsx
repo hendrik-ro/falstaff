@@ -8,6 +8,7 @@ import {
 import { useEffect } from "react";
 import AuthenticationSessions from "./Sessions";
 import AuthenticationExpressJS from "./ExpressSession";
+import JWT from "./JWT";
 
 export default function Authentication() {
   const dispatch = useDispatch();
@@ -26,6 +27,10 @@ export default function Authentication() {
         },
         {
           name: "Express-session",
+          active: false,
+        },
+        {
+          name: "JWT",
           active: false,
         },
       ]),
@@ -48,6 +53,7 @@ export default function Authentication() {
       {activeChapter === "Authentication" && <AuthenticationIntroduction />}
       {activeChapter === "Sessions" && <AuthenticationSessions />}
       {activeChapter === "Express-session" && <AuthenticationExpressJS />}
+      {activeChapter === "JWT" && <JWT />}
     </div>
   );
 }
