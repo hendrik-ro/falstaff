@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Syntax from "../../components/SyntaxHighlighter";
+import Syntax from "../../../components/SyntaxHighlighter";
 
 export default function JWT() {
   const [content, setContent] = useState("Setup");

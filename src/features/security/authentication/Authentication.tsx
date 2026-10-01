@@ -4,7 +4,7 @@ import {
   selectActiveChapter,
   setActiveChapter,
   setChapterLinks,
-} from "../navBar/navBarSlice";
+} from "../../navBar/navBarSlice";
 import { useEffect } from "react";
 import AuthenticationSessions from "./Sessions";
 import AuthenticationExpressJS from "./ExpressSession";
@@ -57,7 +57,7 @@ export default function Authentication() {
       </p>
       {activeChapter === "Authentication" && <AuthenticationIntroduction />}
       {activeChapter === "Sessions" && <AuthenticationSessions />}
-      {activeChapter === "Express-session." && <AuthenticationExpressJS />}
+      {activeChapter === "Express-session" && <AuthenticationExpressJS />}
       {activeChapter === "Passport.js" && <AuthenticationPassportJS />}
       {activeChapter === "JWT" && <JWT />}
     </div>

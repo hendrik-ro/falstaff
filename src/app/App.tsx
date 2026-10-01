@@ -20,8 +20,9 @@ import Sorting from "../features/data/sort/Sorting";
 import Testing from "../features/dev/testing/Testing";
 import CORS from "../features/backend/cors/CORS";
 import Postgres from "../features/backend/postgres/Postgres";
-import Authentication from "../features/security/Authentication";
+import Authentication from "../features/security/authentication/Authentication";
 import Cookies from "../features/frontend/cookies/Cookies";
+import Bcrypt from "../features/security/bcrypt/Bcrypt";
 
 const Layout = () => {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="backend/postgres" element={<Postgres />} />
         // Web Security
         <Route path="security/authentication" element={<Authentication />} />
+        <Route path="security/bcrypt" element={<Bcrypt />} />
         // Development
         <Route path="dev/testing" element={<Testing />} />
         // Data Structures and Algorithms
