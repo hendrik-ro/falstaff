@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import AuthenticationSessions from "./Sessions";
 import AuthenticationExpressJS from "./ExpressSession";
 import JWT from "./JWT";
+import AuthenticationPassportJS from "./PassportJS";
 
 export default function Authentication() {
   const dispatch = useDispatch();
@@ -27,6 +28,10 @@ export default function Authentication() {
         },
         {
           name: "Express-session",
+          active: false,
+        },
+        {
+          name: "Passport.js",
           active: false,
         },
         {
@@ -52,7 +57,8 @@ export default function Authentication() {
       </p>
       {activeChapter === "Authentication" && <AuthenticationIntroduction />}
       {activeChapter === "Sessions" && <AuthenticationSessions />}
-      {activeChapter === "Express-session" && <AuthenticationExpressJS />}
+      {activeChapter === "Express-session." && <AuthenticationExpressJS />}
+      {activeChapter === "Passport.js" && <AuthenticationPassportJS />}
       {activeChapter === "JWT" && <JWT />}
     </div>
   );
