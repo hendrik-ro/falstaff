@@ -23,6 +23,7 @@ import Postgres from "../features/backend/postgres/Postgres";
 import Authentication from "../features/security/authentication/Authentication";
 import Cookies from "../features/frontend/cookies/Cookies";
 import Bcrypt from "../features/security/bcrypt/Bcrypt";
+import OAuth from "../features/security/oAuth/OAuth";
 
 const Layout = () => {
   return (
@@ -52,6 +53,7 @@ function App() {
         // Web Security
         <Route path="security/authentication" element={<Authentication />} />
         <Route path="security/bcrypt" element={<Bcrypt />} />
+        <Route path="security/oAuth" element={<OAuth />} />
         // Development
         <Route path="dev/testing" element={<Testing />} />
         // Data Structures and Algorithms

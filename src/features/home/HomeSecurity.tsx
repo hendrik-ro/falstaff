@@ -12,6 +12,11 @@ export default function HomeContentSecurity() {
       path: "/security/bcrypt",
       tooltip: "JavaScript encryption library",
     },
+    {
+      title: "oAuth 2.0",
+      path: "/security/oAuth",
+      tooltip: "JavaScript authentication library",
+    },
   ];
   const placeholders = ["Authorization"];
   return (
