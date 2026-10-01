@@ -1,45 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-} from "../../navBar/navBarSlice";
-import { useEffect } from "react";
-
 export default function Cookies() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Cookies",
-          active: true,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Cookies"));
-
-    // Clear chapters on unmount
-    return () => {
-      dispatch(clearChapterLinks());
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Cookies</h1>
-      <p>Browser storage.</p>
-
-      {activeChapter === "Cookies" && <CookiesComparison />}
-    </div>
-  );
-}
-
-function CookiesComparison() {
   return (
     <div>
       <h2>Types of browser storage</h2>

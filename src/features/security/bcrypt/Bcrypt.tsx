@@ -1,50 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-} from "../../navBar/navBarSlice";
-import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
-import BcryptHashing from "./Hashing";
 
 export default function Bcrypt() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Bcrypt",
-          active: true,
-        },
-        {
-          name: "Hashing",
-          active: false,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Bcrypt"));
-
-    return () => {
-      dispatch(setActiveChapter(""));
-      dispatch(clearChapterLinks());
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Bcrypt</h1>
-      <p>JavaScript encryption library.</p>
-      {activeChapter === "Bcrypt" && <BcryptIntro />}
-      {activeChapter === "Hashing" && <BcryptHashing />}
-    </div>
-  );
-}
-
-function BcryptIntro() {
   return (
     <div>
       <h2>Introduction</h2>

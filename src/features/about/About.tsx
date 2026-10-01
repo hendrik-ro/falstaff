@@ -1,24 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setLinks } from "../navBar/navBarSlice";
-
 export default function About() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(
-      setLinks([
-        {
-          name: "Home",
-          to: "/",
-        },
-        {
-          name: "About",
-          to: "/about",
-        },
-      ]),
-    );
-  }, [dispatch]);
-
   return (
     <div>
       <h1>About</h1>

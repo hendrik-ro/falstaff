@@ -1,70 +1,51 @@
-import {
-  createHashRouter,
-  createRoutesFromElements,
-  Outlet,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { Outlet, RouterProvider, createHashRouter } from "react-router-dom";
+import type { RouteObject } from "react-router-dom";
 import "./App.css";
 import Home from "../features/home/Home";
 import About from "../features/about/About";
 import Error404 from "../components/ErrorElement";
-import NavBar from "../features/navBar/NavBar";
-import Footer from "../features/Footer";
-import React from "../features/frontend/react/React";
-import DocumentObjectModel from "../features/frontend/dom/DOM";
-import Redux from "../features/frontend/redux/Redux";
-import NodeJS from "../features/backend/node/Node";
-import ExpressJS from "../features/backend/express/Express";
-import Sorting from "../features/data/sort/Sorting";
-import Testing from "../features/dev/testing/Testing";
-import CORS from "../features/backend/cors/CORS";
-import Postgres from "../features/backend/postgres/Postgres";
-import Authentication from "../features/security/authentication/Authentication";
-import Cookies from "../features/frontend/cookies/Cookies";
-import Bcrypt from "../features/security/bcrypt/Bcrypt";
-import OAuth from "../features/security/oAuth/OAuth";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import TopicPage from "../components/TopicPage";
+import lazyPage from "../components/LazyPage";
+import { topics } from "./content";
 
 const Layout = () => {
   return (
     <>
       <NavBar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
 };
 
+const topicRoutes: RouteObject[] = topics.map((topic) => ({
+  path: topic.path,
+  element: <TopicPage topic={topic} />,
+  children: [
+    { index: true, element: lazyPage(topic.chapters[0].loader) },
+    ...topic.chapters
+      .slice(1)
+      .map((chapter) => ({ path: chapter.path, element: lazyPage(chapter.loader) })),
+  ],
+}));
+
 function App() {
-  const router = createHashRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        // Front End
-        <Route path="frontend/react" element={<React />} />
-        <Route path="frontend/dom" element={<DocumentObjectModel />} />
-        <Route path="frontend/redux" element={<Redux />} />
-        <Route path="frontend/cookies" element={<Cookies />} />
-        // Back End
-        <Route path="backend/nodejs" element={<NodeJS />} />
-        <Route path="backend/expressjs" element={<ExpressJS />} />
-        <Route path="backend/cors" element={<CORS />} />
-        <Route path="backend/postgres" element={<Postgres />} />
-        // Web Security
-        <Route path="security/authentication" element={<Authentication />} />
-        <Route path="security/bcrypt" element={<Bcrypt />} />
-        <Route path="security/oAuth" element={<OAuth />} />
-        // Development
-        <Route path="dev/testing" element={<Testing />} />
-        // Data Structures and Algorithms
-        <Route path="data/sort" element={<Sorting />} />
-        // About
-        <Route path="about" element={<About />} />
-        // ErrorElement
-        <Route path="*" element={<Error404 />} />
-      </Route>,
-    ),
-  );
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <Home /> },
+        ...topicRoutes,
+        { path: "about", element: <About /> },
+        { path: "*", element: <Error404 /> },
+      ],
+    },
+  ]);
   return <RouterProvider router={router} />;
 }
 

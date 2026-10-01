@@ -1,54 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectActiveChapter, setActiveChapter, setChapterLinks } from "../../navBar/navBarSlice";
-import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
-import ExpressJSRouting from "./Routing";
-import ExpressMiddleware from "./Middleware";
 
 export default function ExpressJS() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Express",
-          active: true,
-        },
-        {
-          name: "Routing",
-          active: false,
-        },
-        {
-          name: "Middleware",
-          active: false,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Express"));
-
-    // Clear chapters on unmount
-    return () => {
-      dispatch(setChapterLinks([]));
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Express</h1>
-      <p>A framework to build backend servers.</p>
-
-      {activeChapter === "Express" && <ExpressJSSetup />}
-      {activeChapter === "Routing" && <ExpressJSRouting />}
-      {activeChapter === "Middleware" && <ExpressMiddleware />}
-
-      <br style={{ marginTop: "2rem" }} />
-    </div>
-  );
-}
-
-function ExpressJSSetup() {
   return (
     <div>
       <h2>Setup</h2>

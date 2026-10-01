@@ -1,59 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-} from "../../navBar/navBarSlice";
-import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
-import NodeJSCLI from "./REPL";
-import NodeJSModules from "./Modules";
 
 export default function NodeJS() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Node",
-          active: true,
-        },
-        {
-          name: "CLI",
-          active: false,
-        },
-        {
-          name: "Modules",
-          active: false,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Node"));
-
-    // Clear chapters on unmount
-    return () => {
-      dispatch(clearChapterLinks());
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Node</h1>
-      <p>A runtime that allows JavaScript to be executed outside of a browser environment.</p>
-
-      {activeChapter === "Node" && <NodeJSSetup />}
-      {activeChapter === "CLI" && <NodeJSCLI />}
-      {activeChapter === "Modules" && <NodeJSModules />}
-
-      <br style={{ marginTop: "2rem" }} />
-    </div>
-  );
-}
-
-function NodeJSSetup() {
   return (
     <div>
       <h2>Setup</h2>

@@ -1,71 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setChapterLinks,
-  setActiveChapter,
-} from "../../navBar/navBarSlice";
-import ReactFrameworks from "./Frameworks";
-import ReactComponents from "./Components";
-import ReactHooks from "./Hooks";
 import Syntax from "../../../components/SyntaxHighlighter";
-import ReactProps from "./Props";
 
 export default function React() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "React",
-          active: true,
-        },
-        {
-          name: "Frameworks",
-          active: false,
-        },
-        {
-          name: "Components",
-          active: false,
-        },
-        {
-          name: "Props",
-          active: false,
-        },
-        {
-          name: "Hooks",
-          active: false,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("React"));
-
-    // Clear chapters on unmount
-    return () => {
-      dispatch(clearChapterLinks());
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
   return (
     <div>
-      <header>
-        <h1>React</h1>
-        <p>A JavaScript library for building user interfaces.</p>
-      </header>
-
-      {activeChapter === "React" && (
-        <>
-          <ReactSetup />
-          <ReactAbout />
-        </>
-      )}
-      {activeChapter === "Frameworks" && <ReactFrameworks />}
-      {activeChapter === "Components" && <ReactComponents />}
-      {activeChapter === "Hooks" && <ReactHooks />}
-      {activeChapter === "Props" && <ReactProps />}
+      <ReactSetup />
+      <ReactAbout />
     </div>
   );
 }

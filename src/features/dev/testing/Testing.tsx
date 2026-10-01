@@ -1,45 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-} from "../../navBar/navBarSlice";
-import { useEffect } from "react";
 
 export default function Testing() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Testing",
-          active: true,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Testing"));
-
-    // Clear chapter on unmount
-    return () => {
-      dispatch(clearChapterLinks());
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Testing</h1>
-      <p>Automated testing.</p>
-      {activeChapter === "Testing" && <TestingLibraries />}
-    </div>
-  );
-}
-
-function TestingLibraries() {
   return (
     <div>
       <h2>Testing Libraries</h2>
