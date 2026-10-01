@@ -29,11 +29,9 @@ export default function TopicPage({ topic }: TopicPageProps) {
                 <NavLink
                   end
                   to={chapterPath(topic, chapter)}
-                  className={({ isActive }) =>
-                    isActive ? styles.activeChapterLink : styles.inactiveChapterLink
-                  }
+                  className={({ isActive }) => (isActive ? styles.activeChapterLink : undefined)}
                 >
-                  {chapter.name}{" "}
+                  {chapter.name}
                 </NavLink>
               </li>
             ))}

@@ -5,7 +5,7 @@ import style from "./Home.module.css";
 
 function HomeSection({ section }: { section: Section }) {
   return (
-    <div>
+    <div className={style.section}>
       <h3>{section.name}</h3>
       <p className={style.sectionDescription}>{section.description}</p>
       <FlexGroup
@@ -17,6 +17,7 @@ function HomeSection({ section }: { section: Section }) {
         externalContent={section.externalLinks}
         placeholders={section.placeholders}
       />
+      <br style={{ marginBottom: "2rem" }} />
     </div>
   );
 }
@@ -29,9 +30,6 @@ function HomeContent() {
           <HomeSection key={s.name} section={s} />
         ))}
       </div>
-      <span className={style.externalLinks}>external links</span>
-      <span className={style.internalLinks}>internal links</span>
-      <span className={style.placeholders}>placeholders</span>
     </div>
   );
 }
@@ -44,6 +42,11 @@ function HomeHeaders() {
       <p className={style.sectionDescription}>
         This cheat sheet is work in progress and is continuously updated.
       </p>
+      <div className={style.legend}>
+        <span className={style.externalLinks}>external links</span>
+        <span className={style.internalLinks}>internal links</span>
+        <span className={style.placeholders}>placeholders</span>
+      </div>
     </header>
   );
 }

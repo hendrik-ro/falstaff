@@ -20,7 +20,7 @@ export const sections: Section[] = [
         tooltip: "Document Object Model",
         path: "frontend/dom",
         chapters: [
-          { name: "DOM", path: "", loader: () => import("../features/frontend/dom/DOM") },
+          { name: "About", path: "", loader: () => import("../features/frontend/dom/DOM") },
           {
             name: "Document",
             path: "document",

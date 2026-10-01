@@ -150,7 +150,7 @@ tfoot td {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  min-width: 20%;
+  min-width: 50%;
 }
 
 /* Footer */
