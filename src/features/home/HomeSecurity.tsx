@@ -10,8 +10,8 @@ export default function HomeContentSecurity() {
     {
       title: "Bcrypt",
       path: "/security/bcrypt",
-      tooltip: "JavaScript encryption library"
-    }
+      tooltip: "JavaScript encryption library",
+    },
   ];
   const placeholders = ["Authorization"];
   return (
