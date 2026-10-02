@@ -108,6 +108,7 @@ table {
   border: 2px solid rbg(140 140 140);
   font-size: 0.8rem;
   letter-spacing: 1px;
+  margin: 0 1rem;
 }
 caption {
   caption-side: bottom;

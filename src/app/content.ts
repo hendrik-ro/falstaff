@@ -39,7 +39,7 @@ export const sections: Section[] = [
         tooltip: "React",
         path: "frontend/react",
         chapters: [
-          { name: "React", path: "", loader: () => import("../features/frontend/react/React") },
+          { name: "About", path: "", loader: () => import("../features/frontend/react/React") },
           {
             name: "Frameworks",
             path: "frameworks",
@@ -68,7 +68,7 @@ export const sections: Section[] = [
         tooltip: "Redux & Redux Toolkit",
         path: "frontend/redux",
         chapters: [
-          { name: "Redux", path: "", loader: () => import("../features/frontend/redux/Redux") },
+          { name: "About", path: "", loader: () => import("../features/frontend/redux/Redux") },
           {
             name: "Store",
             path: "store",
@@ -130,7 +130,7 @@ export const sections: Section[] = [
         tooltip: "Node.js",
         path: "backend/nodejs",
         chapters: [
-          { name: "Node", path: "", loader: () => import("../features/backend/node/Node") },
+          { name: "Setup", path: "", loader: () => import("../features/backend/node/Node") },
           { name: "CLI", path: "cli", loader: () => import("../features/backend/node/REPL") },
           {
             name: "Modules",
@@ -147,7 +147,7 @@ export const sections: Section[] = [
         path: "backend/expressjs",
         chapters: [
           {
-            name: "Express",
+            name: "Setup",
             path: "",
             loader: () => import("../features/backend/express/Express"),
           },
@@ -169,7 +169,7 @@ export const sections: Section[] = [
         tooltip: "Cross-origin resource sharing",
         path: "backend/cors",
         chapters: [
-          { name: "CORS", path: "", loader: () => import("../features/backend/cors/CORS") },
+          { name: "About", path: "", loader: () => import("../features/backend/cors/CORS") },
           {
             name: "TypeScript",
             path: "typescript",
@@ -184,7 +184,7 @@ export const sections: Section[] = [
         path: "backend/postgres",
         chapters: [
           {
-            name: "PostgreSQL",
+            name: "Setup",
             path: "",
             loader: () => import("../features/backend/postgres/Postgres"),
           },
@@ -262,7 +262,7 @@ export const sections: Section[] = [
         tooltip: "JavaScript encryption library",
         path: "security/bcrypt",
         chapters: [
-          { name: "Bcrypt", path: "", loader: () => import("../features/security/bcrypt/Bcrypt") },
+          { name: "Setup", path: "", loader: () => import("../features/security/bcrypt/Bcrypt") },
           {
             name: "Hashing",
             path: "hashing",
@@ -308,7 +308,7 @@ export const sections: Section[] = [
         tooltip: "Sorting algorithms",
         path: "data/sort",
         chapters: [
-          { name: "Sort", path: "", loader: () => import("../features/data/sort/Sorting") },
+          { name: "Overview", path: "", loader: () => import("../features/data/sort/Sorting") },
           {
             name: "Bubble Sort",
             path: "bubble-sort",

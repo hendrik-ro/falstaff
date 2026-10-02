@@ -1,6 +1,7 @@
 export default function Sorting() {
   return (
     <div>
+      <h2>Overview complexity</h2>
       <table>
         <caption>Different sorting algorithms have different time complexities</caption>
         <thead>
