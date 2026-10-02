@@ -282,6 +282,11 @@ export const sections: Section[] = [
             path: "grant-types",
             loader: () => import("../features/security/oAuth/GrantTypes"),
           },
+          {
+            name: "Setup",
+            path: "setup",
+            loader: () => import("../features/security/oAuth/Setup"),
+          },
         ],
       },
     ],
