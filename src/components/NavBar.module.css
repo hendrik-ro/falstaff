@@ -1,4 +1,4 @@
-nav {
+.nav {
   position: relative;
   top: 0;
   z-index: 1000;
@@ -7,7 +7,7 @@ nav {
   border: 1px solid var(--accent-border);
   transition: width 500ms ease-in;
 }
-nav ul {
+.nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -18,38 +18,23 @@ nav ul {
   max-height: 15rem;
   overflow-y: scroll;
 }
-nav ul li {
+.nav ul li {
   color: var(--accent);
   font-weight: bold;
 }
-nav ul a {
+.nav ul a {
   color: var(--accent);
   text-decoration: none;
 }
-nav ul a:hover {
+.nav ul a:hover {
   font-weight: 900;
   transition-delay: 20ms;
-}
-nav ul button {
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-weight: bold;
-  cursor: pointer;
 }
 .activeNavLink {
   font-weight: bold;
   font-size: 1.2rem;
 }
 .inactiveNavLink {
-  font-weight: normal;
-  font-size: 1rem;
-}
-.activeChapterLink {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.inactiveChapterLink {
   font-weight: normal;
   font-size: 1rem;
 }

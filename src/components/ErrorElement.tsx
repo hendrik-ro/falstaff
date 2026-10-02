@@ -1,14 +1,7 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearLinks } from "../features/navBar/navBarSlice";
 
 export default function Error404() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(clearLinks());
-  }, [dispatch]);
 
   return (
     <div className="errorPage">

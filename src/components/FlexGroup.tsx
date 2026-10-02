@@ -8,8 +8,8 @@ export default function FlexGroup(props: FlexGroupProps) {
   return (
     <div className={style.group}>
       {internalContent &&
-        internalContent.map((item, index) => (
-          <span key={index} className={style.tooltip}>
+        internalContent.map((item) => (
+          <span key={item.title} className={style.tooltip}>
             <Link className={style.internalLink} to={item.path}>
               {item.title}
             </Link>
@@ -17,8 +17,8 @@ export default function FlexGroup(props: FlexGroupProps) {
           </span>
         ))}
       {externalContent &&
-        externalContent.map((item, index) => (
-          <span key={index} className={style.tooltip}>
+        externalContent.map((item) => (
+          <span key={item.title} className={style.tooltip}>
             <a
               className={style.externalLink}
               href={item.path}
@@ -31,8 +31,8 @@ export default function FlexGroup(props: FlexGroupProps) {
           </span>
         ))}
       {placeholders &&
-        placeholders.map((placeholder, index) => (
-          <span key={index} className={style.tooltip}>
+        placeholders.map((placeholder) => (
+          <span key={placeholder} className={style.tooltip}>
             <p className={style.placeholder}>{placeholder}</p>
             <span className={style.tooltiptext}>Not yet implemented</span>
           </span>

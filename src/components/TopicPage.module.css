@@ -1,0 +1,33 @@
+.chapterNav {
+  margin: 0.5rem 0 1.5rem 0;
+}
+.chapterNav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.chapterNav a {
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  transition:
+    background-color 200ms,
+    color 200ms;
+}
+.chapterNav a:hover {
+  color: var(--text-hover);
+}
+.activeChapterLink {
+  color: var(--text);
+  background-color: var(--bg-h);
+  border-color: var(--bg-h);
+  font-weight: bold;
+}

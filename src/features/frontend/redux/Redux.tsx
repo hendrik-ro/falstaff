@@ -1,65 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearChapterLinks,
-  selectActiveChapter,
-  setActiveChapter,
-  setChapterLinks,
-} from "../../navBar/navBarSlice";
-import { useEffect } from "react";
 import Syntax from "../../../components/SyntaxHighlighter";
-import ReduxStore from "./Store";
-import ReduxSlice from "./Slice";
-import ReduxMiddleware from "./Middleware";
 
 export default function Redux() {
-  const dispatch = useDispatch();
-  const activeChapter = useSelector(selectActiveChapter);
-  useEffect(() => {
-    dispatch(
-      setChapterLinks([
-        {
-          name: "Redux",
-          active: true,
-        },
-        {
-          name: "Store",
-          active: false,
-        },
-        {
-          name: "Slice",
-          active: false,
-        },
-        {
-          name: "Middleware",
-          active: false,
-        },
-      ]),
-    );
-    dispatch(setActiveChapter("Redux"));
-
-    // Clear chapters on unmount
-    return () => {
-      dispatch(clearChapterLinks());
-      dispatch(setActiveChapter(""));
-    };
-  }, [dispatch]);
-
-  return (
-    <div>
-      <header>
-        <h1>Redux</h1>
-        <p>Provides a predictable state container for React applications.</p>
-      </header>
-
-      {activeChapter === "Redux" && <ReduxSetup />}
-      {activeChapter === "Store" && <ReduxStore />}
-      {activeChapter === "Slice" && <ReduxSlice />}
-      {activeChapter === "Middleware" && <ReduxMiddleware />}
-    </div>
-  );
-}
-
-function ReduxSetup() {
   return (
     <div>
       <h2>Redux Setup</h2>
