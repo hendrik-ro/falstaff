@@ -4,6 +4,10 @@ export default function OAuthModel() {
   return (
     <div>
       <h2>Model</h2>
+      <p>
+        <em>oAuth 2.0</em> requires the following functions to be implemented for a{" "}
+        <em>client crediential grant</em>:
+      </p>
       <Syntax
         language="typescript"
         code={`// model.ts — in-memory store for an OAuth 2.0 client-credentials demo
@@ -48,6 +52,13 @@ export const saveToken = (
   tokens.push({ ...token, client });
   return { ...token, client };
 };
+
+const getAccessToken = (accessToken) => {
+  let tokens = db.tokens.filter((savedToken) => {
+    return savedToken.accessToken === accessToken;
+  })
+  return tokens[0];
+}
 `}
         lineNumbers={true}
       />
