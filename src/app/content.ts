@@ -276,7 +276,12 @@ export const sections: Section[] = [
         tooltip: "JavaScript authentication library",
         path: "security/oAuth",
         chapters: [
-          { name: "oAuth 2.0", path: "", loader: () => import("../features/security/oAuth/OAuth") },
+          { name: "About", path: "", loader: () => import("../features/security/oAuth/OAuth") },
+          {
+            name: "Grant Types",
+            path: "grant-types",
+            loader: () => import("../features/security/oAuth/GrantTypes"),
+          },
         ],
       },
     ],
