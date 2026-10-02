@@ -287,6 +287,11 @@ export const sections: Section[] = [
             path: "setup",
             loader: () => import("../features/security/oAuth/Setup"),
           },
+          {
+            name: "Register Clients",
+            path: "register",
+            loader: () => import("../features/security/oAuth/RegisterClients"),
+          },
         ],
       },
     ],
