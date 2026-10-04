@@ -318,6 +318,11 @@ export const sections: Section[] = [
             path: "libraries",
             loader: () => import("../features/dev/testing/Libraries"),
           },
+          {
+            name: "TDD",
+            path: "tdd",
+            loader: () => import("../features/dev/testing/TDD"),
+          },
         ],
       },
     ],
