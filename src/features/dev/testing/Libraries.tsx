@@ -1,13 +1,15 @@
-import { useState, type SubmitEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { Link } from "react-router-dom";
 
 export default function TestLibraries() {
   const [language, setLanguage] = useState("js");
 
-  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: SyntheticEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const selected = event.target.elements.language.value;
-    setLanguage(selected);
+    const selected = new FormData(event.currentTarget).get("language");
+    if (selected === "js" || selected === "go") {
+      setLanguage(selected);
+    }
   };
 
   return (
