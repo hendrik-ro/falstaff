@@ -319,6 +319,11 @@ export const sections: Section[] = [
             loader: () => import("../features/dev/testing/Libraries"),
           },
           {
+            name: "jsdom",
+            path: "jsdom",
+            loader: () => import("../features/dev/testing/Jsdom"),
+          },
+          {
             name: "TDD",
             path: "tdd",
             loader: () => import("../features/dev/testing/TDD"),

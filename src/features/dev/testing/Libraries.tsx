@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, type SubmitEvent } from "react";
 import { Link } from "react-router-dom";
 
 export default function TestLibraries() {
   const [language, setLanguage] = useState("js");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     const selected = event.target.elements.language.value;
     setLanguage(selected);
