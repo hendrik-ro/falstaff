@@ -312,7 +312,12 @@ export const sections: Section[] = [
         tooltip: "Testing in development",
         path: "dev/testing",
         chapters: [
-          { name: "Testing", path: "", loader: () => import("../features/dev/testing/Testing") },
+          { name: "Overview", path: "", loader: () => import("../features/dev/testing/Testing") },
+          {
+            name: "Libraries",
+            path: "libraries",
+            loader: () => import("../features/dev/testing/Libraries"),
+          },
         ],
       },
     ],
