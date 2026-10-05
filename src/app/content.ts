@@ -312,7 +312,27 @@ export const sections: Section[] = [
         tooltip: "Testing in development",
         path: "dev/testing",
         chapters: [
-          { name: "Testing", path: "", loader: () => import("../features/dev/testing/Testing") },
+          { name: "Overview", path: "", loader: () => import("../features/dev/testing/Testing") },
+          {
+            name: "Libraries",
+            path: "libraries",
+            loader: () => import("../features/dev/testing/Libraries"),
+          },
+          {
+            name: "jsdom",
+            path: "jsdom",
+            loader: () => import("../features/dev/testing/Jsdom"),
+          },
+          {
+            name: "Supertest",
+            path: "supertest",
+            loader: () => import("../features/dev/testing/Supertest"),
+          },
+          {
+            name: "TDD",
+            path: "tdd",
+            loader: () => import("../features/dev/testing/TDD"),
+          },
         ],
       },
     ],

@@ -1,92 +1,21 @@
-import { Link } from "react-router-dom";
-
 export default function Testing() {
   return (
     <div>
-      <h2>Testing Libraries</h2>
-      <div className="flexContainer">
-        <TestingJS />
-        <TestingGo />
-      </div>
-    </div>
-  );
-}
-
-function TestingJS() {
-  const Libraries = [
-    {
-      name: "Chai",
-      link: "https://www.chaijs.com/",
-      description: "assertion library for JavaScript",
-    },
-    {
-      name: "Enzyme",
-      link: "https://enzymejs.github.io/enzyme/",
-      description: "testing framework for React",
-    },
-    {
-      name: "Jest",
-      link: "https://www.jestjs.io/",
-      description: "testing framework for JavaScript",
-    },
-    {
-      name: "Mocha",
-      link: "https://mochajs.org/",
-      description: "testing framework for JavaScript",
-    },
-    {
-      name: "Sinon",
-      link: "https://sinonjs.org/",
-      description: "library including fakes, spies and mocks to be used with any testing framework",
-    },
-  ];
-  return (
-    <div className="flexItem">
-      <h3>JavaScript / TypeScript</h3>
-      <ul style={{ fontSize: "1rem" }}>
-        {Libraries.map((lib) => (
-          <li key={lib.name}>
-            <Link target="_blank" rel="noopener noreferrer" to={lib.link}>
-              {lib.name}
-            </Link>{" "}
-            - {lib.description}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function TestingGo() {
-  const Libraries = [
-    {
-      name: "Testify",
-      link: "https://github.com/stretchr/testify",
-      description: "testing library for Go",
-    },
-    {
-      name: "Golangci-lint",
-      link: "https://golangci-lint.run/",
-      description: "linter for go",
-    },
-    {
-      name: "Testing",
-      link: "https://pkg.go.dev/testing",
-      description: "built-in testing package",
-    },
-  ];
-  return (
-    <div className="flexItem">
-      <h3>Go</h3>
-      <ul style={{ fontSize: "1rem" }}>
-        {Libraries.map((lib) => (
-          <li key={lib.name}>
-            <Link target="_blank" rel="noopener noreferrer" to={lib.link}>
-              {lib.name}
-            </Link>{" "}
-            - {lib.description}
-          </li>
-        ))}
+      <h2>Testing</h2>
+      <h3>Software testing types</h3>
+      <ul>
+        <li>
+          <strong>Unit testing</strong> - Tests individual functions/classes in isolation. Fast,
+          cheap, run on every commit. Use case: validating a pricing calculation function.
+        </li>
+        <li>
+          <strong>Integration testing</strong> - Tests how components work together (e.g., service +
+          database). Use case: verifying an API correctly persists orders.
+        </li>
+        <li>
+          <strong>System / End-to-end (E2E) testing</strong> - Tests the whole application as a user
+          would. Slow but realistic. Use case: checkout flow from login to payment.
+        </li>
       </ul>
     </div>
   );
