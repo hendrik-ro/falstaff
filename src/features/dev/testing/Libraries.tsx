@@ -1,30 +1,22 @@
-import { useState, type SyntheticEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 
 export default function TestLibraries() {
   const [language, setLanguage] = useState("js");
 
-  const handleSubmit = (event: SyntheticEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    const selected = new FormData(event.currentTarget).get("language");
-    if (selected === "js" || selected === "go") {
-      setLanguage(selected);
-    }
-  };
-
   return (
     <div>
-      <h2>Testing Libraries</h2>
-      <form id="language-form" onSubmit={handleSubmit}>
-        <select id="language" name="language" required>
-          <option value="js">JavaScript/TypeScript</option>
-          <option value="go">Golang</option>
-        </select>
-
-        <button style={{ fontSize: "0.7rem" }} type="submit">
-          show
-        </button>
-      </form>
+      <h2>Testing Libraries & Frameworks</h2>
+      <select
+        id="language"
+        value={language}
+        onChange={(e: ChangeEvent<HTMLSelectElement>) => setLanguage(e.target.value)}
+        style={{ fontSize: "0.7rem" }}
+        required
+      >
+        <option value="js">JavaScript/TypeScript</option>
+        <option value="go">Golang</option>
+      </select>
       <div className="flexContainer">
         {language === "js" && <TestingJS />}
         {language === "go" && <TestingGo />}
@@ -39,6 +31,16 @@ function TestingJS() {
       name: "Chai",
       link: "https://www.chaijs.com/",
       description: "assertion library for JavaScript",
+    },
+    {
+      name: "Supertest",
+      link: "https://github.com/ladjs/supertest",
+      description: "API testing library",
+    },
+    {
+      name: "jsdom",
+      link: "https://github.com/jsdom/jsdom",
+      description: "DOM testing library",
     },
     {
       name: "Enzyme",
@@ -60,10 +62,17 @@ function TestingJS() {
       link: "https://sinonjs.org/",
       description: "library including fakes, spies and mocks to be used with any testing framework",
     },
+    {
+      name: "Vitest",
+      link: "https://vitest.dev/",
+      description: "Vite-native testing framework",
+    },
   ];
   return (
     <div className="flexItem">
       <h3>JavaScript / TypeScript</h3>
+      <p>Modern React project: Jest (or Vitest) + React Testing Library</p>
+      <p>Node.js API/service: Mocha + Chai + Sinon</p>
       <ul style={{ fontSize: "1rem" }}>
         {Libraries.map((lib) => (
           <li key={lib.name}>
