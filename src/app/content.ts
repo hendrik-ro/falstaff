@@ -178,9 +178,22 @@ export const sections: Section[] = [
         ],
       },
       {
+        title: "SQL",
+        description: "Structured Query Language",
+        tooltip: "Structured Query Language",
+        path: "backend/sql",
+        chapters: [
+          {
+            name: "About",
+            path: "",
+            loader: () => import("../features/backend/sql/SQL"),
+          }
+        ]
+      },
+      {
         title: "PostgreSQL",
         description: "Open-source object-relational database.",
-        tooltip: "PostgreSQL",
+        tooltip: "PostgreSQL database",
         path: "backend/postgres",
         chapters: [
           {
