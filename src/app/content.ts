@@ -187,8 +187,13 @@ export const sections: Section[] = [
             name: "About",
             path: "",
             loader: () => import("../features/backend/sql/SQL"),
-          }
-        ]
+          },
+          {
+            name: "Data Types",
+            path: "data-types",
+            loader: () => import("../features/backend/sql/DataTypes"),
+          },
+        ],
       },
       {
         title: "PostgreSQL",
