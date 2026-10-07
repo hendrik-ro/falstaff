@@ -189,9 +189,44 @@ export const sections: Section[] = [
             loader: () => import("../features/backend/sql/SQL"),
           },
           {
+            name: "Commands",
+            path: "commands",
+            loader: () => import("../features/backend/sql/Commands"),
+          },
+          {
+            name: "Clauses",
+            path: "clauses",
+            loader: () => import("../features/backend/sql/Clauses"),
+          },
+          {
             name: "Data Types",
             path: "data-types",
             loader: () => import("../features/backend/sql/DataTypes"),
+          },
+          {
+            name: "DDL",
+            path: "ddl",
+            loader: () => import("../features/backend/sql/DDL"),
+          },
+          {
+            name: "Functions",
+            path: "functions",
+            loader: () => import("../features/backend/sql/Functions"),
+          },
+          {
+            name: "Aggregations",
+            path: "aggregations",
+            loader: () => import("../features/backend/sql/Aggregations"),
+          },
+          {
+            name: "Joins",
+            path: "joins",
+            loader: () => import("../features/backend/sql/Joins"),
+          },
+          {
+            name: "Transactions",
+            path: "transactions",
+            loader: () => import("../features/backend/sql/Transactions"),
           },
         ],
       },
