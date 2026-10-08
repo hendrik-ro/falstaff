@@ -178,9 +178,52 @@ export const sections: Section[] = [
         ],
       },
       {
+        title: "SQL",
+        description: "Structured Query Language",
+        tooltip: "Structured Query Language",
+        path: "backend/sql",
+        chapters: [
+          {
+            name: "About",
+            path: "",
+            loader: () => import("../features/backend/sql/SQL"),
+          },
+          {
+            name: "Commands",
+            path: "commands",
+            loader: () => import("../features/backend/sql/Commands"),
+          },
+          {
+            name: "Clauses",
+            path: "clauses",
+            loader: () => import("../features/backend/sql/Clauses"),
+          },
+          {
+            name: "Data Types",
+            path: "data-types",
+            loader: () => import("../features/backend/sql/DataTypes"),
+          },
+          {
+            name: "Constraints",
+            path: "constraints",
+            loader: () => import("../features/backend/sql/Constraints"),
+          },
+          {
+            name: "Functions",
+            path: "functions",
+            loader: () => import("../features/backend/sql/Functions"),
+          },
+          {
+            name: "Joins",
+            path: "joins",
+            loader: () => import("../features/backend/sql/Joins"),
+          },
+        ],
+      },
+      {
         title: "PostgreSQL",
         description: "Open-source object-relational database.",
-        tooltip: "PostgreSQL",
+        tooltip: "PostgreSQL database",
         path: "backend/postgres",
         chapters: [
           {
