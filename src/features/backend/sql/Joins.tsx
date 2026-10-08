@@ -2,8 +2,10 @@ export default function SQLJoins() {
   return (
     <div>
       <h2>JOIN Operations</h2>
-      <table style={{ textAlign: "center" }}>
-        <caption>JOIN types and their aliases</caption>
+
+      <h3>Standard JOIN Types</h3>
+      <table style={{ textAlign: "center", marginBottom: "40px" }}>
+        <caption>Standard SQL join types</caption>
         <thead style={{ fontWeight: "bold" }}>
           <tr>
             <td>Join Type</td>
@@ -49,6 +51,22 @@ export default function SQLJoins() {
             <td>CROSS JOIN</td>
             <td>CROSS JOIN</td>
           </tr>
+        </tbody>
+      </table>
+
+      <h3>Special JOIN Types</h3>
+      <table style={{ textAlign: "center", marginBottom: "40px" }}>
+        <caption>Special join variations</caption>
+        <thead style={{ fontWeight: "bold" }}>
+          <tr>
+            <td>Join Type</td>
+            <td>Description</td>
+            <td>MySQL</td>
+            <td>PostgreSQL</td>
+            <td>SQLite</td>
+          </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>SELF JOIN</td>
             <td>Joins a table to itself</td>
@@ -63,20 +81,52 @@ export default function SQLJoins() {
             <td>NATURAL JOIN, NATURAL LEFT JOIN, NATURAL RIGHT JOIN</td>
             <td>NATURAL JOIN</td>
           </tr>
+        </tbody>
+      </table>
+
+      <h3>JOIN Clauses</h3>
+      <table style={{ textAlign: "center", marginBottom: "40px" }}>
+        <caption>JOIN condition syntax</caption>
+        <thead style={{ fontWeight: "bold" }}>
           <tr>
-            <td>JOIN with USING</td>
-            <td>Join on specific column(s)</td>
+            <td>Clause</td>
+            <td>Description</td>
+            <td>MySQL</td>
+            <td>PostgreSQL</td>
+            <td>SQLite</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>USING</td>
+            <td>Specify column for JOIN</td>
             <td>JOIN ... USING (column)</td>
             <td>JOIN ... USING (column)</td>
             <td>JOIN ... USING (column)</td>
           </tr>
           <tr>
-            <td>JOIN with ON</td>
-            <td>Join with custom condition</td>
+            <td>ON</td>
+            <td>Join condition</td>
             <td>JOIN ... ON condition</td>
             <td>JOIN ... ON condition</td>
             <td>JOIN ... ON condition</td>
           </tr>
+        </tbody>
+      </table>
+
+      <h3>LATERAL Joins and APPLY</h3>
+      <table style={{ textAlign: "center" }}>
+        <caption>Lateral joins for subqueries referencing outer tables</caption>
+        <thead style={{ fontWeight: "bold" }}>
+          <tr>
+            <td>Join Type</td>
+            <td>Description</td>
+            <td>MySQL</td>
+            <td>PostgreSQL</td>
+            <td>SQLite</td>
+          </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>LATERAL JOIN</td>
             <td>Join with subquery that references left table</td>

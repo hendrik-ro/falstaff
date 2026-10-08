@@ -204,9 +204,9 @@ export const sections: Section[] = [
             loader: () => import("../features/backend/sql/DataTypes"),
           },
           {
-            name: "DDL",
-            path: "ddl",
-            loader: () => import("../features/backend/sql/DDL"),
+            name: "Constraints",
+            path: "constraints",
+            loader: () => import("../features/backend/sql/Constraints"),
           },
           {
             name: "Functions",
@@ -214,19 +214,9 @@ export const sections: Section[] = [
             loader: () => import("../features/backend/sql/Functions"),
           },
           {
-            name: "Aggregations",
-            path: "aggregations",
-            loader: () => import("../features/backend/sql/Aggregations"),
-          },
-          {
             name: "Joins",
             path: "joins",
             loader: () => import("../features/backend/sql/Joins"),
-          },
-          {
-            name: "Transactions",
-            path: "transactions",
-            loader: () => import("../features/backend/sql/Transactions"),
           },
         ],
       },
