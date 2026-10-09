@@ -375,6 +375,39 @@ export const sections: Section[] = [
           },
         ],
       },
+      {
+        title: "Injection",
+        description: "Prevent injection attacks across SQL, files, and LLMs.",
+        tooltip: "Injection attacks and defenses",
+        path: "security/injection",
+        chapters: [
+          {
+            name: "Overview",
+            path: "",
+            loader: () => import("../features/security/injection/Injection"),
+          },
+          {
+            name: "SQL Injection",
+            path: "sql-injection",
+            loader: () => import("../features/security/injection/SQLInjection"),
+          },
+          {
+            name: "Validation & Sanitization",
+            path: "validation-sanitization",
+            loader: () => import("../features/security/injection/ValidationSanitization"),
+          },
+          {
+            name: "Safe ZIP Extraction",
+            path: "safe-zip-extraction",
+            loader: () => import("../features/security/injection/SafeZipExtraction"),
+          },
+          {
+            name: "LLM Injection",
+            path: "llm-injection",
+            loader: () => import("../features/security/injection/LLMInjection"),
+          },
+        ],
+      },
     ],
   },
   {
