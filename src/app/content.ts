@@ -342,8 +342,16 @@ export const sections: Section[] = [
           },
         ],
       },
+      {
+        title: "Authorization",
+        description: "Control user access and permissions.",
+        tooltip: "Authorization and access control",
+        path: "security/authorization",
+        chapters: [
+          { name: "Cheat Sheet", path: "", loader: () => import("../features/security/authorization/Authorization") },
+        ],
+      },
     ],
-    placeholders: ["Authorization"],
   },
   {
     name: "Development",
