@@ -348,7 +348,31 @@ export const sections: Section[] = [
         tooltip: "Authorization and access control",
         path: "security/authorization",
         chapters: [
-          { name: "Cheat Sheet", path: "", loader: () => import("../features/security/authorization/Authorization") },
+          {
+            name: "Least Privilege",
+            path: "",
+            loader: () => import("../features/security/authorization/LeastPrivilege"),
+          },
+          {
+            name: "Broken Access Control",
+            path: "broken-access-control",
+            loader: () => import("../features/security/authorization/BrokenAccessControl"),
+          },
+          {
+            name: "Access Control Models",
+            path: "access-control-models",
+            loader: () => import("../features/security/authorization/AccessControlModels"),
+          },
+          {
+            name: "RBAC vs ABAC",
+            path: "rbac-vs-abac",
+            loader: () => import("../features/security/authorization/RBACvsABAC"),
+          },
+          {
+            name: "IDOR",
+            path: "idor",
+            loader: () => import("../features/security/authorization/IDOR"),
+          },
         ],
       },
     ],
